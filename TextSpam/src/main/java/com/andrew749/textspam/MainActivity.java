@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
     static int itemposition = 0;
     adapter adapter;
     private String phoneNumber;
+    Intent intent=new Intent();
     private static int frequency;
     private static String message;
     EditText phonenumberenter, frequencyenter, messageenter;
@@ -38,6 +39,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        intent.setClass(getApplicationContext(),TutorialActivity.class);
+
+        startActivity(intent);
+
         lv = (ListView) findViewById(R.id.contactlist);
         adapter = new adapter(this, R.id.contactlist, item);
         lv.setAdapter(adapter);
@@ -233,7 +239,7 @@ public class MainActivity extends Activity {
 
     }
 
-    Thread r = new  Thread (new Runnable() {
+    Thread r = new Thread(new Runnable() {
         @Override
         public void run() {
             for (int i = 0; i < frequency; i++) {
