@@ -13,4 +13,4 @@
             android:id="@+id/numberoption"
             android:textSize="50dip"
             android:layout_alignParentLeft="true"/>
-</RelativeLayout><!-- From: file:/home/andrew/TextSpam/TextSpam/src/main/res/layout/listitem.xml -->
+</RelativeLayout><!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/layout/listitem.xml -->

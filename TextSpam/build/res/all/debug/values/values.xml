@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/home/andrew/TextSpam/TextSpam/src/main/res/values/dimens.xml -->
+    <!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/dimens.xml -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/home/andrew/TextSpam/TextSpam/src/main/res/values/strings.xml -->
+    <!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/strings.xml -->
     <string name="action_settings">Settings</string>
     <string name="app_name">TextSpam</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_tutorial">MainActivity</string>
     <string name="tutorial">Welcome to TextSpam. To start spamming, first enter the message in the Message field. Then the amount of texts to send in the Frequency field. Finally add the recipient contact number(without hyphens) in the Recipient field. When you do add the number, make sure to click Add so that it appears on the list below. Once you are content with the information, click Send. To clear individual numbers just long click on the entry until it disappears, or press clear all to remove all recipients!!!</string>
-    <!-- From: file:/home/andrew/TextSpam/TextSpam/src/main/res/values/styles.xml -->
+    <!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/styles.xml -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in

@@ -4,12 +4,16 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.telephony.SmsManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -24,7 +28,7 @@ public class MainActivity extends Activity {
     static int itemposition = 0;
     adapter adapter;
     private String phoneNumber;
-    Intent intent=new Intent();
+    Intent intent = new Intent();
     private static int frequency;
     private static String message;
     EditText phonenumberenter, frequencyenter, messageenter;
@@ -39,10 +43,22 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final String PREFS_NAME = "MyPrefsFile";
 
-        intent.setClass(getApplicationContext(),TutorialActivity.class);
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        intent.setClass(getApplicationContext(), TutorialActivity.class);
 
-        startActivity(intent);
+        if (settings.getBoolean("my_first_time", true)) {
+            //the app is being launched for first time, do something
+            Log.d("Comments", "First time");
+
+            // first time task
+
+            startActivity(intent);
+            // record the fact that the app has been started at least once
+            settings.edit().putBoolean("my_first_time", false).commit();
+        }
+
 
         lv = (ListView) findViewById(R.id.contactlist);
         adapter = new adapter(this, R.id.contactlist, item);
@@ -256,4 +272,22 @@ public class MainActivity extends Activity {
             }
         }
     });
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.tutorial_menu:
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

@@ -1,8 +1,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-            android:id="@+id/action_settings"
-            android:title="Cl"
+            android:id="@+id/tutorial_menu"
+            android:title="Tutorial"
             android:orderInCategory="100"
             android:showAsAction="never"/>
 </menu>
-<!-- From: file:/home/andrew/TextSpam/TextSpam/src/main/res/menu/main.xml -->
+<!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/menu/main.xml -->
