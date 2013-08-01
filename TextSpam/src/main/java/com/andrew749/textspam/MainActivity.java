@@ -120,14 +120,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                try {
-                    message = messageenter.getText().toString();
-                    frequency = Integer.parseInt(frequencyenter.getText()
-                            .toString());
-                } catch (Exception e) {
-                    Toast.makeText(getApplicationContext(), "Sorry but the fields are not entered correctly",
-                            Toast.LENGTH_SHORT).show();
-                }
+                gatherInformation();
                 if (frequency > 30) {
                     initializeAlert();
                     alertDialog.show();
@@ -188,6 +181,17 @@ public class MainActivity extends Activity {
         }
 
     };
+
+    public void gatherInformation() {
+        try {
+            message = messageenter.getText().toString();
+            frequency = Integer.parseInt(frequencyenter.getText()
+                    .toString());
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Sorry but the fields are not entered correctly",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         String phone = "";
@@ -298,6 +302,9 @@ public class MainActivity extends Activity {
         switch (item.getItemId()) {
             case R.id.tutorial_menu:
                 startActivity(intent);
+                return true;
+            case R.id.sendmessage:
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

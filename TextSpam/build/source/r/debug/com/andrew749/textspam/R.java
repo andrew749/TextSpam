@@ -37,6 +37,7 @@ public final class R {
         public static final int numberedit = 0x7f080007;
         public static final int numberoption = 0x7f08000c;
         public static final int send = 0x7f080008;
+        public static final int sendmessage = 0x7f08000f;
         public static final int text = 0x7f080002;
         public static final int textView = 0x7f080000;
         public static final int textView2 = 0x7f080004;
