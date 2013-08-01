@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.telephony.SmsManager;
 import android.util.Log;
@@ -29,7 +30,8 @@ public class MainActivity extends Activity {
     adapter adapter;
     private String phoneNumber;
     Intent intent = new Intent();
-    private static int frequency;
+    //rfrequency will hold remainder after stuff is sent
+    private static int frequency, rfrequency, nfrequency;
     private static String message;
     EditText phonenumberenter, frequencyenter, messageenter;
     Button send, add, clearall;
@@ -38,31 +40,41 @@ public class MainActivity extends Activity {
     AlertDialog.Builder alertDialogBuilder;
     ListView lv;
     public static ArrayList<Custom> item = new ArrayList<Custom>();
+    Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         final String PREFS_NAME = "MyPrefsFile";
+
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         intent.setClass(getApplicationContext(), TutorialActivity.class);
 
         if (settings.getBoolean("my_first_time", true)) {
+
+
             //the app is being launched for first time, do something
             Log.d("Comments", "First time");
 
-            // first time task
-
+            // first time task is run
             startActivity(intent);
+
+
             // record the fact that the app has been started at least once
             settings.edit().putBoolean("my_first_time", false).commit();
+
+
         }
 
 
         lv = (ListView) findViewById(R.id.contactlist);
         adapter = new adapter(this, R.id.contactlist, item);
         lv.setAdapter(adapter);
+        //where the user enters the message qualiites
         phonenumberenter = (EditText) findViewById(R.id.numberedit);
         frequencyenter = (EditText) findViewById(R.id.frequencyedit);
         messageenter = (EditText) findViewById(R.id.messageedit);
@@ -75,8 +87,13 @@ public class MainActivity extends Activity {
                 return true;
             }
         });
+
+
         sm = SmsManager.getDefault();
         initializeAlert();
+
+
+        //add contact to list
         add = (Button) findViewById(R.id.add);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +112,9 @@ public class MainActivity extends Activity {
                 }
             }
         });
+
+
+        //send the messages
         send = (Button) findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
 
@@ -112,21 +132,9 @@ public class MainActivity extends Activity {
                     initializeAlert();
                     alertDialog.show();
                 } else {
-                    for (int x = 0; x < item.size(); x++) {
-                        phoneNumber = ((item.get(x)).getPhoneNumber()) + "";
-                        for (int i = 0; i < frequency; i++) {
-                            try {
-                                sm.sendTextMessage(phoneNumber, null, message, null, null);
-
-                                Thread.sleep(50);
-                            } catch
-                                    (InterruptedException r) {
-                                Log.d("error", "couldnt sent message");
-                            }
-                        }
-                        Log.d("Success", "messaged contact " + item.get(x).getPhoneNumber());
-
-                    }
+                    nfrequency = frequency / 30;
+                    rfrequency = frequency % 30;
+                    handler.postDelayed(sendMessage, 10000);
                 }
 
 
@@ -158,6 +166,28 @@ public class MainActivity extends Activity {
             }
         });
     }
+
+    Runnable sendMessage = new Runnable() {
+
+        @Override
+        public void run() {
+            for (int x = 0; x < item.size(); x++) {
+                phoneNumber = ((item.get(x)).getPhoneNumber()) + "";
+                for (int i = 0; i < frequency; i++) {
+                    try {
+                        sm.sendTextMessage(phoneNumber, null, message, null, null);
+
+                        Thread.sleep(50);
+                    } catch
+                            (InterruptedException r) {
+                    }
+                }
+                Log.d("Success", "messaged contact " + item.get(x).getPhoneNumber());
+
+            }
+        }
+
+    };
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         String phone = "";
@@ -240,7 +270,7 @@ public class MainActivity extends Activity {
 
                 for (int i = 0; i < item.size(); i++) {
                     phoneNumber = ((item.get(i)).getPhoneNumber()) + "";
-                    r.run();
+                    handler.postDelayed(sendMessage, 10000);
                 }
 
             }
@@ -255,23 +285,6 @@ public class MainActivity extends Activity {
 
     }
 
-    Thread r = new Thread(new Runnable() {
-        @Override
-        public void run() {
-            for (int i = 0; i < frequency; i++) {
-                try {
-                    try {
-                        sm.sendTextMessage(phoneNumber, null, message, null, null);
-                    } catch (Exception e) {
-                        Log.d("Error", " couldn't send message");
-                    }
-                    Thread.sleep(50);
-                } catch
-                        (InterruptedException r) {
-                }
-            }
-        }
-    });
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
