@@ -63,50 +63,31 @@
                 android:onClick="doLaunchContactPicker"
                 />
 
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add"
-                android:id="@+id/add"
-                android:layout_row="0"
-                android:layout_column="4"/>
-    </LinearLayout>
 
+
+    </LinearLayout>
+<LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
     <EditText
             android:layout_width="fill_parent"
+            android:layout_weight="9"
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
             android:id="@+id/numberedit"
             android:layout_gravity="left|center_vertical"/>
-
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
-
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Send"
-                android:id="@+id/send"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_gravity="left|center_vertical"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_weight="50"/>
-
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:text="Clear All"
-                android:id="@+id/clear"
-                android:layout_weight="50"/>
-
-    </LinearLayout>
-
+            android:text="Add"
+            android:id="@+id/add"
+            android:layout_row="0"
+            android:layout_column="4"
+            />
+</LinearLayout>
     <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">

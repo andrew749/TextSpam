@@ -8,5 +8,9 @@
             android:id="@+id/sendmessage"
             android:title="Send"
             android:showAsAction="always"></item>
+    <item
+            android:id="@+id/clearmessage"
+            android:title="Clear"
+            android:showAsAction="always"></item>
 </menu>
-        <!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/menu/main.xml -->
+<!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/menu/main.xml -->

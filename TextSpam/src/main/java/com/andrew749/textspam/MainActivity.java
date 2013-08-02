@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
     private static int frequency, rfrequency, nfrequency;
     private static String message;
     EditText phonenumberenter, frequencyenter, messageenter;
-    Button send, add, clearall;
+    Button add;
     SmsManager sm;
     AlertDialog alertDialog;
     AlertDialog.Builder alertDialogBuilder;
@@ -55,7 +55,6 @@ public class MainActivity extends Activity {
         intent.setClass(getApplicationContext(), TutorialActivity.class);
 
         if (settings.getBoolean("my_first_time", true)) {
-
 
             //the app is being launched for first time, do something
             Log.d("Comments", "First time");
@@ -78,7 +77,6 @@ public class MainActivity extends Activity {
         phonenumberenter = (EditText) findViewById(R.id.numberedit);
         frequencyenter = (EditText) findViewById(R.id.frequencyedit);
         messageenter = (EditText) findViewById(R.id.messageedit);
-        clearall = (Button) findViewById(R.id.clear);
         lv.setOnItemLongClickListener(new android.widget.AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -98,66 +96,10 @@ public class MainActivity extends Activity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    item.add(new Custom(phonenumberenter.getText().toString()));
-                    Log.d("Success", "added phone number " + item.get(itemposition).getPhoneNumber());
-
-                    itemposition++;
-                    for (int i = 0; i < itemposition; i++) {
-                        Log.d("entry:", "Entry " + i + " == " + item.get(i).getPhoneNumber());
-                    }
-                    adapter.notifyDataSetChanged();
-                    phonenumberenter.setText("");
-                } catch (Exception e) {
-                }
+                addItem();
             }
         });
 
-
-        //send the messages
-        send = (Button) findViewById(R.id.send);
-        send.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                gatherInformation();
-                if (frequency > 30) {
-                    initializeAlert();
-                    alertDialog.show();
-                } else {
-                    nfrequency = frequency / 30;
-                    rfrequency = frequency % 30;
-                    handler.postDelayed(sendMessage, 10000);
-                }
-
-
-            }
-        });
-        clearall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                item.clear();
-                adapter.notifyDataSetChanged();
-                alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-
-
-                // Setting Dialog Title
-                alertDialogBuilder.setTitle("Notice");
-
-                // Setting Dialog Message
-                alertDialogBuilder.setMessage("If you want to only remove one item just long click on the item.");
-                alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                    }
-                });
-
-                alertDialog = alertDialogBuilder.create();
-                alertDialog.show();
-            }
-        });
     }
 
     Runnable sendMessage = new Runnable() {
@@ -289,7 +231,55 @@ public class MainActivity extends Activity {
 
     }
 
+    private void ClearAlert(){
+        item.clear();
+        adapter.notifyDataSetChanged();
+        alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
 
+
+        // Setting Dialog Title
+        alertDialogBuilder.setTitle("Notice");
+
+        // Setting Dialog Message
+        alertDialogBuilder.setMessage("If you want to only remove one item just long click on the item.");
+        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Log.d("Success","cleared all entries");
+            }
+        });
+
+        alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
+
+    private void addItem(){
+        try {
+            item.add(new Custom(phonenumberenter.getText().toString()));
+            Log.d("Success", "added phone number " + item.get(itemposition).getPhoneNumber());
+
+            itemposition++;
+            for (int i = 0; i < itemposition; i++) {
+                Log.d("entry:", "Entry " + i + " == " + item.get(i).getPhoneNumber());
+            }
+            adapter.notifyDataSetChanged();
+            phonenumberenter.setText("");
+        } catch (Exception e) {
+        }
+    }
+
+    public void sendMessages(){
+        gatherInformation();
+        if (frequency > 30) {
+            initializeAlert();
+            alertDialog.show();
+        } else {
+            nfrequency = frequency / 30;
+            rfrequency = frequency % 30;
+            handler.postDelayed(sendMessage, 10000);
+        }
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -304,7 +294,10 @@ public class MainActivity extends Activity {
                 startActivity(intent);
                 return true;
             case R.id.sendmessage:
-
+                    sendMessages();
+                return true;
+            case R.id.clearmessage:
+                ClearAlert();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
