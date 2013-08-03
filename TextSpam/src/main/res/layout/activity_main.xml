@@ -64,30 +64,33 @@
                 />
 
 
-
     </LinearLayout>
-<LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-    <EditText
+
+    <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_weight="9"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:ems="10"
-            android:id="@+id/numberedit"
-            android:layout_gravity="left|center_vertical"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Add"
-            android:id="@+id/add"
-            android:layout_row="0"
-            android:layout_column="4"
-            />
-</LinearLayout>
+            android:layout_height="wrap_content">
+
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_weight="9"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:ems="10"
+                android:id="@+id/numberedit"
+                android:layout_gravity="left|center_vertical"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:id="@+id/add"
+                android:layout_row="0"
+                android:layout_column="4"
+                />
+    </LinearLayout>
+
     <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">

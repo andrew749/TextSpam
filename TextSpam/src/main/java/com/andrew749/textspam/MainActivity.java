@@ -26,21 +26,37 @@ import java.util.ArrayList;
 
 public class MainActivity extends Activity {
     private static final int CONTACT_PICKER_RESULT = 1001;
+    public static ArrayList<Custom> item = new ArrayList<Custom>();
     static int itemposition = 0;
-    adapter adapter;
-    private String phoneNumber;
-    Intent intent = new Intent();
-    //rfrequency will hold remainder after stuff is sent
-    private static int frequency, rfrequency, nfrequency;
+    private static int frequency;
     private static String message;
+    adapter adapter;
+    Intent intent = new Intent();
     EditText phonenumberenter, frequencyenter, messageenter;
     Button add;
     SmsManager sm;
     AlertDialog alertDialog;
     AlertDialog.Builder alertDialogBuilder;
     ListView lv;
-    public static ArrayList<Custom> item = new ArrayList<Custom>();
     Handler handler = new Handler();
+    Thread sendMessageContact = new Thread(new Runnable() {
+
+        @Override
+        public void run() {
+            for (int i = 0; i < frequency; i++) {
+                sm.sendTextMessage(phoneNumber, null, message, null, null);
+
+                frequency--;
+                handler.postDelayed(this, 500);
+                Log.d("Remaining", frequency + "");
+
+            }
+
+        }
+
+
+    });
+    private String phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,39 +116,6 @@ public class MainActivity extends Activity {
             }
         });
 
-    }
-
-    Runnable sendMessage = new Runnable() {
-
-        @Override
-        public void run() {
-            for (int x = 0; x < item.size(); x++) {
-                phoneNumber = ((item.get(x)).getPhoneNumber()) + "";
-                for (int i = 0; i < frequency; i++) {
-                    try {
-                        sm.sendTextMessage(phoneNumber, null, message, null, null);
-
-                        Thread.sleep(50);
-                    } catch
-                            (InterruptedException r) {
-                    }
-                }
-                Log.d("Success", "messaged contact " + item.get(x).getPhoneNumber());
-
-            }
-        }
-
-    };
-
-    public void gatherInformation() {
-        try {
-            message = messageenter.getText().toString();
-            frequency = Integer.parseInt(frequencyenter.getText()
-                    .toString());
-        } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "Sorry but the fields are not entered correctly",
-                    Toast.LENGTH_SHORT).show();
-        }
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -199,6 +182,17 @@ public class MainActivity extends Activity {
         alertDialog.show();
     }
 
+    public void gatherInformation() {
+        try {
+            message = messageenter.getText().toString();
+            frequency = Integer.parseInt(frequencyenter.getText()
+                    .toString());
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Sorry but the fields are not entered correctly",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void initializeAlert() {
         alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
 
@@ -213,11 +207,8 @@ public class MainActivity extends Activity {
         // Setting OK Button
         alertDialogBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
+                sendMessagesToAll();
 
-                for (int i = 0; i < item.size(); i++) {
-                    phoneNumber = ((item.get(i)).getPhoneNumber()) + "";
-                    handler.postDelayed(sendMessage, 10000);
-                }
 
             }
         });
@@ -231,7 +222,14 @@ public class MainActivity extends Activity {
 
     }
 
-    private void ClearAlert(){
+    private void sendMessagesToAll() {
+        for (int i = 0; i < item.size(); i++) {
+            phoneNumber = ((item.get(i)).getPhoneNumber()) + "";
+            sendMessageContact.run();
+        }
+    }
+
+    private void ClearAlert() {
         item.clear();
         adapter.notifyDataSetChanged();
         alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
@@ -246,7 +244,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Log.d("Success","cleared all entries");
+                Log.d("Success", "cleared all entries");
             }
         });
 
@@ -254,7 +252,7 @@ public class MainActivity extends Activity {
         alertDialog.show();
     }
 
-    private void addItem(){
+    private void addItem() {
         try {
             item.add(new Custom(phonenumberenter.getText().toString()));
             Log.d("Success", "added phone number " + item.get(itemposition).getPhoneNumber());
@@ -269,17 +267,17 @@ public class MainActivity extends Activity {
         }
     }
 
-    public void sendMessages(){
+    public void sendMessagesComplete() {
         gatherInformation();
         if (frequency > 30) {
+
             initializeAlert();
             alertDialog.show();
         } else {
-            nfrequency = frequency / 30;
-            rfrequency = frequency % 30;
-            handler.postDelayed(sendMessage, 10000);
+            sendMessagesToAll();
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -294,7 +292,7 @@ public class MainActivity extends Activity {
                 startActivity(intent);
                 return true;
             case R.id.sendmessage:
-                    sendMessages();
+                sendMessagesComplete();
                 return true;
             case R.id.clearmessage:
                 ClearAlert();
