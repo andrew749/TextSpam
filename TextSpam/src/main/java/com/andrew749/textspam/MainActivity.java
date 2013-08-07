@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
 
         for (int i = 0; i < totalfreq; i++) {
             sm.sendTextMessage(phoneNumber, null, message, null, null);
-            Toast.makeText(getApplicationContext(), "Sending Text " + i + " of " + totalfreq + " to " + phoneNumber, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Sending Text " + (i+1) + " of " + totalfreq + " to " + phoneNumber, Toast.LENGTH_SHORT).show();
             frequency--;
                 Log.d("Remaining", frequency + "");
 
