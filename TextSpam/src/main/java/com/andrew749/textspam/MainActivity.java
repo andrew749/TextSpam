@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
     private static final int CONTACT_PICKER_RESULT = 1001;
     public static ArrayList<Custom> item = new ArrayList<Custom>();
     static int itemposition = 0;
-    private static int frequency;
+    private static int frequency, totalfreq;
     private static String message;
     adapter adapter;
     Intent intent = new Intent();
@@ -39,23 +39,21 @@ public class MainActivity extends Activity {
     AlertDialog.Builder alertDialogBuilder;
     ListView lv;
     Handler handler = new Handler();
-    Thread sendMessageContact = new Thread(new Runnable() {
 
-        @Override
-        public void run() {
-            for (int i = 0; i < frequency; i++) {
-                sm.sendTextMessage(phoneNumber, null, message, null, null);
+    public void sendMessageContact() {
 
-                frequency--;
-                handler.postDelayed(this, 500);
+        for (int i = 0; i < totalfreq; i++) {
+            sm.sendTextMessage(phoneNumber, null, message, null, null);
+            Toast.makeText(getApplicationContext(), "Sending Text " + i + " of " + totalfreq + " to " + phoneNumber, Toast.LENGTH_SHORT).show();
+            frequency--;
                 Log.d("Remaining", frequency + "");
 
-            }
 
         }
 
 
-    });
+    }
+
     private String phoneNumber;
 
     @Override
@@ -187,6 +185,7 @@ public class MainActivity extends Activity {
             message = messageenter.getText().toString();
             frequency = Integer.parseInt(frequencyenter.getText()
                     .toString());
+            totalfreq = frequency;
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "Sorry but the fields are not entered correctly",
                     Toast.LENGTH_SHORT).show();
@@ -225,7 +224,7 @@ public class MainActivity extends Activity {
     private void sendMessagesToAll() {
         for (int i = 0; i < item.size(); i++) {
             phoneNumber = ((item.get(i)).getPhoneNumber()) + "";
-            sendMessageContact.run();
+            sendMessageContact();
         }
     }
 
