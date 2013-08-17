@@ -25,23 +25,25 @@ public final class R {
         public static final int adView=0x7f080008;
         public static final int add=0x7f080007;
         public static final int button2=0x7f080005;
-        public static final int clearmessage=0x7f08000e;
+        public static final int clearmessage=0x7f08000f;
         public static final int contactlist=0x7f080009;
-        public static final int exitTutorial=0x7f08000b;
+        public static final int exitTutorial=0x7f08000c;
         public static final int frequencyedit=0x7f080003;
         public static final int messageedit=0x7f080001;
         public static final int numberedit=0x7f080006;
-        public static final int numberoption=0x7f08000a;
-        public static final int sendmessage=0x7f08000d;
+        public static final int numberoption=0x7f08000b;
+        public static final int sendmessage=0x7f08000e;
         public static final int text=0x7f080002;
         public static final int textView=0x7f080000;
         public static final int textView2=0x7f080004;
-        public static final int tutorial_menu=0x7f08000c;
+        public static final int tutorial_menu=0x7f08000d;
+        public static final int webView=0x7f08000a;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int listitem=0x7f030001;
-        public static final int tutorial=0x7f030002;
+        public static final int changedview=0x7f030001;
+        public static final int listitem=0x7f030002;
+        public static final int tutorial=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f070000;

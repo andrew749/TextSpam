@@ -2,6 +2,7 @@ package com.andrew749.textspam;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,6 +13,7 @@ import android.os.Handler;
 import android.provider.ContactsContract;
 import android.telephony.SmsManager;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -134,7 +136,7 @@ public class MainActivity extends Activity {
                         if (contacts.moveToFirst()) {
                             //gets the phone no
                             phone = contacts.getString(phoneIdx);
-                            phone = phone.substring(2, phone.length());
+                            phone = phone.substring(1, phone.length());
                             //assigns phone no to EditText field phoneno
                             phonenumberenter.setText(phone);
                         } else {
@@ -283,7 +285,24 @@ public class MainActivity extends Activity {
         inflater.inflate(R.menu.main, menu);
         return true;
     }
+    public void  ChangedAlert(){
+        alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
 
+
+        // Setting Dialog Title
+        alertDialogBuilder.setTitle("What's Changed");
+       // possible added changes view changedview view=new changedview(getApplicationContext());
+        // Setting Dialog Message
+        alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+
+        alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
