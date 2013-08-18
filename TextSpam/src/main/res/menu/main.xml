@@ -12,4 +12,8 @@
             android:id="@+id/clearmessage"
             android:title="Clear"
             android:showAsAction="always"></item>
+    <item
+            android:id="@+id/changes"
+            android:title="Changes"
+            android:showAsAction="never"></item>
 </menu>

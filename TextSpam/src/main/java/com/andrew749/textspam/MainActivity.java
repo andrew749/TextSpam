@@ -2,7 +2,6 @@ package com.andrew749.textspam;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,6 +20,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -46,9 +46,9 @@ public class MainActivity extends Activity {
 
         for (int i = 0; i < totalfreq; i++) {
             sm.sendTextMessage(phoneNumber, null, message, null, null);
-            Toast.makeText(getApplicationContext(), "Sending Text " + (i+1) + " of " + totalfreq + " to " + phoneNumber, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Sending Text " + (i + 1) + " of " + totalfreq + " to " + phoneNumber, Toast.LENGTH_SHORT).show();
             frequency--;
-                Log.d("Remaining", frequency + "");
+            Log.d("Remaining", frequency + "");
 
 
         }
@@ -63,6 +63,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
 
         final String PREFS_NAME = "MyPrefsFile";
 
@@ -285,13 +286,11 @@ public class MainActivity extends Activity {
         inflater.inflate(R.menu.main, menu);
         return true;
     }
-    public void  ChangedAlert(){
-        alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
 
-
+    public void ChangedAlert() {
+        alertDialogBuilder.setTitle("Changes");
         // Setting Dialog Title
         alertDialogBuilder.setTitle("What's Changed");
-       // possible added changes view changedview view=new changedview(getApplicationContext());
         // Setting Dialog Message
         alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
@@ -300,9 +299,20 @@ public class MainActivity extends Activity {
             }
         });
 
+        LayoutInflater inflater = alertDialog.getLayoutInflater();
+        View dialoglayout = inflater.inflate(R.layout.notification, new LinearLayout(getApplicationContext()));
+        alertDialogBuilder.setView(dialoglayout);
         alertDialog = alertDialogBuilder.create();
+
         alertDialog.show();
     }
+
+    public void dataParser() {
+        ArrayList<Version> changes = new ArrayList<Version>();
+        //a loop to go over the elements and add them to the list
+
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -314,6 +324,9 @@ public class MainActivity extends Activity {
                 return true;
             case R.id.clearmessage:
                 ClearAlert();
+                return true;
+            case R.id.changes:
+                ChangedAlert();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
