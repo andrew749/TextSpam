@@ -30,41 +30,24 @@ public class MainActivity extends Activity {
     private static final int CONTACT_PICKER_RESULT = 1001;
     public static ArrayList<Custom> item = new ArrayList<Custom>();
     static int itemposition = 0;
-    private static int frequency, totalfreq;
+    private static int frequency;
     private static String message;
-    adapter adapter;
+    Adapter adapter;
     Intent intent = new Intent();
     EditText phonenumberenter, frequencyenter, messageenter;
     Button add;
     SmsManager sm;
-    AlertDialog alertDialog;
-    AlertDialog.Builder alertDialogBuilder;
+    Messager messager;
     ListView lv;
-    Handler handler = new Handler();
-
-    public void sendMessageContact() {
-
-        for (int i = 0; i < totalfreq; i++) {
-            sm.sendTextMessage(phoneNumber, null, message, null, null);
-            Toast.makeText(getApplicationContext(), "Sending Text " + (i + 1) + " of " + totalfreq + " to " + phoneNumber, Toast.LENGTH_SHORT).show();
-            frequency--;
-            Log.d("Remaining", frequency + "");
-
-
-        }
-
-
-    }
-
-    private String phoneNumber;
+    Alerts alert;
+ String phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-
+         messager=new Messager();
+         alert=new Alerts(this);
         final String PREFS_NAME = "MyPrefsFile";
 
 
@@ -88,7 +71,7 @@ public class MainActivity extends Activity {
 
 
         lv = (ListView) findViewById(R.id.contactlist);
-        adapter = new adapter(this, R.id.contactlist, item);
+        adapter = new Adapter(this, R.id.contactlist, item);
         lv.setAdapter(adapter);
         //where the user enters the message qualiites
         phonenumberenter = (EditText) findViewById(R.id.numberedit);
@@ -105,7 +88,6 @@ public class MainActivity extends Activity {
 
 
         sm = SmsManager.getDefault();
-        initializeAlert();
 
 
         //add contact to list
@@ -159,28 +141,9 @@ public class MainActivity extends Activity {
     }
 
     public void doLaunchContactPicker(View view) {
-        alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-
-
-        // Setting Dialog Title
-        alertDialogBuilder.setTitle("Warning");
-
-        // Setting Dialog Message
-        alertDialogBuilder.setMessage("The built in contact picker will currently only return results properly for " +
-                "North American numbers, please adjust the number accordingly for the time being if you are texting " +
-                "any other region" +
-                ".");
-        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Intent contactPickerIntent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-                startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT);
-            }
-        });
-
-        alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
+        alert.contactAlert();
+        Intent contactPickerIntent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+        startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT);
     }
 
     public void gatherInformation() {
@@ -188,71 +151,15 @@ public class MainActivity extends Activity {
             message = messageenter.getText().toString();
             frequency = Integer.parseInt(frequencyenter.getText()
                     .toString());
-            totalfreq = frequency;
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "Sorry but the fields are not entered correctly",
                     Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void initializeAlert() {
-        alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
 
 
-        // Setting Dialog Title
-        alertDialogBuilder.setTitle("Warning");
 
-        // Setting Dialog Message
-        alertDialogBuilder.setMessage("NOTE: Most Android phones cannot handle more than 30 messages sent at " +
-                "one time, Android has a built in mechanism to limit the number of texts.");
-
-        // Setting OK Button
-        alertDialogBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                sendMessagesToAll();
-
-
-            }
-        });
-        alertDialogBuilder.setNegativeButton("Stop", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-        alertDialog = alertDialogBuilder.create();
-
-    }
-
-    private void sendMessagesToAll() {
-        for (int i = 0; i < item.size(); i++) {
-            phoneNumber = ((item.get(i)).getPhoneNumber()) + "";
-            sendMessageContact();
-        }
-    }
-
-    private void ClearAlert() {
-        item.clear();
-        adapter.notifyDataSetChanged();
-        alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-
-
-        // Setting Dialog Title
-        alertDialogBuilder.setTitle("Notice");
-
-        // Setting Dialog Message
-        alertDialogBuilder.setMessage("If you want to only remove one item just long click on the item.");
-        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Log.d("Success", "cleared all entries");
-            }
-        });
-
-        alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
-    }
 
     private void addItem() {
         try {
@@ -273,10 +180,14 @@ public class MainActivity extends Activity {
         gatherInformation();
         if (frequency > 30) {
 
-            initializeAlert();
-            alertDialog.show();
+            if(alert.warningAlert()){
+messager.sendMessagesToAll(item,frequency,message);
+            }else {
+                //when stop is clicked
+            }
+
         } else {
-            sendMessagesToAll();
+            messager.sendMessagesToAll(item,frequency,message);
         }
     }
 
@@ -287,25 +198,7 @@ public class MainActivity extends Activity {
         return true;
     }
 
-    public void ChangedAlert() {
-        alertDialogBuilder.setTitle("Changes");
-        // Setting Dialog Title
-        alertDialogBuilder.setTitle("What's Changed");
-        // Setting Dialog Message
-        alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-            }
-        });
-
-        LayoutInflater inflater = alertDialog.getLayoutInflater();
-        View dialoglayout = inflater.inflate(R.layout.notification, new LinearLayout(getApplicationContext()));
-        alertDialogBuilder.setView(dialoglayout);
-        alertDialog = alertDialogBuilder.create();
-
-        alertDialog.show();
-    }
 
     public void dataParser() {
         ArrayList<Version> changes = new ArrayList<Version>();
@@ -323,11 +216,12 @@ public class MainActivity extends Activity {
                 sendMessagesComplete();
                 return true;
             case R.id.clearmessage:
-                ClearAlert();
+                alert.clearAlerts(this.item);
+                adapter.notifyDataSetChanged();
                 return true;
             case R.id.changes:
-                ChangedAlert();
-                return true;
+                alert.changedAlert();
+                    return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

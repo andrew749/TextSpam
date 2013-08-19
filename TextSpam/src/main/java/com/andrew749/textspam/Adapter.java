@@ -13,11 +13,11 @@ import java.util.ArrayList;
 /**
  * Created by andrew on 25/06/13.
  */
-public class adapter extends ArrayAdapter<Custom> {
+public class Adapter extends ArrayAdapter<Custom> {
     private ArrayList<Custom> entries;
     private Activity ac;
 
-    public adapter(Activity a, int textViewResourceId, ArrayList<Custom> list) {
+    public Adapter(Activity a, int textViewResourceId, ArrayList<Custom> list) {
         super(a, textViewResourceId, list);
         entries = list;
         ac = a;

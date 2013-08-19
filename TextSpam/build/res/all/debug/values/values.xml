@@ -17,8 +17,7 @@
         on the list below.
         Once you are content with the information, click Send. To clear individual numbers just long
         click on the entry
-        until it disappears, or press clear all to remove all recipients!!!
-    </string>
+        until it disappears, or press clear all to remove all recipients!!!</string>
     <!-- From: file:/home/andrew/TextSpam/TextSpam/src/main/res/values/styles.xml -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
