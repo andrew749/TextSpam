@@ -3,8 +3,6 @@ package com.andrew749.textspam;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,41 +16,44 @@ import java.util.ArrayList;
 public class Alerts {
     AlertDialog.Builder alertDialogBuilder;
     AlertDialog alertDialog;
-    boolean decision=false;
+    boolean decision = false;
     Context context;
-    public Alerts(Context context){
-        alertDialogBuilder=new AlertDialog.Builder(context);
-        alertDialog=new AlertDialog.Builder(context).create();
-        this.context=context;
+
+    public Alerts(Context context) {
+        alertDialogBuilder = new AlertDialog.Builder(context);
+        alertDialog = new AlertDialog.Builder(context).create();
+        this.context = context;
     }
 
     /**
      * alert displayed when list is cleared
+     *
      * @param item
      */
-     public void clearAlerts(ArrayList<Custom> item){
-         item.clear();
-         alertDialogBuilder = new AlertDialog.Builder(context);
+    public void clearAlerts(ArrayList<Custom> item) {
+        item.clear();
+        alertDialogBuilder = new AlertDialog.Builder(context);
 
 
-         // Setting Dialog Title
-         alertDialogBuilder.setTitle("Notice");
+        // Setting Dialog Title
+        alertDialogBuilder.setTitle("Notice");
 
-         // Setting Dialog Message
-         alertDialogBuilder.setMessage("If you want to only remove one item just long click on the item.");
-         alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        // Setting Dialog Message
+        alertDialogBuilder.setMessage("If you want to only remove one item just long click on the item.");
+        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 
-             @Override
-             public void onClick(DialogInterface dialogInterface, int i) {
-                 Log.d("Success", "cleared all entries");
-                 alertDialog.dismiss();
-             }
-         });
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Log.d("Success", "cleared all entries");
+                alertDialog.dismiss();
+            }
+        });
 
-         alertDialog = alertDialogBuilder.create();
-         alertDialog.show();
-     }
-    public void changedAlert(){
+        alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
+
+    public void changedAlert() {
         alertDialogBuilder.setTitle("Changes");
         // Setting Dialog Title
         alertDialogBuilder.setTitle("What's Changed");
@@ -72,8 +73,9 @@ public class Alerts {
 
         alertDialog.show();
     }
-    public boolean warningAlert(){
-        decision=false;
+
+    public boolean warningAlert() {
+        decision = false;
         alertDialogBuilder = new AlertDialog.Builder(context);
 
 
@@ -88,7 +90,7 @@ public class Alerts {
         alertDialogBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 //need to fix
-                decision=true;
+                decision = true;
                 alertDialog.dismiss();
 
 
@@ -104,7 +106,9 @@ public class Alerts {
         alertDialog.show();
         return decision;
     }
-    public void contactAlert(){
+
+    public void contactAlert() {
+        alertDialog.dismiss();
 
 
         // Setting Dialog Title
@@ -120,6 +124,7 @@ public class Alerts {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 alertDialog.dismiss();
+
             }
         });
 

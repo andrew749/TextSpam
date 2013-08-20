@@ -12,23 +12,27 @@ import java.util.ArrayList;
 public class Messager {
     SmsManager sm;
     Context context;
-    public void Messager(Context context){
-        sm=SmsManager.getDefault();
-        this.context=context;
+
+    public void Messager(Context context) {
+        sm = SmsManager.getDefault();
+        this.context = context;
     }
-    public void sendMessage(String address, String message){
-        sm.sendTextMessage(address,null,message,null,null);
+
+    public void sendMessage(String address, String message) {
+        sm.sendTextMessage(address, null, message, null, null);
     }
-    public void sendMessageToContact(String address, String message,int number){
-        for (int i=0;i<number;i++){
-            sendMessage(address,message);
-            Toast.makeText(context, "Sending Text " + (i + 1) + " of " + number+ " to " + address, Toast.LENGTH_SHORT).show();
+
+    public void sendMessageToContact(String address, String message, int number) {
+        for (int i = 0; i < number; i++) {
+            sendMessage(address, message);
+            Toast.makeText(context, "Sending Text " + (i + 1) + " of " + number + " to " + address, Toast.LENGTH_SHORT).show();
 
         }
     }
-    public void sendMessagesToAll(ArrayList<Custom> item, int number, String message){
+
+    public void sendMessagesToAll(ArrayList<Custom> item, int number, String message) {
         for (int i = 0; i < item.size(); i++) {
-            sendMessageToContact(item.get(i).getPhoneNumber().toString(),message,number);
+            sendMessageToContact(item.get(i).getPhoneNumber().toString(), message, number);
         }
     }
 }
