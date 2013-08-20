@@ -32,6 +32,7 @@ public class Alerts {
      */
     public void clearAlerts(ArrayList<Custom> item) {
         item.clear();
+        alertDialog.dismiss();
         alertDialogBuilder = new AlertDialog.Builder(context);
 
 
@@ -54,6 +55,7 @@ public class Alerts {
     }
 
     public void changedAlert() {
+        alertDialog.dismiss();
         alertDialogBuilder.setTitle("Changes");
         // Setting Dialog Title
         alertDialogBuilder.setTitle("What's Changed");
@@ -109,8 +111,6 @@ public class Alerts {
 
     public void contactAlert() {
         alertDialog.dismiss();
-
-
         // Setting Dialog Title
         alertDialogBuilder.setTitle("Warning");
 
@@ -127,7 +127,6 @@ public class Alerts {
 
             }
         });
-
         alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }

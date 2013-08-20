@@ -22,6 +22,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends Activity {
+    /**
+     * This is the main class where all the methods are interconnected
+      */
     private static final int CONTACT_PICKER_RESULT = 1001;
     public static ArrayList<Custom> item = new ArrayList<Custom>();
     static int item_position = 0;
