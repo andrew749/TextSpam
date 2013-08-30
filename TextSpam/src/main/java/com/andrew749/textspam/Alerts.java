@@ -56,8 +56,9 @@ public class Alerts {
 
     public void changedAlert() {
         alertDialog.dismiss();
-        alertDialogBuilder.setTitle("Changes");
         // Setting Dialog Title
+        alertDialogBuilder = new AlertDialog.Builder(context);
+
         alertDialogBuilder.setTitle("What's Changed");
         // Setting Dialog Message
         alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -70,6 +71,7 @@ public class Alerts {
 
         LayoutInflater inflater = alertDialog.getLayoutInflater();
         View dialoglayout = inflater.inflate(R.layout.notification, new LinearLayout(context));
+
         alertDialogBuilder.setView(dialoglayout);
         alertDialog = alertDialogBuilder.create();
 
@@ -78,6 +80,7 @@ public class Alerts {
 
     public boolean warningAlert() {
         decision = false;
+        alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder = new AlertDialog.Builder(context);
 
 
@@ -108,7 +111,7 @@ public class Alerts {
         alertDialog.show();
         return decision;
     }
-
+/*
     public void contactAlert() {
         alertDialog.dismiss();
         // Setting Dialog Title
@@ -130,4 +133,5 @@ public class Alerts {
         alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
+    */
 }

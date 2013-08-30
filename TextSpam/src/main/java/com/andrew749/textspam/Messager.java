@@ -13,7 +13,7 @@ public class Messager {
     SmsManager sm;
     Context context;
 
-    public void Messager(Context context) {
+    public Messager(Context context) {
         sm = SmsManager.getDefault();
         this.context = context;
     }

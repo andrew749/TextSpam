@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        messager = new Messager();
+        messager = new Messager(this);
         alert = new Alerts(this);
         final String PREFS_NAME = "MyPrefsFile";
 
@@ -132,7 +132,9 @@ public class MainActivity extends Activity {
 
     //TODO need to find a way to launch alert then wait for button press
     public void doLaunchContactPicker(View view) {
-        alert.contactAlert();
+        //alert.contactAlert();
+        Intent contactPickerIntent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+        startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT);
 
     }
 
