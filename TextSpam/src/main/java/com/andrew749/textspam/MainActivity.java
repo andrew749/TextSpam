@@ -170,13 +170,8 @@ public class MainActivity extends Activity {
     }
 
     public void sendMessagesComplete() {
-        if (phonenumber_enter.getText().toString() != null) {
-            Toast.makeText(getApplicationContext(), "Please click Add to ensure the number is added to the recipient " +
-                    "" +
-                    "list", Toast.LENGTH_LONG).show();
-            Log.d("Success", "Warned about non null field");
-        } else {
-            try {
+        //need to warn user if field has entry
+        try {
                 gatherInformation();
             } catch (IllegalArgumentException e) {
                 e.printStackTrace();
@@ -192,7 +187,6 @@ public class MainActivity extends Activity {
             } else {
                 messager.sendMessagesToAll(item, frequency, message);
             }
-        }
 
 
     }
