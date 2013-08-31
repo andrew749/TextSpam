@@ -24,7 +24,7 @@ import java.util.ArrayList;
 public class MainActivity extends Activity {
     /**
      * This is the main class where all the methods are interconnected
-      */
+     */
     private static final int CONTACT_PICKER_RESULT = 1001;
     public static ArrayList<Custom> item = new ArrayList<Custom>();
     static int item_position = 0;
@@ -111,7 +111,8 @@ public class MainActivity extends Activity {
                             phone = contacts.getString(phoneIdx);
                             phone = phone.substring(1, phone.length());
                             //assigns phone no to EditText field phoneno
-                            phonenumber_enter.setText(phone);
+                            // no longer needed to streamline process phonenumber_enter.setText(phone);
+                            item.add(new Custom(phone));
                         } else {
                             Toast.makeText(this, "error", 100).show();
                         }
@@ -123,6 +124,7 @@ public class MainActivity extends Activity {
             }
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), 50).show();
+            e.printStackTrace();
         } finally {
             if (contacts != null) {
                 contacts.close();
@@ -130,7 +132,6 @@ public class MainActivity extends Activity {
         }
     }
 
-    //TODO need to find a way to launch alert then wait for button press
     public void doLaunchContactPicker(View view) {
         //alert.contactAlert();
         Intent contactPickerIntent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
@@ -146,11 +147,13 @@ public class MainActivity extends Activity {
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "Sorry but the fields are not entered correctly",
                     Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
     }
 
 
     private void addItem() {
+
         try {
             item.add(new Custom(phonenumber_enter.getText().toString()));
             Log.d("Success", "added phone number " + item.get(item_position).getPhoneNumber());
@@ -162,21 +165,36 @@ public class MainActivity extends Activity {
             adapter.notifyDataSetChanged();
             phonenumber_enter.setText("");
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     public void sendMessagesComplete() {
-        gatherInformation();
-        if (frequency > 30) {
-            if (alert.warningAlert()) {
-                messager.sendMessagesToAll(item, frequency, message);
-            } else {
-                //when stop is clicked
-            }
-
+        if (phonenumber_enter.getText().toString() != null) {
+            Toast.makeText(getApplicationContext(), "Please click Add to ensure the number is added to the recipient " +
+                    "" +
+                    "list", Toast.LENGTH_LONG).show();
+            Log.d("Success", "Warned about non null field");
         } else {
-            messager.sendMessagesToAll(item, frequency, message);
+            try {
+                gatherInformation();
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            }
+            if (frequency > 30) {
+                if (alert.warningAlert() == true) {
+                    messager.sendMessagesToAll(item, frequency, message);
+                } else {
+                    //when stop is clicked
+                    Toast.makeText(getApplicationContext(), "Please reduce the frequency", Toast.LENGTH_LONG).show();
+                }
+
+            } else {
+                messager.sendMessagesToAll(item, frequency, message);
+            }
         }
+
+
     }
 
     @Override
