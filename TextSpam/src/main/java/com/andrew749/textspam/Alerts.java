@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class Alerts {
     AlertDialog.Builder alertDialogBuilder;
     AlertDialog alertDialog;
-    boolean decision = false;
+    boolean decision;
     Context context;
 
     public Alerts(Context context) {
@@ -70,7 +70,10 @@ public class Alerts {
         });
 
         LayoutInflater inflater = alertDialog.getLayoutInflater();
+
+
         View dialoglayout = inflater.inflate(R.layout.notification, new LinearLayout(context));
+
 
         alertDialogBuilder.setView(dialoglayout);
         alertDialog = alertDialogBuilder.create();
@@ -78,9 +81,7 @@ public class Alerts {
         alertDialog.show();
     }
 
-    public boolean warningAlert() {
-        decision = false;
-        alertDialogBuilder = new AlertDialog.Builder(context);
+    public synchronized void warningAlert() {
         alertDialogBuilder = new AlertDialog.Builder(context);
 
 
@@ -97,41 +98,28 @@ public class Alerts {
                 //need to fix
                 decision = true;
                 alertDialog.dismiss();
-
-
+                notify();
             }
         });
         alertDialogBuilder.setNegativeButton("Stop", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 alertDialog.dismiss();
+                decision = false;
             }
         });
         alertDialog = alertDialogBuilder.create();
         alertDialog.show();
+        try {
+            wait();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public boolean getDecision() {
         return decision;
     }
-/*
-    public void contactAlert() {
-        alertDialog.dismiss();
-        // Setting Dialog Title
-        alertDialogBuilder.setTitle("Warning");
 
-        // Setting Dialog Message
-        alertDialogBuilder.setMessage("The built in contact picker will currently only return results properly for " +
-                "North American numbers, please adjust the number accordingly for the time being if you are texting " +
-                "any other region" +
-                ".");
-        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                alertDialog.dismiss();
-
-            }
-        });
-        alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
-    }
-    */
 }

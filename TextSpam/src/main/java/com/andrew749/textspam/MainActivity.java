@@ -1,11 +1,16 @@
 package com.andrew749.textspam;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Looper;
 import android.provider.ContactsContract;
 import android.telephony.SmsManager;
 import android.util.Log;
@@ -37,7 +42,7 @@ public class MainActivity extends Activity {
     SmsManager sm;
     Messager messager;
     ListView lv;
-    Alerts alert;
+    static Alerts alert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +93,40 @@ public class MainActivity extends Activity {
                 addItem();
             }
         });
+        //TODO fix generic failure, delay sms add count of failure
+        registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context arg0, Intent arg1) {
+                switch (getResultCode()) {
+                    case Activity.RESULT_OK:
+                        //Toast.makeText(MainActivity.this, "SMS sent",
+                        //    Toast.LENGTH_SHORT).show();
+                        Log.d("Message sent", "");
+                        break;
+                    case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
+                        //Toast.makeText(MainActivity.this, "Generic failure",
+                        //      Toast.LENGTH_SHORT).show();
+                        Log.d("Failure in sending message", "");
+                        break;
+                    case SmsManager.RESULT_ERROR_NO_SERVICE:
+                        Toast.makeText(MainActivity.this, "No service",
+                                Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmsManager.RESULT_ERROR_NULL_PDU:
+                        Toast.makeText(MainActivity.this, "Null PDU",
+                                Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmsManager.RESULT_ERROR_RADIO_OFF:
+                        Toast.makeText(getBaseContext(), "Radio off",
+                                Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        }, new IntentFilter("SMS_SENT"));
+    }
 
+    public Alerts getAlerts() {
+        return alert;
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -113,6 +151,7 @@ public class MainActivity extends Activity {
                             //assigns phone no to EditText field phoneno
                             // no longer needed to streamline process phonenumber_enter.setText(phone);
                             item.add(new Custom(phone));
+                            adapter.notifyDataSetChanged();
                         } else {
                             Toast.makeText(this, "error", 100).show();
                         }
@@ -172,21 +211,20 @@ public class MainActivity extends Activity {
     public void sendMessagesComplete() {
         //need to warn user if field has entry
         try {
-                gatherInformation();
-            } catch (IllegalArgumentException e) {
-                e.printStackTrace();
-            }
-            if (frequency > 30) {
-                if (alert.warningAlert() == true) {
-                    messager.sendMessagesToAll(item, frequency, message);
-                } else {
-                    //when stop is clicked
-                    Toast.makeText(getApplicationContext(), "Please reduce the frequency", Toast.LENGTH_LONG).show();
-                }
+            gatherInformation();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+        if (frequency > 30) {
+            new task().execute();
 
-            } else {
-                messager.sendMessagesToAll(item, frequency, message);
-            }
+            Toast.makeText(getApplicationContext(), "Please reduce frequency", Toast.LENGTH_LONG).show();
+            messager.sendMessagesToAll(item, frequency, message);
+
+
+        } else {
+            messager.sendMessagesToAll(item, frequency, message);
+        }
 
 
     }
@@ -217,5 +255,19 @@ public class MainActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+}
+
+class task extends AsyncTask<Void, Void, Boolean> {
+
+
+    @Override
+    protected Boolean doInBackground(Void... voids) {
+        boolean decision;
+        Looper.prepare();
+        MainActivity.alert.warningAlert();
+        Looper.loop();
+        decision = MainActivity.alert.getDecision();
+        return decision;
     }
 }

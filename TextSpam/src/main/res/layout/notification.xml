@@ -9,9 +9,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=""
+            android:text="Made some framework changes for greater stability\n\nThe app now works better for other countries besides Canada and the US"
             android:id="@+id/changesplaceholder"
-            android:layout_gravity="center_horizontal|top"/>
+            android:layout_gravity="center_horizontal|top">
+
+    </TextView>
 
 
 </FrameLayout>

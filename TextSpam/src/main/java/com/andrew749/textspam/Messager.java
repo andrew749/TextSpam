@@ -1,6 +1,8 @@
 package com.andrew749.textspam;
 
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.telephony.SmsManager;
 import android.widget.Toast;
 
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 public class Messager {
     SmsManager sm;
     Context context;
+    PendingIntent intent;
 
     public Messager(Context context) {
         sm = SmsManager.getDefault();
@@ -19,13 +22,17 @@ public class Messager {
     }
 
     public void sendMessage(String address, String message) {
-        sm.sendTextMessage(address, null, message, null, null);
+        intent = PendingIntent.getBroadcast(context, 0, new Intent("SMS_SENT"), 0);
+        sm.sendTextMessage(address, null, message, intent, null);
+
     }
 
+    //TODO figure out way to log failures
     public void sendMessageToContact(String address, String message, int number) {
         for (int i = 0; i < number; i++) {
             sendMessage(address, message);
-            Toast.makeText(context, "Sending Text " + (i + 1) + " of " + number + " to " + address, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Sending Text " + (i + 1) + " of " + number + " to " + address,
+                    Toast.LENGTH_SHORT).show();
 
         }
     }
