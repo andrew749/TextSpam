@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class Alerts {
     AlertDialog.Builder alertDialogBuilder;
     AlertDialog alertDialog;
-    boolean decision;
     Context context;
 
     public Alerts(Context context) {
@@ -96,16 +95,8 @@ public class Alerts {
         alertDialogBuilder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 //need to fix
-                decision = true;
                 alertDialog.dismiss();
                 notify();
-            }
-        });
-        alertDialogBuilder.setNegativeButton("Stop", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                alertDialog.dismiss();
-                decision = false;
             }
         });
         alertDialog = alertDialogBuilder.create();
@@ -118,8 +109,5 @@ public class Alerts {
 
     }
 
-    public boolean getDecision() {
-        return decision;
-    }
 
 }

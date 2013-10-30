@@ -1,4 +1,4 @@
-package com.andrew749.textspam;
+package com.andrew749.textspam.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,16 +8,19 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.andrew749.textspam.Custom;
+import com.andrew749.textspam.R;
+
 import java.util.ArrayList;
 
 /**
  * Created by andrew on 25/06/13.
  */
-public class Adapter extends ArrayAdapter<Custom> {
+public class ContactListAdapter extends ArrayAdapter<Custom> {
     private ArrayList<Custom> entries;
     private Activity ac;
 
-    public Adapter(Activity a, int textViewResourceId, ArrayList<Custom> list) {
+    public ContactListAdapter(Activity a, int textViewResourceId, ArrayList<Custom> list) {
         super(a, textViewResourceId, list);
         entries = list;
         ac = a;

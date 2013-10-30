@@ -1,4 +1,4 @@
-package com.andrew749.textspam;
+package com.andrew749.textspam.Database;
 
 /**
  * Created by andrew on 19/08/13.

@@ -10,8 +10,8 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Looper;
 import android.provider.ContactsContract;
+import android.support.v4.widget.DrawerLayout;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
@@ -19,10 +19,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.andrew749.textspam.Adapters.ContactListAdapter;
 
 import java.util.ArrayList;
 
@@ -33,21 +36,29 @@ public class MainActivity extends Activity {
     private static final int CONTACT_PICKER_RESULT = 1001;
     public static ArrayList<Custom> item = new ArrayList<Custom>();
     static int item_position = 0;
+    static Alerts alert;
     private static int frequency;
     private static String message;
-    Adapter adapter;
+    ContactListAdapter contactListAdapter;
     Intent intent = new Intent();
     EditText phonenumber_enter, frequency_enter, message_enter;
     Button add;
     SmsManager sm;
     Messager messager;
     ListView lv;
-    static Alerts alert;
+    private String[] drawerTitles;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
 
+    /**
+     * initializes all the elements of the main activity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setupDrawer();
         messager = new Messager(this);
         alert = new Alerts(this);
         final String PREFS_NAME = "MyPrefsFile";
@@ -65,9 +76,9 @@ public class MainActivity extends Activity {
             settings.edit().putBoolean("my_first_time", false).commit();
         }
 
-        adapter = new Adapter(this, R.id.contactlist, item);
+        contactListAdapter = new ContactListAdapter(this, R.id.contactlist, item);
         lv = (ListView) findViewById(R.id.contactlist);
-        lv.setAdapter(adapter);
+        lv.setAdapter(contactListAdapter);
         //where the user enters the message qualities
         phonenumber_enter = (EditText) findViewById(R.id.numberedit);
         frequency_enter = (EditText) findViewById(R.id.frequencyedit);
@@ -76,7 +87,7 @@ public class MainActivity extends Activity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 item.remove(position);
-                adapter.notifyDataSetChanged();
+                contactListAdapter.notifyDataSetChanged();
                 return true;
             }
         });
@@ -93,7 +104,7 @@ public class MainActivity extends Activity {
                 addItem();
             }
         });
-        //TODO fix generic failure, delay sms add count of failure
+        //TODO fix generic failure, delay sms add count of failure, put on backgroud thread
         registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context arg0, Intent arg1) {
@@ -129,6 +140,17 @@ public class MainActivity extends Activity {
         return alert;
     }
 
+    /*
+    sets up the elements for the drawer
+     */
+    private void setupDrawer() {
+        drawerTitles = getResources().getStringArray(R.array.listitems);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+        mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawerlistitem, drawerTitles));
+        mDrawerList.setOnItemClickListener(new drawer_item_click_listener());
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         String phone;
         Cursor contacts = null;
@@ -151,7 +173,7 @@ public class MainActivity extends Activity {
                             //assigns phone no to EditText field phoneno
                             // no longer needed to streamline process phonenumber_enter.setText(phone);
                             item.add(new Custom(phone));
-                            adapter.notifyDataSetChanged();
+                            contactListAdapter.notifyDataSetChanged();
                         } else {
                             Toast.makeText(this, "error", 100).show();
                         }
@@ -178,6 +200,9 @@ public class MainActivity extends Activity {
 
     }
 
+    /**
+     * gets all of the information from the fields in the main layout
+     */
     public void gatherInformation() {
         try {
             message = message_enter.getText().toString();
@@ -190,7 +215,9 @@ public class MainActivity extends Activity {
         }
     }
 
-
+    /**
+     * adds a new phone number to the sending list
+     */
     private void addItem() {
 
         try {
@@ -201,7 +228,7 @@ public class MainActivity extends Activity {
             for (int i = 0; i < item_position; i++) {
                 Log.d("entry:", "Entry " + i + " == " + item.get(i).getPhoneNumber());
             }
-            adapter.notifyDataSetChanged();
+            contactListAdapter.notifyDataSetChanged();
             phonenumber_enter.setText("");
         } catch (Exception e) {
             e.printStackTrace();
@@ -215,16 +242,8 @@ public class MainActivity extends Activity {
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
-        if (frequency > 30) {
-            new task().execute();
 
-            Toast.makeText(getApplicationContext(), "Please reduce frequency", Toast.LENGTH_LONG).show();
-            messager.sendMessagesToAll(item, frequency, message);
-
-
-        } else {
-            messager.sendMessagesToAll(item, frequency, message);
-        }
+        new task(item, frequency, message, messager).execute();
 
 
     }
@@ -247,7 +266,7 @@ public class MainActivity extends Activity {
                 return true;
             case R.id.clearmessage:
                 alert.clearAlerts(this.item);
-                adapter.notifyDataSetChanged();
+                contactListAdapter.notifyDataSetChanged();
                 return true;
             case R.id.changes:
                 alert.changedAlert();
@@ -258,16 +277,22 @@ public class MainActivity extends Activity {
     }
 }
 
-class task extends AsyncTask<Void, Void, Boolean> {
+class task extends AsyncTask<Void, Void, Void> {
+    ArrayList<Custom> item;
+    int frequency;
+    String message;
+    Messager messager;
 
+    protected task(ArrayList<Custom> item, int frequency, String message, Messager messager) {
+        this.item = item;
+        this.frequency = frequency;
+        this.message = message;
+        this.messager = messager;
+    }
 
     @Override
-    protected Boolean doInBackground(Void... voids) {
-        boolean decision;
-        Looper.prepare();
-        MainActivity.alert.warningAlert();
-        Looper.loop();
-        decision = MainActivity.alert.getDecision();
-        return decision;
+    protected Void doInBackground(Void... voids) {
+        messager.sendMessagesToAll(item, frequency, message);
+        return null;
     }
 }

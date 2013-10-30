@@ -4,7 +4,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.telephony.SmsManager;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,8 +30,8 @@ public class Messager {
     public void sendMessageToContact(String address, String message, int number) {
         for (int i = 0; i < number; i++) {
             sendMessage(address, message);
-            Toast.makeText(context, "Sending Text " + (i + 1) + " of " + number + " to " + address,
-                    Toast.LENGTH_SHORT).show();
+            // Toast.makeText(context, "Sending Text " + (i + 1) + " of " + number + " to " + address,
+            //Toast.LENGTH_SHORT).show();
 
         }
     }
