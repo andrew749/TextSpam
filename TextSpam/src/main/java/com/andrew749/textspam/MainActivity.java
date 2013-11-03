@@ -45,8 +45,9 @@ public class MainActivity extends Activity {
     EditText phonenumber_enter, frequency_enter, message_enter;
     Button add;
     SmsManager sm;
-    Messager messager;
     ListView lv;
+
+    Messager messager;
     private String[] drawerTitles;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
