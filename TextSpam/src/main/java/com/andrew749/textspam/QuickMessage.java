@@ -39,7 +39,7 @@ public class QuickMessage extends Fragment {
     private static String message;
     EditText phonenumber_enter, frequency_enter, message_enter;
     ContactListAdapter contactListAdapter;
-    Button add;
+    Button add, contact;
     ListView lv;
 
     @Override
@@ -71,9 +71,15 @@ public class QuickMessage extends Fragment {
         phonenumber_enter = (EditText) v.findViewById(R.id.numberedit);
         frequency_enter = (EditText) v.findViewById(R.id.frequencyedit);
         message_enter = (EditText) v.findViewById(R.id.messageedit);
+        contact = (Button) v.findViewById(R.id.button2);
         alert = new Alerts(getActivity());
 
-
+        contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doLaunchContactPicker(new View(getActivity()));
+            }
+        });
         lv = (ListView) v.findViewById(R.id.contactlist);
         lv.setAdapter(contactListAdapter);
         //where the user enters the message qualities
