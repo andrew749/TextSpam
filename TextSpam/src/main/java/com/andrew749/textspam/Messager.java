@@ -1,8 +1,6 @@
 package com.andrew749.textspam;
 
 import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.telephony.SmsManager;
 
@@ -13,16 +11,13 @@ import java.util.ArrayList;
  */
 public class Messager {
     SmsManager sm;
-    Context context;
     PendingIntent intent;
 
-    public Messager(Context context) {
+    public Messager() {
         sm = SmsManager.getDefault();
-        this.context = context;
     }
 
     public void sendMessage(String address, String message) {
-        intent = PendingIntent.getBroadcast(context, 0, new Intent("SMS_SENT"), 0);
         sm.sendTextMessage(address, null, message, intent, null);
 
     }
@@ -50,7 +45,7 @@ class SendMessagesTask extends AsyncTask<Void, Void, Void> {
     int frequency;
     String message;
     Messager messager;
-    Context context;
+
 
     @Override
     protected void onPreExecute() {
@@ -58,12 +53,11 @@ class SendMessagesTask extends AsyncTask<Void, Void, Void> {
 
     }
 
-    protected SendMessagesTask(ArrayList<Custom> item, int frequency, String message, Messager messager, Context context) {
+    protected SendMessagesTask(ArrayList<Custom> item, int frequency, String message) {
         this.item = item;
         this.frequency = frequency;
         this.message = message;
-        this.messager = messager;
-        this.context = context;
+        messager = new Messager();
     }
 
     @Override
