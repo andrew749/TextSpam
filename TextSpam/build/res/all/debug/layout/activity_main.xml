@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
 
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/drawer_layout"
@@ -9,36 +8,10 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
     <!-- The main content view -->
-
-
-    <RelativeLayout
+    <TextView
+            android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-        <com.google.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="fill_parent"
-
-                android:layout_height="wrap_content"
-                ads:adUnitId="a151b64d7011849"
-                ads:adSize="BANNER"
-                ads:loadAdOnCreate="true"
-
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"/>
-
-        <ListView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/contactlist"
-                android:visibility="visible"
-                android:layout_alignParentTop="true"
-                android:layout_above="@id/adView"
-                android:headerDividersEnabled="true"></ListView>
-
-
-    </RelativeLayout>
-
+            android:text=""/>
     <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="match_parent"

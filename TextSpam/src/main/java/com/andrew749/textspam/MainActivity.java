@@ -1,6 +1,9 @@
 package com.andrew749.textspam;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -8,6 +11,8 @@ import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -23,6 +28,7 @@ public class MainActivity extends Activity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
+    public Fragment frag;
 
     /**
      * initializes all the elements of the main activity
@@ -45,6 +51,12 @@ public class MainActivity extends Activity {
             // record the fact that the app has been started at least once
             settings.edit().putBoolean("my_first_time", false).commit();
         }
+        FragmentManager manager = getFragmentManager();
+        FragmentTransaction ft = manager.beginTransaction();
+        manager.beginTransaction();
+        frag = new QuickMessage();
+        ft.add(R.id.content_frame, frag);
+        ft.commit();
     }
 
     /*
@@ -78,6 +90,19 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = this.getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    private void doLaunchContactPicker() {
+        Intent in = new Intent();
+        in.setAction("opencontact");
+        sendBroadcast(in);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
@@ -85,8 +110,22 @@ public class MainActivity extends Activity {
         if (item.getItemId() == R.id.tutorial_menu) {
             startActivity(intent);
             return true;
-        } else {
-            return false;
+        }
+        switch (item.getItemId()) {
+            case R.id.sendmessage:
+                ((QuickMessage) frag).sendMessagesComplete();
+                return true;
+            case R.id.clearmessage:
+                Intent i = new Intent();
+                i.setAction("update");
+                sendBroadcast(i);
+                return true;
+            case R.id.changes:
+                //TODO show changes
+                //alert.changedAlert();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 

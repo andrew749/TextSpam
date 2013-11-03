@@ -16,7 +16,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -47,6 +46,23 @@ public class QuickMessage extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        contactListAdapter = new ContactListAdapter(getActivity(), R.id.contactlist, item);
+        getActivity().getApplicationContext().registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Log.d("Received Broadcast", "update listview");
+                item.clear();
+                contactListAdapter.notifyDataSetChanged();
+
+            }
+        }, new IntentFilter("update"));
+        getActivity().getApplicationContext().registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Log.d("Recieved Broadcast", "open contact menu");
+                doLaunchContactPicker(new View(getActivity()));
+            }
+        }, new IntentFilter("opencontact"));
     }
 
     @Override
@@ -55,7 +71,6 @@ public class QuickMessage extends Fragment {
         phonenumber_enter = (EditText) v.findViewById(R.id.numberedit);
         frequency_enter = (EditText) v.findViewById(R.id.frequencyedit);
         message_enter = (EditText) v.findViewById(R.id.messageedit);
-        contactListAdapter = new ContactListAdapter(getActivity(), R.id.contactlist, item);
         alert = new Alerts(getActivity());
 
 
@@ -149,34 +164,15 @@ public class QuickMessage extends Fragment {
         info.putSerializable("contact", item);
 
         Intent intent = new Intent();
-        intent.setAction("sendmessages");
+        intent.setAction("com.andrew749.textspam.sendmessages");
         intent.putExtra("information", info);
-        new SendMessagesTask(item, frequency, message).execute();
+        getActivity().sendBroadcast(intent);
+        Log.d("Sent Intent", "sendmessages");
 
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-
-            case R.id.sendmessage:
-                sendMessagesComplete();
-                return true;
-            case R.id.clearmessage:
-                alert.clearAlerts(this.item);
-                contactListAdapter.notifyDataSetChanged();
-                return true;
-            case R.id.changes:
-                alert.changedAlert();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-
-    }
-
+//TODO make tutorial with spotlight to showcase features
 
     public void onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getActivity().getMenuInflater();

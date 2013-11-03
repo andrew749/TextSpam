@@ -2,6 +2,8 @@
 
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -89,4 +91,32 @@
                 android:layout_column="4"
                 />
     </LinearLayout>
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <com.google.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="fill_parent"
+
+                android:layout_height="wrap_content"
+                ads:adUnitId="a151b64d7011849"
+                ads:adSize="BANNER"
+                ads:loadAdOnCreate="true"
+
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"/>
+
+        <ListView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contactlist"
+                android:visibility="visible"
+                android:layout_alignParentTop="true"
+                android:layout_above="@id/adView"
+                android:headerDividersEnabled="true"></ListView>
+
+
+    </RelativeLayout>
 </LinearLayout>

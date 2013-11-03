@@ -32,6 +32,12 @@
                 android:name="com.andrew749.textspam.TutorialActivity"
                 android:label="@string/title_activity_tutorial">
         </activity>
+
+        <receiver android:name="MessageReciever">
+            <intent-filter>
+                <action android:name="com.andrew749.textspam.sendmessages"></action>
+            </intent-filter>
+        </receiver>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

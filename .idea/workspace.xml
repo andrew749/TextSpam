@@ -50,8 +50,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74c5027f-8b19-4c80-8c96-7c4038dd754b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/TextSpam/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Custom.java" afterPath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Custom.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java" afterPath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MessageReciever.java" afterPath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MessageReciever.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/QuickMessage.java" afterPath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/QuickMessage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/source/r/debug/com/andrew749/textspam/R.java" afterPath="$PROJECT_DIR$/TextSpam/build/source/r/debug/com/andrew749/textspam/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/res/all/debug/layout/activity_main.xml" afterPath="$PROJECT_DIR$/TextSpam/build/res/all/debug/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/TextSpam/src/main/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/main/res/layout/quickmessagefragment.xml" afterPath="$PROJECT_DIR$/TextSpam/src/main/res/layout/quickmessagefragment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/res/all/debug/layout/tutorial.xml" afterPath="$PROJECT_DIR$/TextSpam/build/res/all/debug/layout/tutorial.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/res/all/debug/values/values.xml" afterPath="$PROJECT_DIR$/TextSpam/build/res/all/debug/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -123,44 +130,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="0" selection-start="1554" selection-end="1554" vertical-scroll-proportion="-2.3561947" vertical-offset="2430" max-vertical-offset="4035">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quickmessagefragment.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/layout/quickmessagefragment.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="121" selection-end="121" vertical-scroll-proportion="0.0" vertical-offset="577" max-vertical-offset="1455">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="960">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuickMessage.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="QuickMessage.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/QuickMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="44" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="495">
+            <state line="146" column="35" selection-start="5560" selection-end="5560" vertical-scroll-proportion="1.0940266" vertical-offset="751" max-vertical-offset="3375">
+              <folding>
+                <element signature="e#1642#1934#0" expanded="true" />
+                <element signature="e#1923#1924#0" expanded="true" />
+                <element signature="e#2028#2264#0" expanded="true" />
+                <element signature="e#2253#2254#0" expanded="true" />
+                <element signature="e#3410#3553#0" expanded="true" />
+                <element signature="e#3542#3543#0" expanded="true" />
+                <element signature="e#3595#5002#0" expanded="true" />
+                <element signature="e#4991#4992#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TextSpam/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="32" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Custom.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Custom.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageReciever.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MessageReciever.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="37" selection-start="812" selection-end="812" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -542,8 +554,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/TextSpam/src/main/res/layout/drawerlistitem.xml" />
-        <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/drawer_item_click_listener.java" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Conversations.java" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Service.java" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/SmsService.java" />
@@ -551,13 +561,15 @@
         <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Services/SmsService.java" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Alerts.java" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/TextSpam/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Messager.java" />
         <option value="$PROJECT_DIR$/TextSpam/build.gradle" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/res/layout/quickmessagefragment.xml" />
+        <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Messager.java" />
+        <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Custom.java" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/QuickMessage.java" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java" />
+        <option value="$PROJECT_DIR$/TextSpam/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MessageReciever.java" />
+        <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/QuickMessage.java" />
       </list>
     </option>
   </component>
@@ -597,96 +609,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Changed Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="TextSpam-TextSpam">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="TextSpam">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="TextSpam-TextSpam">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="TextSpam">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="res">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="TextSpam-TextSpam">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="TextSpam">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="res">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="menu">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="TextSpam-TextSpam">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="TextSpam">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -887,6 +809,130 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextSpam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextSpam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextSpam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="textspam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Messager.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Changed Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="TextSpam-TextSpam">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="TextSpam">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="TextSpam-TextSpam">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="TextSpam">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="res">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="TextSpam-TextSpam">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="TextSpam">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="res">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="menu">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="TextSpam-TextSpam">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="TextSpam">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -916,6 +962,7 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="LayoutCode.rearrangeEntriesJava" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1147,7 +1194,11 @@
       <created>1383437331569</created>
       <updated>1383437331569</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="rearranged code">
+      <created>1383453029417</created>
+      <updated>1383453029417</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1174,11 +1225,14 @@
     <frame x="-4" y="-3" width="1928" height="1052" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="164" y="96" width="959" height="573" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3457792" sideWeight="0.67194927" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867885" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993559" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3888292" sideWeight="0.50104165" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1191,15 +1245,12 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24972497" sideWeight="0.6747182" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.6763285" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19114584" sideWeight="0.6777042" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.091145836" sideWeight="0.6777042" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32223415" sideWeight="0.49895832" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="164" y="96" width="959" height="573" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3457792" sideWeight="0.67194927" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1247,7 +1298,8 @@
     <MESSAGE value="bug fixes" />
     <MESSAGE value="Version 2.2" />
     <MESSAGE value="added navigation bar with toggle button&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="added navigation bar with toggle button&#10;" />
+    <MESSAGE value="rearranged code" />
+    <option name="LAST_COMMIT_MESSAGE" value="rearranged code" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1255,40 +1307,14 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Conversations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="26" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Adapters/ContactListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="36" selection-start="444" selection-end="444" vertical-scroll-proportion="0.11945392" vertical-offset="0" max-vertical-offset="879" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Alerts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="0" selection-start="3291" selection-end="3291" vertical-scroll-proportion="0.89376444" vertical-offset="576" max-vertical-offset="1485">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="317" selection-end="317" vertical-scroll-proportion="0.13651878" vertical-offset="0" max-vertical-offset="879">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/layout/drawerlistitem.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="36" selection-start="455" selection-end="455" vertical-scroll-proportion="0.22860493" vertical-offset="0" max-vertical-offset="853">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/src/main/ic_launcher-web.png">
@@ -1303,23 +1329,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/TextSpam-TextSpam.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.0477816" vertical-offset="614" max-vertical-offset="1200">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.0477816" vertical-offset="614" max-vertical-offset="1200" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="0.13274336" vertical-offset="0" max-vertical-offset="904">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Messager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="31" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
-          <folding />
-        </state>
+        <state line="8" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="0.13274336" vertical-offset="0" max-vertical-offset="904" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/values/strings.xml">
@@ -1336,37 +1351,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/QuickMessage.java">
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Messager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="44" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+        <state line="11" column="13" selection-start="218" selection-end="218" vertical-scroll-proportion="-0.045353983" vertical-offset="146" max-vertical-offset="1050">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/layout/quickmessagefragment.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Alerts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="121" selection-end="121" vertical-scroll-proportion="0.0" vertical-offset="577" max-vertical-offset="1455">
+        <state line="110" column="0" selection-start="3291" selection-end="3291" vertical-scroll-proportion="0.0" vertical-offset="279" max-vertical-offset="1485">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="22" selection-start="520" selection-end="520" vertical-scroll-proportion="0.22209567" vertical-offset="0" max-vertical-offset="878">
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/layout/quickmessagefragment.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="960">
+        <state line="39" column="28" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.41002277" vertical-offset="225" max-vertical-offset="1890">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1554" selection-end="1554" vertical-scroll-proportion="-2.3561947" vertical-offset="2430" max-vertical-offset="4035">
+        <state line="110" column="29" selection-start="4006" selection-end="4006" vertical-scroll-proportion="0.74747473" vertical-offset="759" max-vertical-offset="1815">
+          <folding>
+            <element signature="e#2695#2715#0" expanded="true" />
+            <element signature="e#2733#2754#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Custom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="32" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MessageReciever.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="37" selection-start="812" selection-end="812" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/QuickMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="35" selection-start="5560" selection-end="5560" vertical-scroll-proportion="1.0940266" vertical-offset="751" max-vertical-offset="3375">
+          <folding>
+            <element signature="e#1642#1934#0" expanded="true" />
+            <element signature="e#1923#1924#0" expanded="true" />
+            <element signature="e#2028#2264#0" expanded="true" />
+            <element signature="e#2253#2254#0" expanded="true" />
+            <element signature="e#3410#3553#0" expanded="true" />
+            <element signature="e#3542#3543#0" expanded="true" />
+            <element signature="e#3595#5002#0" expanded="true" />
+            <element signature="e#4991#4992#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
