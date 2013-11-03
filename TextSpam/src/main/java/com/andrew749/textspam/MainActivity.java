@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
@@ -240,8 +241,8 @@ public class MainActivity extends Activity {
      * adds a new phone number to the sending list
      */
     private void addItem() {
-
-        try {
+        if (PhoneNumberUtils.isGlobalPhoneNumber(phonenumber_enter.getText().toString())) {
+            try {
             item.add(new Custom(phonenumber_enter.getText().toString()));
             Log.d("Success", "added phone number " + item.get(item_position).getPhoneNumber());
 
@@ -253,6 +254,9 @@ public class MainActivity extends Activity {
             phonenumber_enter.setText("");
         } catch (Exception e) {
             e.printStackTrace();
+            }
+        } else {
+            Toast.makeText(this, "This is not a valid phone number", Toast.LENGTH_LONG).show();
         }
     }
 
