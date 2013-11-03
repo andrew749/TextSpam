@@ -15,5 +15,7 @@
         click on the entry
         until it disappears, or press clear all to remove all recipients!!!
     </string>
+    <string name="drawer_open">Options</string>
+    <string name="drawer_close">TextSpam</string>
 
 </resources>

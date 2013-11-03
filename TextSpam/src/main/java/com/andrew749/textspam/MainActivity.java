@@ -6,11 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.telephony.SmsManager;
 import android.util.Log;
@@ -49,6 +50,7 @@ public class MainActivity extends Activity {
     private String[] drawerTitles;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     /**
      * initializes all the elements of the main activity
@@ -149,6 +151,25 @@ public class MainActivity extends Activity {
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
         mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawerlistitem, drawerTitles));
         mDrawerList.setOnItemClickListener(new drawer_item_click_listener());
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.drawable.ic_drawer, R.string.drawer_open,
+                R.string.drawer_close) {
+
+        };
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -243,7 +264,7 @@ public class MainActivity extends Activity {
             e.printStackTrace();
         }
 
-        new task(item, frequency, message, messager).execute();
+        new SendMessagesTask(item, frequency, message, messager, this).execute();
 
 
     }
@@ -257,6 +278,9 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
         switch (item.getItemId()) {
             case R.id.tutorial_menu:
                 startActivity(intent);
@@ -274,25 +298,6 @@ public class MainActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-}
 
-class task extends AsyncTask<Void, Void, Void> {
-    ArrayList<Custom> item;
-    int frequency;
-    String message;
-    Messager messager;
-
-    protected task(ArrayList<Custom> item, int frequency, String message, Messager messager) {
-        this.item = item;
-        this.frequency = frequency;
-        this.message = message;
-        this.messager = messager;
-    }
-
-    @Override
-    protected Void doInBackground(Void... voids) {
-        messager.sendMessagesToAll(item, frequency, message);
-        return null;
     }
 }

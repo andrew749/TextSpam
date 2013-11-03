@@ -3,6 +3,7 @@ package com.andrew749.textspam;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.telephony.SmsManager;
 
 import java.util.ArrayList;
@@ -40,5 +41,34 @@ public class Messager {
         for (int i = 0; i < item.size(); i++) {
             sendMessageToContact(item.get(i).getPhoneNumber().toString(), message, number);
         }
+    }
+}
+
+//tast to run in background and send messages
+class SendMessagesTask extends AsyncTask<Void, Void, Void> {
+    ArrayList<Custom> item;
+    int frequency;
+    String message;
+    Messager messager;
+    Context context;
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+
+    }
+
+    protected SendMessagesTask(ArrayList<Custom> item, int frequency, String message, Messager messager, Context context) {
+        this.item = item;
+        this.frequency = frequency;
+        this.message = message;
+        this.messager = messager;
+        this.context = context;
+    }
+
+    @Override
+    protected Void doInBackground(Void... voids) {
+        messager.sendMessagesToAll(item, frequency, message);
+        return null;
     }
 }

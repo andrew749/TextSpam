@@ -9,9 +9,6 @@ package com.andrew749.textspam;
 
 public final class R {
     public static final class array {
-        /**
-         * From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/menu_entries.xml
-         */
         public static final int listitems = 0x7f040000;
     }
 
@@ -19,19 +16,16 @@ public final class R {
     }
 
     public static final class dimen {
-        /**
-         * From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/dimens.xml
-         * From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values-sw720dp-land/dimens.xml
-         */
         public static final int activity_horizontal_margin = 0x7f050000;
         public static final int activity_vertical_margin = 0x7f050001;
     }
 
     public static final class drawable {
-        public static final int ic_launcher = 0x7f020000;
-        public static final int textspamlogo = 0x7f020001;
-        public static final int textspamlogo_old = 0x7f020002;
-        public static final int textspamlogoprod = 0x7f020003;
+        public static final int ic_drawer = 0x7f020000;
+        public static final int ic_launcher = 0x7f020001;
+        public static final int textspamlogo = 0x7f020002;
+        public static final int textspamlogo_old = 0x7f020003;
+        public static final int textspamlogoprod = 0x7f020004;
     }
 
     public static final class id {
@@ -72,27 +66,22 @@ public final class R {
     }
 
     public static final class string {
-        /**
-         * From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/strings.xml
-         */
         public static final int action_settings = 0x7f060000;
         public static final int app_name = 0x7f060001;
-        public static final int hello_world = 0x7f060002;
-        public static final int title_activity_tutorial = 0x7f060003;
-        public static final int tutorial = 0x7f060004;
+        public static final int drawer_close = 0x7f060002;
+        public static final int drawer_open = 0x7f060003;
+        public static final int hello_world = 0x7f060004;
+        public static final int title_activity_tutorial = 0x7f060005;
+        public static final int tutorial = 0x7f060006;
     }
 
     public static final class style {
         /**
-         * From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/styles.xml
-         * <p/>
          * Theme customizations available in newer API levels can go in
          * res/values-vXX/styles.xml, while customizations related to
          * backward-compatibility can go here.
          * <p/>
-         * From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values-v11/styles.xml
          * API 11 theme customizations can go here.
-         * From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values-v14/styles.xml
          * API 14 theme customizations can go here.
          */
         public static final int AppBaseTheme = 0x7f070000;
