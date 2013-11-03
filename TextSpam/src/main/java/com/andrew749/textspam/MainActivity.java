@@ -96,12 +96,6 @@ public class MainActivity extends Activity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    private void doLaunchContactPicker() {
-        Intent in = new Intent();
-        in.setAction("opencontact");
-        sendBroadcast(in);
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mDrawerToggle.onOptionsItemSelected(item)) {

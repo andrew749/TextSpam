@@ -12,6 +12,7 @@
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:text=""/>
+
     <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="match_parent"

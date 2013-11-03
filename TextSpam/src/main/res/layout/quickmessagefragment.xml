@@ -61,7 +61,6 @@
                 android:layout_height="wrap_content"
                 android:text="Contacts"
                 android:id="@+id/button2"
-                android:onClick="doLaunchContactPicker"
                 />
 
 
