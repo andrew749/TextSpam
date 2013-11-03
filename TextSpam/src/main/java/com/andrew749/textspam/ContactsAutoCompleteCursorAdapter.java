@@ -4,7 +4,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Color;
-import android.provider.Contacts;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +18,12 @@ import android.widget.TextView;
 /**
  * Created by andrew on 03/11/13.
  */
+
 public class ContactsAutoCompleteCursorAdapter extends CursorAdapter implements Filterable {
 
+
     private TextView mName, mNumber;
+    private ContentResolver mContent;
 
     public ContactsAutoCompleteCursorAdapter(Context context, Cursor c) {
         super(context, c);
@@ -42,8 +45,8 @@ public class ContactsAutoCompleteCursorAdapter extends CursorAdapter implements 
         // THIS EXAMPLE DOES IT PROGRAMMATICALLY USING JAVA, BUT THE XML ANALOG IS VERY SIMILAR
         ImageView icon = new ImageView(context);
 
-        int nameIdx = cursor.getColumnIndexOrThrow(Contacts.People.NAME);
-        int numberIdx = cursor.getColumnIndex(Contacts.People.NUMBER);
+        int nameIdx = cursor.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME);
+        int numberIdx = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
 
         String name = cursor.getString(nameIdx);
         String number = cursor.getString(numberIdx);
@@ -69,8 +72,8 @@ public class ContactsAutoCompleteCursorAdapter extends CursorAdapter implements 
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        int nameIdx = cursor.getColumnIndexOrThrow(Contacts.People.NAME);
-        int numberIdx = cursor.getColumnIndex(Contacts.People.NUMBER);
+        int nameIdx = cursor.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME);
+        int numberIdx = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
 
         String name = cursor.getString(nameIdx);
         String number = cursor.getString(numberIdx);
@@ -86,7 +89,7 @@ public class ContactsAutoCompleteCursorAdapter extends CursorAdapter implements 
     public String convertToString(Cursor cursor) {
         // THIS METHOD DICTATES WHAT IS SHOWN WHEN THE USER CLICKS EACH ENTRY IN YOUR AUTOCOMPLETE LIST
         // IN MY CASE I WANT THE NUMBER DATA TO BE SHOWN
-        int numCol = cursor.getColumnIndexOrThrow(Contacts.People.NUMBER);
+        int numCol = cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.NUMBER);
         String number = cursor.getString(numCol);
         return number;
     }
@@ -103,16 +106,13 @@ public class ContactsAutoCompleteCursorAdapter extends CursorAdapter implements 
         String[] args = null;
         if (constraint != null) {
             buffer = new StringBuilder();
-            buffer.append(Contacts.People.NAME + " IS NOT NULL AND " + Contacts.People.NUMBER_KEY + " IS NOT NULL AND ");
+            buffer.append(ContactsContract.Contacts.DISPLAY_NAME + " IS NOT NULL AND " + ContactsContract.CommonDataKinds.Phone.NUMBER + " IS NOT NULL AND ");
             buffer.append("UPPER(");
-            buffer.append(Contacts.People.NAME);
+            buffer.append(ContactsContract.CommonDataKinds.Phone.NUMBER);
             buffer.append(") GLOB ?");
             args = new String[]{constraint.toString().toUpperCase() + "*"};
         }
 
-        return mContent.query(Contacts.People.CONTENT_URI, null, buffer == null ? null : buffer
-                .toString(), args, Contacts.People.DEFAULT_SORT_ORDER);
+        return mContent.query(ContactsContract.Data.CONTENT_URI, null, null, null, null);
     }
-
-    private ContentResolver mContent;
 }
