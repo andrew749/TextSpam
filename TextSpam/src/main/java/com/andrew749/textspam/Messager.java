@@ -22,7 +22,7 @@ public class Messager {
             sm.sendTextMessage(address, null, message, intent, null);
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
-           
+
         }
 
     }

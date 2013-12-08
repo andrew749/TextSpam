@@ -71,6 +71,8 @@ public class QuickMessageFragment extends Fragment {
                 doLaunchContactPicker(new View(getActivity()));
             }
         }, new IntentFilter("opencontact"));
+        mPeopleList = new ArrayList<Map<String, String>>();
+        populateContacts();
     }
 
     public void populateContacts() {
@@ -120,7 +122,6 @@ public class QuickMessageFragment extends Fragment {
             }
         }
         people.close();
-        getActivity().startManagingCursor(people);
     }
 
     @Override
@@ -131,9 +132,7 @@ public class QuickMessageFragment extends Fragment {
         message_enter = (EditText) v.findViewById(R.id.messageedit);
         contact = (Button) v.findViewById(R.id.button2);
         alert = new Alerts(getActivity());
-        mPeopleList = new ArrayList<Map<String, String>>();
-        populateContacts();
-        // ContactsAutoCompleteCursorAdapter adap=new ContactsAutoCompleteCursorAdapter(getActivity(),c);
+
         mAdapter = new SimpleAdapter(getActivity(), mPeopleList, R.layout.customcontactview,
                 new String[]{"Name", "Phone", "Type"}, new int[]{
                 R.id.ccontName, R.id.ccontNo, R.id.ccontType});

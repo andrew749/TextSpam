@@ -67,6 +67,8 @@ public class MainActivity extends Activity {
     private void setupDrawer() {
         drawerTitles = getResources().getStringArray(R.array.listitems);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //TODO remove in other version
+        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
         mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawerlistitem, drawerTitles));
         mDrawerList.setOnItemClickListener(new drawer_item_click_listener());
@@ -82,13 +84,13 @@ public class MainActivity extends Activity {
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        mDrawerToggle.syncState();
+//        mDrawerToggle.syncState();
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        mDrawerToggle.onConfigurationChanged(newConfig);
+        //  mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
     @Override
@@ -100,9 +102,9 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
+/*        if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
-        }
+        }*/
         if (item.getItemId() == R.id.tutorial_menu) {
             startActivity(intent);
             return true;
@@ -116,10 +118,7 @@ public class MainActivity extends Activity {
                 i.setAction("update");
                 sendBroadcast(i);
                 return true;
-            case R.id.changes:
-                //TODO show changes
-                //alert.changedAlert();
-                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
