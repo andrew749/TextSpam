@@ -113,6 +113,9 @@ public class ContactsAutoCompleteCursorAdapter extends CursorAdapter implements 
             args = new String[]{constraint.toString().toUpperCase() + "*"};
         }
 
-        return mContent.query(ContactsContract.Data.CONTENT_URI, null, null, null, null);
+        return mContent.query(ContactsContract.Data.CONTENT_URI, new String[]{ContactsContract.Data.DISPLAY_NAME,
+                ContactsContract
+                        .CommonDataKinds.Phone
+                        .NUMBER}, null, null, null);
     }
 }

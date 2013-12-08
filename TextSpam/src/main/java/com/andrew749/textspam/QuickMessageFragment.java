@@ -102,6 +102,8 @@ public class QuickMessageFragment extends Fragment {
                             ContactsContract.CommonDataKinds.Phone.TYPE));
                     Map<String, String> NamePhoneType = new HashMap<String, String>();
                     NamePhoneType.put("Name", contactName);
+                    phoneNumber = phoneNumber.replace("-", "");
+                    phoneNumber = phoneNumber.replace(" ", "");
                     NamePhoneType.put("Phone", phoneNumber);
                     if (numberType.equals("0"))
                         NamePhoneType.put("Type", "Work");
@@ -146,7 +148,6 @@ public class QuickMessageFragment extends Fragment {
 
                 String name = map.get("Name");
                 String number = map.get("Phone");
-                number = number.replace(" ", "");
                 phonenumber_enter.setText("" + number);
 
             }

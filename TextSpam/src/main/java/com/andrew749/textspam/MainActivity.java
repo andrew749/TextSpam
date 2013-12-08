@@ -14,6 +14,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -23,12 +25,12 @@ public class MainActivity extends Activity {
      */
     static int item_position = 0;
     final String PREFS_NAME = "MyPrefsFile";
+    public Fragment frag;
     Intent intent = new Intent();
     private String[] drawerTitles;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
-    public Fragment frag;
 
     /**
      * initializes all the elements of the main activity
@@ -54,7 +56,7 @@ public class MainActivity extends Activity {
         FragmentManager manager = getFragmentManager();
         FragmentTransaction ft = manager.beginTransaction();
         manager.beginTransaction();
-        frag = new QuickMessage();
+        frag = new QuickMessageFragment();
         ft.add(R.id.content_frame, frag);
         ft.commit();
     }
@@ -107,7 +109,7 @@ public class MainActivity extends Activity {
         }
         switch (item.getItemId()) {
             case R.id.sendmessage:
-                ((QuickMessage) frag).sendMessagesComplete();
+                ((QuickMessageFragment) frag).sendMessagesComplete();
                 return true;
             case R.id.clearmessage:
                 Intent i = new Intent();
@@ -123,7 +125,41 @@ public class MainActivity extends Activity {
         }
     }
 
+    private void selectItem(int position) {
+        FragmentManager manager = getFragmentManager();
+        switch (position) {
+            case 0:
+                Fragment quickMessageFragment = new QuickMessageFragment();
+                manager.beginTransaction().replace(R.id.content_frame, quickMessageFragment).commit();
+                mDrawerLayout.closeDrawer(mDrawerList);
+                break;
+            case 1:
+                Fragment conversationFragment = new Conversations();
+                manager.beginTransaction().replace(R.id.content_frame, conversationFragment).commit();
+                mDrawerLayout.closeDrawer(mDrawerList);
+
+                break;
+            case 2:
+                break;
+        }
+    }
+
+    class drawer_item_click_listener implements ListView.OnItemClickListener {
+
+        /*
+        0 will be quick message
+        1 conversations
+        2
+         */
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            selectItem(i);
+        }
+
+
+    }
 }
+
 
 
 
