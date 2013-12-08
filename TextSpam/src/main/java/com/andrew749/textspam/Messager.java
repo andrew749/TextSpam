@@ -18,7 +18,12 @@ public class Messager {
     }
 
     public void sendMessage(String address, String message) {
-        sm.sendTextMessage(address, null, message, intent, null);
+        try {
+            sm.sendTextMessage(address, null, message, intent, null);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+           
+        }
 
     }
 
