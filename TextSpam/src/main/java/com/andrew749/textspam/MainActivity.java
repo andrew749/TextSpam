@@ -137,7 +137,6 @@ public class MainActivity extends Activity {
                 Fragment conversationFragment = new Conversations();
                 manager.beginTransaction().replace(R.id.content_frame, conversationFragment).commit();
                 mDrawerLayout.closeDrawer(mDrawerList);
-
                 break;
             case 2:
                 break;
