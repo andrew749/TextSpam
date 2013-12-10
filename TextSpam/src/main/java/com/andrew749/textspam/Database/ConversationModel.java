@@ -8,20 +8,17 @@ import java.util.ArrayList;
  * Created by andrew on 08/12/13.
  */
 public class ConversationModel {
+    public long id;
     private String sendingString;
     private ArrayList<String> phoneNumbers = new ArrayList<String>();
-    public long id;
+    private String numberlist;
 
-    public void setSendingString(String input) {
-        sendingString = input;
+    public long getId() {
+        return id;
     }
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public void addphoneNumber(String phoneNumber) {
@@ -30,6 +27,10 @@ public class ConversationModel {
 
     public String getSendingString() {
         return sendingString;
+    }
+
+    public void setSendingString(String input) {
+        sendingString = input;
     }
 
     public ArrayList<String> getPhoneNumbers() {
@@ -41,13 +42,22 @@ public class ConversationModel {
     }
 
     public void parseDbresult(String dbResult) {
-        String tempString;
-        for (int i = 0; i < dbResult.length(); i++) {
-            tempString = dbResult.substring(i, dbResult.indexOf(","));
-            Log.d("number:", tempString);
+        String tempString = "";
+        numberlist = dbResult;
+        for (int i = 0; i < dbResult.length() - 1; i++) {
+            if (dbResult.indexOf(",") >= 0) {
+                tempString = dbResult.substring(i, dbResult.indexOf(","));
+                Log.d("number:", tempString);
 
-            addphoneNumber(tempString);
-            i = dbResult.indexOf(",");
+                addphoneNumber(tempString);
+                i = dbResult.indexOf(",");
+            }
+
         }
+    }
+
+    @Override
+    public String toString() {
+        return sendingString + ": " + numberlist;
     }
 }

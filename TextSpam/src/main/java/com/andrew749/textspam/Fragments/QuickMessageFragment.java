@@ -1,4 +1,4 @@
-package com.andrew749.textspam;
+package com.andrew749.textspam.Fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -27,6 +27,9 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.andrew749.textspam.Adapters.ContactListAdapter;
+import com.andrew749.textspam.Alerts;
+import com.andrew749.textspam.Custom;
+import com.andrew749.textspam.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,6 +49,7 @@ public class QuickMessageFragment extends Fragment {
     ContactListAdapter contactListAdapter;
     Button add, contact;
     ListView lv;
+    Cursor people, phones;
     private ArrayList<Map<String, String>> mPeopleList;
     private SimpleAdapter mAdapter;
 
@@ -75,7 +79,7 @@ public class QuickMessageFragment extends Fragment {
 
     public void populateContacts() {
         mPeopleList.clear();
-        Cursor people = getActivity().getContentResolver().query(
+        people = getActivity().getContentResolver().query(
                 ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
         while (people.moveToNext()) {
             String contactName = people.getString(people
@@ -88,7 +92,7 @@ public class QuickMessageFragment extends Fragment {
 
             if ((Integer.parseInt(hasPhone) > 0)) {
                 // You know have the number so now query it like this
-                Cursor phones = getActivity().getContentResolver().query(
+                phones = getActivity().getContentResolver().query(
                         ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                         null,
                         ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + contactId,
@@ -116,10 +120,10 @@ public class QuickMessageFragment extends Fragment {
                     //Then add this map to the list.
                     mPeopleList.add(NamePhoneType);
                 }
-                phones.close();
+                // phones.close();
             }
         }
-        people.close();
+        //people.close();
         getActivity().startManagingCursor(people);
     }
 
@@ -214,7 +218,20 @@ public class QuickMessageFragment extends Fragment {
 
     @Override
     public void onPause() {
+
         super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onDestroy() {
+        phones.close();
+        people.close();
+        super.onDestroy();
     }
 
     /**
@@ -328,5 +345,11 @@ public class QuickMessageFragment extends Fragment {
                 contacts.close();
             }
         }
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+        menu.findItem(R.id.addconversation).setVisible(true);
     }
 }

@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -18,6 +21,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.andrew749.textspam.Fragments.Conversations;
+import com.andrew749.textspam.Fragments.QuickMessageFragment;
+import com.andrew749.textspam.Fragments.TutorialActivity;
 
 public class MainActivity extends Activity {
     /**
@@ -59,6 +67,23 @@ public class MainActivity extends Activity {
         frag = new QuickMessageFragment();
         ft.add(R.id.content_frame, frag);
         ft.commit();
+
+
+        registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context arg0, Intent arg1) {
+                switch (getResultCode()) {
+                    case Activity.RESULT_OK:
+                        Toast.makeText(getBaseContext(), "SMS sent",
+                                Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        Toast.makeText(getApplicationContext(), "Message unsent", Toast.LENGTH_SHORT);
+                        Bundle unsent = arg1.getExtras();
+                        break;
+                }
+            }
+        }, new IntentFilter("SMS_SENT"));
     }
 
     /*

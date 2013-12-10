@@ -54,6 +54,10 @@ public class DataSource {
         database.delete(DatabaseHelper.TABLE_NAME, DatabaseHelper.COLUMN_ID + " = " + id, null);
     }
 
+    public void deleteConversationID(long id) {
+        database.delete(DatabaseHelper.TABLE_NAME, DatabaseHelper.COLUMN_ID + " = " + id, null);
+    }
+
     public List<ConversationModel> getAllConversations() {
         List<ConversationModel> conversations = new ArrayList<ConversationModel>();
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, allColumns, null, null, null, null, null);
