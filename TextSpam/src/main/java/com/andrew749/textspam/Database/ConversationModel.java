@@ -2,6 +2,8 @@ package com.andrew749.textspam.Database;
 
 import android.util.Log;
 
+import com.andrew749.textspam.Custom;
+
 import java.util.ArrayList;
 
 /**
@@ -41,21 +43,42 @@ public class ConversationModel {
         phoneNumbers = parseDbresult(dbResult);
     }
 
+    public String getNumberString() {
+        return numberlist;
+    }
+
+    public ArrayList<String> getResult() {
+        return phoneNumbers;
+    }
+
     public ArrayList<String> parseDbresult(String dbResult) {
+
         ArrayList<String> tempmodel = new ArrayList<String>();
         String tempString = "";
         numberlist = dbResult;
         for (int i = 0; i < dbResult.length(); i++) {
-            if (dbResult.indexOf(",") >= 0) {
-                tempString = dbResult.substring(i, dbResult.indexOf(","));
+            if (dbResult.indexOf(",", i) > 0x0) {
+                tempString = dbResult.substring(i, dbResult.indexOf(",", i));
                 Log.d("number:", tempString);
 
                 tempmodel.add(tempString);
                 i = dbResult.indexOf(",");
+            } else {
+                tempString = dbResult.substring(i);
+                tempmodel.add(tempString);
+                i = dbResult.length();
             }
-
         }
         return tempmodel;
+    }
+
+    public ArrayList<Custom> getNumbersAsCustom() {
+        ArrayList<Custom> temparray = new ArrayList<Custom>();
+        for (String i : phoneNumbers) {
+            temparray.add(new Custom(i));
+
+        }
+        return temparray;
     }
 
     @Override

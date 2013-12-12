@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.andrew749.textspam.Database.ConversationModel;
 import com.andrew749.textspam.Database.DataSource;
@@ -35,6 +36,7 @@ public class Conversations extends Fragment {
     List<ConversationModel> conversations;
     Button popupbutton;
     EditText editfield;
+    TextView popuptextview;
     int frequency = 0;
     ConversationModel model;
 
@@ -61,7 +63,6 @@ public class Conversations extends Fragment {
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //TODO make list items delete
                 dataSource.deleteConversationID(adapter.getItem(i).getId());
                 conversations.remove(i);
                 adapter.notifyDataSetChanged();
@@ -71,9 +72,9 @@ public class Conversations extends Fragment {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //TODO make popup dialog with # of messages option
                 model = new ConversationModel();
-                model = adapter.getItem(i);
+
+                model = conversations.get(i);
 
                 LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context
                         .LAYOUT_INFLATER_SERVICE);
@@ -86,21 +87,26 @@ public class Conversations extends Fragment {
                 pw.showAtLocation(getView().findViewById(R.id.conversationparent), Gravity.CENTER, 0, 0);
                 popupbutton = (Button) v.findViewById(R.id.popupbutton);
                 editfield = (EditText) v.findViewById(R.id.popupedittext);
+                popuptextview = (TextView) v.findViewById(R.id.popuptextview);
+                for (String temp : model.getPhoneNumbers()) {
+                    popuptextview.append(" " + temp);
+
+                }
+
                 popupbutton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //TODO find out why recipient not being returned
                         frequency = Integer.parseInt(editfield.getText().toString());
                         Intent intent = new Intent();
                         intent.setAction("com.andrew749.textspam.sendmessages");
                         Bundle information = new Bundle();
                         information.putString("message", model.getSendingString());
                         information.putInt("freq", frequency);
-                        information.putSerializable("contact", model.getPhoneNumbers());
+                        information.putSerializable("contact", model.getNumbersAsCustom());
                         intent.putExtra("information", information);
                         Log.d("Message", model.getSendingString());
                         Log.d("Frequency", "" + frequency);
-                        Log.d("Recipient", "" + model.getPhoneNumbers());
+                        Log.d("Recipient", "" + model.getNumbersAsCustom());
                         getActivity().sendBroadcast(intent);
                     }
                 });

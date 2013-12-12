@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -82,7 +83,9 @@ public class DataSource {
         try {
             model.setId(cursor.getLong(0));
             model.setSendingString(cursor.getString(1));
+            Log.d("", cursor.getString(2));
             model.setDBResult(cursor.getString(2));
+            Log.d("", "" + model.getPhoneNumbers());
         } catch (CursorIndexOutOfBoundsException e) {
             e.printStackTrace();
         }
