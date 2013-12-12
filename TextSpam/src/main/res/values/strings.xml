@@ -17,5 +17,6 @@
     </string>
     <string name="drawer_open">Options</string>
     <string name="drawer_close">TextSpam</string>
+    <string name="popuptext">Please enter a frequency to send</string>
 
 </resources>

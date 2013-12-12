@@ -145,6 +145,11 @@ public class MainActivity extends Activity {
                 //TODO show changes
                 //alert.changedAlert();
                 return true;
+            case R.id.addconversation:
+                Intent i2 = new Intent();
+                i2.setAction("addconversation");
+                sendBroadcast(i2);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

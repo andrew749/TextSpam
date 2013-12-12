@@ -29,8 +29,10 @@ import android.widget.Toast;
 import com.andrew749.textspam.Adapters.ContactListAdapter;
 import com.andrew749.textspam.Alerts;
 import com.andrew749.textspam.Custom;
+import com.andrew749.textspam.Database.DataSource;
 import com.andrew749.textspam.R;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -52,12 +54,18 @@ public class QuickMessageFragment extends Fragment {
     Cursor people, phones;
     private ArrayList<Map<String, String>> mPeopleList;
     private SimpleAdapter mAdapter;
-
+    DataSource datasource;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        datasource = new DataSource(getActivity());
+        try {
+            datasource.open();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         contactListAdapter = new ContactListAdapter(getActivity(), R.id.contactlist, item);
         getActivity().getApplicationContext().registerReceiver(new BroadcastReceiver() {
             @Override
@@ -75,6 +83,22 @@ public class QuickMessageFragment extends Fragment {
                 doLaunchContactPicker(new View(getActivity()));
             }
         }, new IntentFilter("opencontact"));
+        getActivity().getApplicationContext().registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Log.d("Recieved Broadcast", "add conversation");
+                message = message_enter.getText().toString();
+                datasource.createConversation(message, getStringArrayContacts(item));
+            }
+        }, new IntentFilter("addconversation"));
+    }
+
+    public ArrayList<String> getStringArrayContacts(ArrayList<Custom> object) {
+        ArrayList<String> tempnames = new ArrayList<String>();
+        for (int i = 0; i < object.size(); i++) {
+            tempnames.add(i, object.get(i).getPhoneNumber());
+        }
+        return tempnames;
     }
 
     public void populateContacts() {

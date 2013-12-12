@@ -29,7 +29,7 @@
                 android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
         <activity
                 android:theme="@style/Theme.Transparent"
-                android:name="com.andrew749.textspam.TutorialActivity"
+                android:name=".Fragments.TutorialActivity"
                 android:label="@string/title_activity_tutorial">
         </activity>
 

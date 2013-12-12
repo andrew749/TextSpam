@@ -38,26 +38,29 @@ public class ConversationModel {
     }
 
     public void setDBResult(String dbResult) {
-        parseDbresult(dbResult);
+        phoneNumbers = parseDbresult(dbResult);
     }
 
-    public void parseDbresult(String dbResult) {
+    public ArrayList<String> parseDbresult(String dbResult) {
+        ArrayList<String> tempmodel = new ArrayList<String>();
         String tempString = "";
         numberlist = dbResult;
-        for (int i = 0; i < dbResult.length() - 1; i++) {
+        for (int i = 0; i < dbResult.length(); i++) {
             if (dbResult.indexOf(",") >= 0) {
                 tempString = dbResult.substring(i, dbResult.indexOf(","));
                 Log.d("number:", tempString);
 
-                addphoneNumber(tempString);
+                tempmodel.add(tempString);
                 i = dbResult.indexOf(",");
             }
 
         }
+        return tempmodel;
     }
 
     @Override
     public String toString() {
         return sendingString + ": " + numberlist;
     }
+
 }

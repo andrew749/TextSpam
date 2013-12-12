@@ -1,9 +1,11 @@
-package com.andrew749.textspam;
+package com.andrew749.textspam.Fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.andrew749.textspam.R;
 
 public class TutorialActivity extends Activity {
     Button exitTutorial;

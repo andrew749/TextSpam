@@ -1,14 +1,22 @@
 package com.andrew749.textspam.Fragments;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 
 import com.andrew749.textspam.Database.ConversationModel;
 import com.andrew749.textspam.Database.DataSource;
@@ -25,6 +33,10 @@ public class Conversations extends Fragment {
     ListView lv;
     ArrayAdapter<ConversationModel> adapter;
     List<ConversationModel> conversations;
+    Button popupbutton;
+    EditText editfield;
+    int frequency = 0;
+    ConversationModel model;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,9 +61,49 @@ public class Conversations extends Fragment {
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                dataSource.deleteConversationID(adapter.getItem((int) l).getId());
+                //TODO make list items delete
+                dataSource.deleteConversationID(adapter.getItem(i).getId());
+                conversations.remove(i);
                 adapter.notifyDataSetChanged();
                 return true;
+            }
+        });
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //TODO make popup dialog with # of messages option
+                model = new ConversationModel();
+                model = adapter.getItem(i);
+
+                LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context
+                        .LAYOUT_INFLATER_SERVICE);
+                View v = inflater.inflate(R.layout.conversationpopup, null, true);
+                PopupWindow pw = new PopupWindow(v, 500, 500,
+                        true);
+                pw.setBackgroundDrawable(new BitmapDrawable());
+                pw.setOutsideTouchable(true);
+
+                pw.showAtLocation(getView().findViewById(R.id.conversationparent), Gravity.CENTER, 0, 0);
+                popupbutton = (Button) v.findViewById(R.id.popupbutton);
+                editfield = (EditText) v.findViewById(R.id.popupedittext);
+                popupbutton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //TODO find out why recipient not being returned
+                        frequency = Integer.parseInt(editfield.getText().toString());
+                        Intent intent = new Intent();
+                        intent.setAction("com.andrew749.textspam.sendmessages");
+                        Bundle information = new Bundle();
+                        information.putString("message", model.getSendingString());
+                        information.putInt("freq", frequency);
+                        information.putSerializable("contact", model.getPhoneNumbers());
+                        intent.putExtra("information", information);
+                        Log.d("Message", model.getSendingString());
+                        Log.d("Frequency", "" + frequency);
+                        Log.d("Recipient", "" + model.getPhoneNumbers());
+                        getActivity().sendBroadcast(intent);
+                    }
+                });
             }
         });
         lv.setAdapter(adapter);
@@ -63,5 +115,9 @@ public class Conversations extends Fragment {
     public void onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
         menu.findItem(R.id.addconversation).setVisible(false);
+    }
+
+    public void onClick() {
+
     }
 }

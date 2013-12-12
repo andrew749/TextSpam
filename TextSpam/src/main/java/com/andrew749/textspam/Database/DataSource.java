@@ -3,6 +3,7 @@ package com.andrew749.textspam.Database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.sql.SQLException;
@@ -33,10 +34,14 @@ public class DataSource {
     public ConversationModel createConversation(String message, ArrayList<String> numbers) {
         String recipientsString = "";
         for (int i = 0; i < numbers.size(); i++) {
-            recipientsString += numbers.get(i) + ",";
+            if (i < numbers.size() - 1) {
+                recipientsString += numbers.get(i) + ",";
+
+            } else {
+                recipientsString += numbers.get(i);
+            }
         }
-        //replace last character because it will be a comma
-        recipientsString = recipientsString.substring(0, recipientsString.length() - 1);
+        recipientsString = recipientsString.substring(0, recipientsString.length());
         ContentValues values = new ContentValues();
         values.put(DatabaseHelper.COLUMN_MESSAGE, message);
         values.put(DatabaseHelper.COLUMN_RECIPIENTS, recipientsString);
@@ -74,8 +79,13 @@ public class DataSource {
 
     private ConversationModel cursorToConversation(Cursor cursor) {
         ConversationModel model = new ConversationModel();
-        model.setSendingString(cursor.getString(1));
-        model.parseDbresult(cursor.getString(2));
+        try {
+            model.setId(cursor.getLong(0));
+            model.setSendingString(cursor.getString(1));
+            model.setDBResult(cursor.getString(2));
+        } catch (CursorIndexOutOfBoundsException e) {
+            e.printStackTrace();
+        }
         return model;
     }
 }

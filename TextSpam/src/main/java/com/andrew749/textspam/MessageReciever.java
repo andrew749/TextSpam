@@ -24,8 +24,8 @@ public class MessageReciever extends BroadcastReceiver {
         frequency = information.getInt("freq");
         message = information.getString("message");
         item = (ArrayList<Custom>) information.getSerializable("contact");
-        Log.d("Success", "got itmes");
-        new SendMessagesTask(item, frequency, message).execute();
+        Log.d("Success", "got items");
+        new SendMessagesTask(item, frequency, message, context).execute();
 
     }
 }
