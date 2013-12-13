@@ -26,12 +26,13 @@ import android.widget.Toast;
 import com.andrew749.textspam.Fragments.Conversations;
 import com.andrew749.textspam.Fragments.QuickMessageFragment;
 import com.andrew749.textspam.Fragments.TutorialActivity;
+import com.google.analytics.tracking.android.EasyTracker;
+
 
 public class MainActivity extends Activity {
     /**
      * This is the main class where all the methods are interconnected
      */
-    static int item_position = 0;
     final String PREFS_NAME = "MyPrefsFile";
     public Fragment frag;
     Intent intent = new Intent();
@@ -43,7 +44,7 @@ public class MainActivity extends Activity {
     /**
      * initializes all the elements of the main activity
      *
-     * @param savedInstanceState
+     *
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,6 +186,20 @@ public class MainActivity extends Activity {
             selectItem(i);
         }
 
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);  // Add this method.
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);  // Add this method.
 
     }
 }
