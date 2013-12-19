@@ -1,6 +1,7 @@
 package com.andrew749.textspam;
 
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 public class Messager {
     SmsManager sm;
     PendingIntent intent;
+    int failedMessages = 0;
 
     public Messager(Context context) {
         sm = SmsManager.getDefault();
@@ -21,13 +23,17 @@ public class Messager {
                 new Intent("SMS_SENT"), 0);
     }
 
-    public void sendMessage(String address, String message) {
+    public synchronized void sendMessage(String address, String message) {
         sm.sendTextMessage(address, null, message, intent, null);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
-    //TODO figure out way to log failures
-    public void sendMessageToContact(String address, String message, int number) {
+    public synchronized void sendMessageToContact(String address, String message, int number) {
         for (int i = 0; i < number; i++) {
             sendMessage(address, message);
             // Toast.makeText(context, "Sending Text " + (i + 1) + " of " + number + " to " + address,
@@ -36,11 +42,13 @@ public class Messager {
         }
     }
 
-    public void sendMessagesToAll(ArrayList<Custom> item, int number, String message) {
+    public synchronized void sendMessagesToAll(ArrayList<Custom> item, int number, String message) {
         for (int i = 0; i < item.size(); i++) {
             sendMessageToContact(item.get(i).getPhoneNumber().toString(), message, number);
         }
     }
+
+
 }
 
 //tast to run in background and send messages
@@ -49,7 +57,7 @@ class SendMessagesTask extends AsyncTask<Void, Void, Void> {
     int frequency;
     String message;
     Messager messager;
-
+    ProgressDialog progressDialog;
 
     @Override
     protected void onPreExecute() {

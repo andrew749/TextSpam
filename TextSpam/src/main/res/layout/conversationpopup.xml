@@ -7,7 +7,7 @@
         android:background="@android:color/background_light"
         >
 
-<TextView
+    <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/popuptext"

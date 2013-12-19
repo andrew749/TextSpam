@@ -43,8 +43,6 @@ public class MainActivity extends Activity {
 
     /**
      * initializes all the elements of the main activity
-     *
-     *
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +78,14 @@ public class MainActivity extends Activity {
                         break;
                     default:
                         Toast.makeText(getApplicationContext(), "Message unsent", Toast.LENGTH_SHORT);
-                        Bundle unsent = arg1.getExtras();
+                        Bundle bundle = arg1.getExtras();
+
+//send the messages that didn't send correctly
+                        Intent i = new Intent();
+                        i.putExtra("unsent", bundle);
+                        i.setAction("com.andrew749.textspam.sendmessages");
+                        i.putExtra("resend", "yes");
+                        sendBroadcast(i);
                         break;
                 }
             }
@@ -172,6 +177,12 @@ public class MainActivity extends Activity {
             case 2:
                 break;
         }
+    }
+
+    public interface seeIfSent {
+        public void messageSent();
+
+        public void messageFailed();
     }
 
     class drawer_item_click_listener implements ListView.OnItemClickListener {

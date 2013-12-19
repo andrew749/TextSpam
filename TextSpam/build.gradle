@@ -11,11 +11,12 @@ apply plugin: 'android'
 dependencies {
     compile files('libs/android-support-v4.jar')
     compile files('libs/GoogleAdMobAdsSdk-6.4.1.jar')
+    compile files('libs/libGoogleAnalyticsServices.jar')
 }
 
 android {
     compileSdkVersion 17
-    buildToolsVersion "17.0.0"
+    buildToolsVersion '17.0.0'
 
     defaultConfig {
         minSdkVersion 14

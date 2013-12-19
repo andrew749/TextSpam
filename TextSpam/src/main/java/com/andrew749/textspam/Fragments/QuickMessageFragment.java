@@ -1,6 +1,5 @@
 package com.andrew749.textspam.Fragments;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -11,7 +10,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.telephony.PhoneNumberUtils;
-import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -208,35 +206,34 @@ public class QuickMessageFragment extends Fragment {
                 addItem();
             }
         });
-        getActivity().registerReceiver(new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context arg0, Intent arg1) {
-                switch (getResultCode()) {
-                    case Activity.RESULT_OK:
-                        //Toast.makeText(MainActivity.this, "SMS sent",
-                        //    Toast.LENGTH_SHORT).show();
-                        Log.d("Message sent", "");
-                        break;
-                    case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
-                        //Toast.makeText(MainActivity.this, "Generic failure",
-                        //      Toast.LENGTH_SHORT).show();
-                        Log.d("Failure in sending message", "");
-                        break;
-                    case SmsManager.RESULT_ERROR_NO_SERVICE:
-                        Toast.makeText(getActivity(), "No service",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                    case SmsManager.RESULT_ERROR_NULL_PDU:
-                        Toast.makeText(getActivity(), "Null PDU",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                    case SmsManager.RESULT_ERROR_RADIO_OFF:
-                        Toast.makeText(getActivity(), "Radio off",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                }
-            }
-        }, new IntentFilter("SMS_SENT"));
+        /**getActivity().registerReceiver(new BroadcastReceiver() {
+        @Override public void onReceive(Context arg0, Intent arg1) {
+        switch (getResultCode()) {
+        case Activity.RESULT_OK:
+        //Toast.makeText(MainActivity.this, "SMS sent",
+        //    Toast.LENGTH_SHORT).show();
+        Log.d("Message sent", "");
+        break;
+        case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
+        //Toast.makeText(MainActivity.this, "Generic failure",
+        //      Toast.LENGTH_SHORT).show();
+        Log.d("Failure in sending message", "");
+        break;
+        case SmsManager.RESULT_ERROR_NO_SERVICE:
+        Toast.makeText(getActivity(), "No service",
+        Toast.LENGTH_SHORT).show();
+        break;
+        case SmsManager.RESULT_ERROR_NULL_PDU:
+        Toast.makeText(getActivity(), "Null PDU",
+        Toast.LENGTH_SHORT).show();
+        break;
+        case SmsManager.RESULT_ERROR_RADIO_OFF:
+        Toast.makeText(getActivity(), "Radio off",
+        Toast.LENGTH_SHORT).show();
+        break;
+        }
+        }
+        }, new IntentFilter("SMS_SENT"));**/
         return v;
     }
 
