@@ -28,6 +28,7 @@ public class MessageReciever extends BroadcastReceiver {
             //iterate over all the messages that were unsent
             for (int i = 0; i < messages.length; i++) {
                 sms[i] = SmsMessage.createFromPdu((byte[]) messages[i]);
+                Log.d("Error recipient ", "" + sms[i].getOriginatingAddress());
                 item.add(new Custom(sms[i].getOriginatingAddress()));
                 new SendMessagesTask(item, 1, sms[i].getMessageBody(), context);
                 //clear the array as to not waste memory
