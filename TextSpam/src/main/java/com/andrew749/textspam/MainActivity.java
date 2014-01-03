@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.andrew749.textspam.Fragments.Conversations;
 import com.andrew749.textspam.Fragments.QuickMessageFragment;
 import com.andrew749.textspam.Fragments.TutorialActivity;
+import com.espian.showcaseview.ShowcaseView;
 import com.google.analytics.tracking.android.EasyTracker;
 
 
@@ -40,6 +41,7 @@ public class MainActivity extends Activity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
+    ShowcaseView showcaseview;
 
     /**
      * initializes all the elements of the main activity
@@ -48,11 +50,17 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         setupDrawer();
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         intent.setClass(getApplicationContext(), TutorialActivity.class);
 
         if (settings.getBoolean("my_first_time", true)) {
+            /*
+            Run tutorial because app is being launched for the first time
+             */
+            ShowcaseView.ConfigOptions co = new ShowcaseView.ConfigOptions();
+            co.hideOnClickOutside = true;
             //the app is being launched for first time, do something
             Log.d("Comments", "First time");
             // first time task is run

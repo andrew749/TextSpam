@@ -23,16 +23,21 @@ public class MessageReciever extends BroadcastReceiver {
         if (intent.getStringExtra("resend") != null) {
             //if the message is one being resent
             ArrayList<Custom> item = new ArrayList<Custom>();
-            messages = (Object[]) intent.getBundleExtra("unsent").get("pdus");
-            SmsMessage[] sms = new SmsMessage[messages.length];
-            //iterate over all the messages that were unsent
-            for (int i = 0; i < messages.length; i++) {
-                sms[i] = SmsMessage.createFromPdu((byte[]) messages[i]);
-                Log.d("Error recipient ", "" + sms[i].getOriginatingAddress());
-                item.add(new Custom(sms[i].getOriginatingAddress()));
-                new SendMessagesTask(item, 1, sms[i].getMessageBody(), context);
-                //clear the array as to not waste memory
-                item.clear();
+            Log.d("Error", "some messages error .... resending");
+            try {
+                messages = (Object[]) intent.getBundleExtra("unsent").get("pdus");
+                SmsMessage[] sms = new SmsMessage[messages.length];
+                //iterate over all the messages that were unsent
+                for (int i = 0; i < messages.length; i++) {
+                    sms[i] = SmsMessage.createFromPdu((byte[]) messages[i]);
+                    Log.d("Error recipient ", "" + sms[i].getOriginatingAddress());
+                    item.add(new Custom(sms[i].getOriginatingAddress()));
+                    new SendMessagesTask(item, 1, sms[i].getMessageBody(), context);
+                    //clear the array as to not waste memory
+                    item.clear();
+                }
+            } catch (NullPointerException e) {
+                e.printStackTrace();
             }
 
         } else {
