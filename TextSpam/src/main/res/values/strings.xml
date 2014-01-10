@@ -13,10 +13,30 @@
         on the list below.
         Once you are content with the information, click Send. To clear individual numbers just long
         click on the entry
-        until it disappears, or press clear all to remove all recipients!!!
-    </string>
+        until it disappears, or press clear all to remove all recipients!!!</string>
     <string name="drawer_open">Options</string>
     <string name="drawer_close">TextSpam</string>
     <string name="popuptext">Please enter a frequency to send</string>
+    <string name="firsttimetitle">Welcome to TextSpam</string>
+    <string name="message_field">This is where the message to send goes.</string>
+    <string name="message_title">Message</string>
+    <string name="frequency_field">This is the amount of times the message will be sent.</string>
+    <string name="frequency_title">Frequency</string>
+    <string name="recipient_field">Put the contact number to send to here. The field will suggest contacts you already have</string>
+    <string name="recipient_title">Recipient</string>
+    <string name="add_title">Add</string>
+    <string name="add_tutorial">Click this button to add the contact to the sending list.</string>
+    <string name="sending_list_tutorial">Here is where the recipients of the message will be listed. Click and hold to clear a recipient.</string>
+    <string name="sending_list_title">Recipient List</string>
+    <string name="contact_title">Contact Picker</string>
+    <string name="contact_field">Click this button to see all your contacts. Click on a contact to add.</string>
+    <string name="send_title">Send</string>
+    <string name="send_tutorial">Click this button to send the current message to the listed contacts.</string>
+    <string name="clear_title">Clear</string>
+    <string name="clear_tutorial">Click here to remove all recipients.</string>
+    <string name="conversation_title">Add Conversation</string>
+    <string name="conversation_tutorial">Click here to add the conversation that you created to the conversation menu for quick and easy access.</string>
+    <string name="tutorial_title">Tutorial</string>
+    <string name="tutorial_tutorial">Click here to access the tutorial again.</string>
 
 </resources>

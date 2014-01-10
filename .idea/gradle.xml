@@ -8,7 +8,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/TextSpam/libs" />
       </GradleProjectSettings>
     </option>
   </component>

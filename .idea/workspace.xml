@@ -52,24 +52,31 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Unnamed-1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c5027f-8b19-4c80-8c96-7c4038dd754b" name="Default" comment="added google analytics">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/ComActionbarsherlockActionbarsherlock440_aar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/library_2_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_19_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/libs/GoogleAdMobAdsSdk-6.4.1.jar" afterPath="$PROJECT_DIR$/TextSpam/libs/GoogleAdMobAdsSdk-6.4.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/source/buildConfig/debug/com/andrew749/textspam/BuildConfig.java" afterPath="$PROJECT_DIR$/TextSpam/build/source/buildConfig/debug/com/andrew749/textspam/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java" afterPath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MessageReciever.java" afterPath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MessageReciever.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/source/r/debug/com/andrew749/textspam/R.java" afterPath="$PROJECT_DIR$/TextSpam/build/source/r/debug/com/andrew749/textspam/R.java" />
+    <list default="true" id="74c5027f-8b19-4c80-8c96-7c4038dd754b" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Adapters/ContactListAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Alerts.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Custom.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Database/ConversationModel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Database/DataParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Database/DataSource.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Database/DatabaseHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Fragments/Conversations.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Fragments/QuickMessageFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Fragments/TutorialActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MessageReciever.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Messager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Version.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpam/src/main/res/values/changes.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/libs/android-support-v4.jar" afterPath="$PROJECT_DIR$/TextSpam/libs/android-support-v4.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/ComActionbarsherlockActionbarsherlock440_aar.xml" afterPath="$PROJECT_DIR$/.idea/libraries/ComActionbarsherlockActionbarsherlock440_aar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/TextSpam-TextSpam.iml" afterPath="$PROJECT_DIR$/TextSpam/TextSpam-TextSpam.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build.gradle" afterPath="$PROJECT_DIR$/TextSpam/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library/build.gradle" afterPath="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/TextSpam/src/main/res/layout/activity_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/TextSpam/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TextSpam.iws" />
@@ -141,40 +148,9 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java">
+        <entry file="file://$PROJECT_DIR$/TextSpam/src/main/src/com/andrew749/textspam/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="73" selection-start="2060" selection-end="2060" vertical-scroll-proportion="0.5263158" vertical-offset="600" max-vertical-offset="3525">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2825#3768#0" expanded="true" />
-                <element signature="e#3757#3758#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.gradle" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TextSpam/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="12" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+            <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3555">
               <folding />
             </state>
           </provider>
@@ -225,30 +201,6 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="ShowcaseView" />
-              <option name="path" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-            </ExternalProjectPojo>
-          </key>
-          <value>
-            <list>
-              <ExternalProjectPojo>
-                <option name="name" value="library" />
-                <option name="path" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
-                <option name="name" value="sample" />
-                <option name="path" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
-                <option name="name" value="ShowcaseView" />
-                <option name="path" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-              </ExternalProjectPojo>
-            </list>
-          </value>
-        </entry>
-        <entry>
-          <key>
-            <ExternalProjectPojo>
               <option name="name" value="TextSpam" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
@@ -262,6 +214,22 @@
               <ExternalProjectPojo>
                 <option name="name" value="TextSpam" />
                 <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="libs" />
+              <option name="path" value="$PROJECT_DIR$/TextSpam/libs" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="libs" />
+                <option name="path" value="$PROJECT_DIR$/TextSpam/libs" />
               </ExternalProjectPojo>
             </list>
           </value>
@@ -898,1104 +866,12 @@
             </list>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/TextSpam/libs/ShowcaseView">
-          <value>
-            <list>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileDebugJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles all Release builds" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="assembleRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageReleaseAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="validateDebugSigning" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="generateDebugTestSources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="generateReleaseSources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="processReleaseResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="processDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="preReleaseBuild" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs lint on the Release build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="lintRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="copyDebugLint" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageDebugAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="preDexRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="mergeReleaseResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="generateDebugSources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="processDebugManifest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="generateReleaseBuildConfig" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageReleaseJar" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles a bundle containing the library in Release." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="bundleRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Uninstall all applications." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="uninstallAll" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileDebugTestAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles the Test build for the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="assembleDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileDebugTestJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="mergeReleaseAssets" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="mergeReleaseProguardFiles" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="processDebugTestJavaRes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageDebugRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles all variants of all applications and secondary packages." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="assemble" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs all checks." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="check" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="preDexDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="prepareReleaseDependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageDebugJar" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs all device checks on currently connected devices." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="connectedCheck" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Deletes the build directory." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="clean" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="dexDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageDebugLocalJar" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="dexRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="build" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="buildDependents" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="copyReleaseLint" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs all device checks using Device Providers and Test Servers." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="deviceCheck" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="wrapper" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileReleaseRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="generateDebugTestBuildConfig" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileLint" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Uninstalls the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="uninstallDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project and all projects it depends on." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="buildNeeded" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Installs the Test build for the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="installDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileReleaseNdk" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileDebugAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="mergeDebugProguardFiles" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="mergeDebugTestResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="processDebugTestResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileDebugNdk" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="prepareDebugDependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="processReleaseManifest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="processDebugTestManifest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileReleaseAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileDebugRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Uninstalls the Test build for the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="uninstallDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="preBuild" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageReleaseLocalJar" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileReleaseJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="mergeDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="preDebugBuild" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the Android dependencies of the project" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="androidDependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare com.actionbarsherlock:actionbarsherlock:4.4.0" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="prepareComActionbarsherlockActionbarsherlock440Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Installs the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="installDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="generateDebugBuildConfig" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs lint on the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="lintDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="mergeDebugTestAssets" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="preDexDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileDebugTestNdk" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Uninstalls the Release build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="uninstallRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="processReleaseJavaRes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the signing info for each variant" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="signingReport" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Installs and runs the tests for Build 'debug' on connected devices." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="connectedInstrumentTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs lint on all variants." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="lint" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="processDebugJavaRes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles a bundle containing the library in Debug." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="bundleDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="dexDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageReleaseRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="compileDebugTestRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare com.github.espiandev:library:3.2.0" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="prepareComGithubEspiandevLibrary320Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="preDebugTestBuild" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="mergeDebugAssets" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="prepareDebugTestDependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="packageReleaseResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles all Debug builds" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" />
-                <option name="name" value="assembleDebug" />
-              </ExternalTaskPojo>
-            </list>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library">
-          <value>
-            <list>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the Android dependencies of the project" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="androidDependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles all variants of all applications and secondary packages." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="assemble" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles all Debug builds" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="assembleDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles the Test build for the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="assembleDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles all Release builds" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="assembleRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="build" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="buildDependents" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project and all projects it depends on." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="buildNeeded" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles a bundle containing the library in Debug." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="bundleDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles a bundle containing the library in Release." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="bundleRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs all checks." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="check" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Deletes the build directory." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="clean" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileDebugAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileDebugJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileDebugNdk" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileDebugRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileDebugTestAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileDebugTestJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileDebugTestNdk" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileDebugTestRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileLint" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileReleaseAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileReleaseJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileReleaseNdk" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="compileReleaseRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs all device checks on currently connected devices." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="connectedCheck" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Installs and runs the tests for Build 'debug' on connected devices." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="connectedInstrumentTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="copyDebugLint" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="copyReleaseLint" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs all device checks using Device Providers and Test Servers." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="deviceCheck" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="dexDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="generateDebugBuildConfig" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="generateDebugSources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="generateDebugTestBuildConfig" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="generateDebugTestSources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="generateReleaseBuildConfig" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="generateReleaseSources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Installs the Test build for the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="installDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs lint on all variants." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="lint" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs lint on the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="lintDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs lint on the Release build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="lintRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="mergeDebugAssets" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="mergeDebugProguardFiles" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="mergeDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="mergeDebugTestAssets" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="mergeDebugTestResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="mergeReleaseAssets" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="mergeReleaseProguardFiles" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="mergeReleaseResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="packageDebugAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="packageDebugJar" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="packageDebugLocalJar" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="packageDebugRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="packageDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="packageDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="packageReleaseAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="packageReleaseJar" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="packageReleaseLocalJar" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="packageReleaseRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="packageReleaseResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="preBuild" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="preDebugBuild" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="preDebugTestBuild" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="preDexDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="preReleaseBuild" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="prepareDebugDependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="prepareDebugTestDependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="prepareReleaseDependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="processDebugJavaRes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="processDebugManifest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="processDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="processDebugTestJavaRes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="processDebugTestManifest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="processDebugTestResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="processReleaseJavaRes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="processReleaseManifest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="processReleaseResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the signing info for each variant" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="signingReport" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Uninstall all applications." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="uninstallAll" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Uninstalls the Test build for the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="uninstallDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library" />
-                <option name="name" value="validateDebugSigning" />
-              </ExternalTaskPojo>
-            </list>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample">
-          <value>
-            <list>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the Android dependencies of the project" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="androidDependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles all variants of all applications and secondary packages." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="assemble" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles all Debug builds" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="assembleDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles the Test build for the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="assembleDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles all Release builds" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="assembleRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="build" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="buildDependents" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project and all projects it depends on." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="buildNeeded" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs all checks." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="check" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Deletes the build directory." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="clean" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileDebugAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileDebugJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileDebugNdk" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileDebugRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileDebugTestAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileDebugTestJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileDebugTestNdk" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileDebugTestRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileLint" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileReleaseAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileReleaseJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileReleaseNdk" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="compileReleaseRenderscript" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs all device checks on currently connected devices." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="connectedCheck" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Installs and runs the tests for Build 'debug' on connected devices." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="connectedInstrumentTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs all device checks using Device Providers and Test Servers." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="deviceCheck" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="dexDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="dexDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="dexRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="generateDebugBuildConfig" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="generateDebugSources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="generateDebugTestBuildConfig" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="generateDebugTestSources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="generateReleaseBuildConfig" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="generateReleaseSources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Installs the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="installDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Installs the Test build for the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="installDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs lint on all variants." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="lint" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs lint on the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="lintDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs lint on the Release build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="lintRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="mergeDebugAssets" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="mergeDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="mergeDebugTestAssets" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="mergeDebugTestResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="mergeReleaseAssets" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="mergeReleaseResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="packageDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="packageDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="packageRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="preBuild" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="preDebugBuild" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="preDebugTestBuild" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="preDexDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="preDexDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="preDexRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="preReleaseBuild" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare com.actionbarsherlock:actionbarsherlock:4.4.0" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="prepareComActionbarsherlockActionbarsherlock440Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare com.github.espiandev:library:3.2.0" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="prepareComGithubEspiandevLibrary320Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="prepareDebugDependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="prepareDebugTestDependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="prepareReleaseDependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="processDebugJavaRes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="processDebugManifest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="processDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="processDebugTestJavaRes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="processDebugTestManifest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="processDebugTestResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="processReleaseJavaRes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="processReleaseManifest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="processReleaseResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the signing info for each variant" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="signingReport" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Uninstall all applications." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="uninstallAll" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Uninstalls the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="uninstallDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Uninstalls the Test build for the Debug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="uninstallDebugTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Uninstalls the Release build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="uninstallRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample" />
-                <option name="name" value="validateDebugSigning" />
-              </ExternalTaskPojo>
-            </list>
-          </value>
-        </entry>
       </map>
     </option>
     <option name="modificationStamps">
       <map>
         <entry key="$PROJECT_DIR$" value="1372425389000" />
-        <entry key="$PROJECT_DIR$/TextSpam/libs/ShowcaseView" value="1388695275593" />
+        <entry key="$PROJECT_DIR$/TextSpam/libs" value="1386892627000" />
       </map>
     </option>
   </component>
@@ -2005,7 +881,6 @@
         <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Smsservices/Service.java" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Smsservices/smsservice.java" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/res/layout/quickmessagefragment.xml" />
-        <option value="$PROJECT_DIR$/TextSpam/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/res/layout/conversationfragment.xml" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Database/DataSource.java" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/res/layout/conversationpopup.xml" />
@@ -2020,7 +895,11 @@
         <option value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library/build.gradle" />
         <option value="$PROJECT_DIR$/settings.gradle" />
         <option value="$PROJECT_DIR$/TextSpam/build.gradle" />
+        <option value="$PROJECT_DIR$/TextSpam/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/TextSpam/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/build.gradle" />
         <option value="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java" />
+        <option value="$PROJECT_DIR$/TextSpam/src/main/src/com/andrew749/textspam/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2028,7 +907,7 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="958" />
+    <option name="x" value="-2" />
     <option name="width" value="964" />
     <option name="height" value="1057" />
   </component>
@@ -2044,6 +923,11 @@
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectStructureProblems">
+    <ignored-problems>
+      <problem id="library-invalid-classes-path(library:project:ComActionbarsherlockActionbarsherlock440.aar)" />
+    </ignored-problems>
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -2212,11 +1096,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gradle" />
+              <option name="myItemId" value="TextSpam" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="wrapper" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="andrew749" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="textspam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextSpam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2232,11 +1146,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="preferences.externalResources" />
     <property name="ExportedApkPath" value="$USER_HOME$/built projects/TextSpam2.3.apk" />
     <property name="recentsLimit" value="5" />
     <property name="ExportedModule" value="TextSpam-TextSpam" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/build.gradle" />
+    <property name="last_opened_file_path" value="$USER_HOME$/workspace/ShowcaseView" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="04916c02094da67c" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -2261,10 +1175,13 @@
       <recent name="$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sv/src" />
+      <recent name="$PROJECT_DIR$/TextSpam/src/main/java" />
+      <recent name="$PROJECT_DIR$/TextSpam" />
       <recent name="$PROJECT_DIR$/TextSpam/src/main/res/drawable-hdpi" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Application.sample">
+  <component name="RunManager" selected="Android Application.TextSpam-TextSpam">
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <module name="" />
       <setting name="path" value="" />
@@ -2564,7 +1481,11 @@
       <created>1386893385807</created>
       <updated>1386893385807</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="added showcaseview">
+      <created>1388722827759</created>
+      <updated>1388722827759</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2588,37 +1509,37 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="958" y="0" width="964" height="1057" extended-state="0" />
-    <editor active="true" />
+    <frame x="-2" y="0" width="964" height="1057" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3263965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.75" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7497268" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5416667" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60897434" sideWeight="0.50156415" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.75" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2631579" sideWeight="0.29682365" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3274918" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3482906" sideWeight="0.49895614" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60897434" sideWeight="0.49843588" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31210855" sideWeight="0.6747182" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3263965" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32568306" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32785088" sideWeight="0.6747182" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24972497" sideWeight="0.6747182" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.6763285" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25052193" sideWeight="0.702081" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26864034" sideWeight="0.702081" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31872946" sideWeight="0.49895832" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="164" y="96" width="959" height="573" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.75" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3457792" sideWeight="0.67194927" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32799146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35706463" sideWeight="0.49895614" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2667,6 +1588,7 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
     <MESSAGE value="added working tutorial screen" />
     <MESSAGE value="tutorial screen only appears on first run&#10;can make tutorial screen appear through new added menu interface" />
     <MESSAGE value="new look&#10;implemented action bar controls" />
@@ -2688,7 +1610,8 @@
     <MESSAGE value="workign database with multiple numbers sending" />
     <MESSAGE value="removed todos of work done&#10;" />
     <MESSAGE value="added google analytics" />
-    <option name="LAST_COMMIT_MESSAGE" value="added google analytics" />
+    <MESSAGE value="added showcaseview" />
+    <option name="LAST_COMMIT_MESSAGE" value="added showcaseview" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -2696,79 +1619,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TextSpam/libs/ShowcaseView/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/libs/ShowcaseView/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="0" selection-start="7286" selection-end="7286" vertical-scroll-proportion="0.0" vertical-offset="3000" max-vertical-offset="3000">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2825#3768#0" expanded="true" />
-            <element signature="e#3757#3758#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MessageReciever.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="36" selection-start="1502" selection-end="1502" vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="945">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="52" selection-start="6241" selection-end="6241" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3390">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2825#3768#0" expanded="true" />
-            <element signature="e#3757#3758#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MessageReciever.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="35" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="52" selection-start="3349" selection-end="3349" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3390">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2825#3768#0" expanded="true" />
-            <element signature="e#3757#3758#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MessageReciever.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="59" selection-start="876" selection-end="876" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="61" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.32167044" vertical-offset="0" max-vertical-offset="886" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/layout/conversationfragment.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="43" selection-start="290" selection-end="290" vertical-scroll-proportion="0.12209302" vertical-offset="0" max-vertical-offset="860" />
@@ -2785,27 +1635,12 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Fragments/Conversations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="0" selection-start="4414" selection-end="4414" vertical-scroll-proportion="1.3713318" vertical-offset="0" max-vertical-offset="1620" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Database/DataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="0" selection-start="2814" selection-end="2814" vertical-scroll-proportion="0.90857786" vertical-offset="215" max-vertical-offset="1365" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/layout/conversationpopup.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="8" selection-start="316" selection-end="316" vertical-scroll-proportion="0.12209302" vertical-offset="0" max-vertical-offset="860" />
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Database/ConversationModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="38" selection-start="1182" selection-end="1182" vertical-scroll-proportion="0.3227991" vertical-offset="269" max-vertical-offset="1155" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/values/analytics.xml">
@@ -2820,76 +1655,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Custom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="5" selection-start="318" selection-end="318" vertical-scroll-proportion="0.23702031" vertical-offset="0" max-vertical-offset="886" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Messager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="22" selection-start="325" selection-end="325" vertical-scroll-proportion="-0.21896163" vertical-offset="299" max-vertical-offset="1200" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/Fragments/QuickMessageFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="313" column="0" selection-start="12121" selection-end="12121" vertical-scroll-proportion="0.74604964" vertical-offset="3134" max-vertical-offset="4830" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MessageReciever.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="36" selection-start="1502" selection-end="1502" vertical-scroll-proportion="0.5280528" vertical-offset="0" max-vertical-offset="909">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0990099" vertical-offset="0" max-vertical-offset="909" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library/src/com/espian/showcaseview/ShowcaseView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.64356434" vertical-offset="585" max-vertical-offset="12870">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/libs/ShowcaseView/showcaseview.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="582" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="39" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="569" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/libs/ShowcaseView/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="569">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/libs/ShowcaseView/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="909">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
@@ -2899,28 +1672,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="62" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/TextSpam-TextSpam.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="12" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
-          <folding />
-        </state>
+        <state line="21" column="0" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="660" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample/src/com/espian/showcaseview/sample/SampleActivity.java">
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="1017" selection-end="1017" vertical-scroll-proportion="-0.4473684" vertical-offset="315" max-vertical-offset="2295">
-          <folding />
-        </state>
+        <state line="20" column="23" selection-start="1056" selection-end="1070" vertical-scroll-proportion="0.53571427" vertical-offset="0" max-vertical-offset="560" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/java/com/andrew749/textspam/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/main/src/com/andrew749/textspam/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="73" selection-start="2060" selection-end="2060" vertical-scroll-proportion="0.5263158" vertical-offset="600" max-vertical-offset="3525">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2825#3768#0" expanded="true" />
-            <element signature="e#3757#3758#0" expanded="true" />
-          </folding>
+        <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3555">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2976,7 +1758,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>TextSpam</last-edited>
+          <last-edited>TextSpam-TextSpam</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -3000,7 +1782,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>GoogleAdMobAdsSdk-6.4.1</last-edited>
+          <last-edited>ComActionbarsherlockActionbarsherlock440.aar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

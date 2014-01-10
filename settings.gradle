@@ -1,1 +1,1 @@
-include ':TextSpam', ':libs:ShowcaseView'
+include ':TextSpam'

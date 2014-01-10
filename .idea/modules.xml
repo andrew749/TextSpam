@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TextSpam/libs/ShowcaseView/ShowcaseView.iml" filepath="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/ShowcaseView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TextSpam/src/main/java/ShowcaseView/ShowcaseView.iml" filepath="$PROJECT_DIR$/TextSpam/src/main/java/ShowcaseView/ShowcaseView.iml" />
       <module fileurl="file://$PROJECT_DIR$/TextSpam.iml" filepath="$PROJECT_DIR$/TextSpam.iml" />
       <module fileurl="file://$PROJECT_DIR$/TextSpam/TextSpam-TextSpam.iml" filepath="$PROJECT_DIR$/TextSpam/TextSpam-TextSpam.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library/library.iml" filepath="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/library/library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample/sample.iml" filepath="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/sample/sample.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TextSpam/libs/ShowcaseView/showcaseview.iml" filepath="$PROJECT_DIR$/TextSpam/libs/ShowcaseView/showcaseview.iml" />
+      <module fileurl="file://$USER_HOME$/workspace/ShowcaseView/library/library.iml" filepath="$USER_HOME$/workspace/ShowcaseView/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TextSpam/src/main/java/ShowcaseView/library/library.iml" filepath="$PROJECT_DIR$/TextSpam/src/main/java/ShowcaseView/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TextSpam/libs/libs.iml" filepath="$PROJECT_DIR$/TextSpam/libs/libs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TextSpam/src/main/java/ShowcaseView/sample/sample.iml" filepath="$PROJECT_DIR$/TextSpam/src/main/java/ShowcaseView/sample/sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TextSpam/src/main/java/ShowcaseView/showcaseview.iml" filepath="$PROJECT_DIR$/TextSpam/src/main/java/ShowcaseView/showcaseview.iml" />
     </modules>
   </component>
 </project>

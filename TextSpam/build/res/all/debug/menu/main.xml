@@ -16,5 +16,10 @@
             android:id="@+id/changes"
             android:title="Changes"
             android:showAsAction="never"></item>
+    <item
+            android:id="@+id/addconversation"
+            android:title="Save as Conversation"
+            ></item>
+
 </menu>
 <!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/menu/main.xml -->

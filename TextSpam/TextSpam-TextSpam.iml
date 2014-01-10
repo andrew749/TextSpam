@@ -53,7 +53,7 @@
     <orderEntry type="library" exported="" name="android-support-v4" level="project" />
     <orderEntry type="library" exported="" name="GoogleAdMobAdsSdk-6.4.1" level="project" />
     <orderEntry type="library" exported="" name="libGoogleAnalyticsServices" level="project" />
-    <orderEntry type="module" module-name="library" />
+    <orderEntry type="module" module-name="library" exported="" />
   </component>
 </module>
 
