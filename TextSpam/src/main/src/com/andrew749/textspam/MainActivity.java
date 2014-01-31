@@ -1,5 +1,6 @@
- package com.andrew749.textspam;
+package com.andrew749.textspam;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -14,26 +15,26 @@ import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem;
 import com.andrew749.textspam.Fragments.Conversations;
 import com.andrew749.textspam.Fragments.QuickMessageFragment;
 import com.andrew749.textspam.Fragments.TutorialActivity;
-import com.espian.showcaseview.OnShowcaseEventListener;
 import com.espian.showcaseview.ShowcaseView;
 import com.espian.showcaseview.ShowcaseViews;
 import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
-import com.espian.showcaseview.targets.ViewTarget;
 import com.google.analytics.tracking.android.EasyTracker;
+import com.inscription.ChangeLogDialog;
 
-public class MainActivity extends Activity {
+public class MainActivity extends SherlockActivity {
 	/**
 	 * This is the main class where all the methods are interconnected
 	 */
@@ -44,7 +45,7 @@ public class MainActivity extends Activity {
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
-	ShowcaseViews views;
+	static ShowcaseViews views;
 	Activity activity;
 
 	/**
@@ -78,8 +79,7 @@ public class MainActivity extends Activity {
 			public void onReceive(Context arg0, Intent arg1) {
 				switch (getResultCode()) {
 				case Activity.RESULT_OK:
-					Toast.makeText(getBaseContext(), "SMS sent",
-							Toast.LENGTH_SHORT).show();
+					Toast.makeText(getBaseContext(), "SMS sent",Toast.LENGTH_SHORT).show();
 					break;
 				default:
 					Toast.makeText(getApplicationContext(), "Message unsent",
@@ -132,15 +132,20 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = this.getMenuInflater();
+		MenuInflater inflater = this.getSupportMenuInflater();
 		inflater.inflate(R.menu.main, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		if (mDrawerToggle.onOptionsItemSelected(item)) {
-			return true;
+		// if (mDrawerToggle.onOptionsItemSelected(item)) {return true;}
+		if (item.getItemId() == android.R.id.home) {
+			if (mDrawerLayout.isDrawerOpen(mDrawerList)) {
+				mDrawerLayout.closeDrawer(mDrawerList);
+			} else {
+				mDrawerLayout.openDrawer(mDrawerList);
+			}
 		}
 		if (item.getItemId() == R.id.tutorial_menu) {
 			doTutorial();
@@ -157,7 +162,8 @@ public class MainActivity extends Activity {
 			return true;
 		} else if (itemId == R.id.changes) {
 			// TODO show changes
-			// alert.changedAlert();
+			ChangeLogDialog dialog = new ChangeLogDialog(this);
+			dialog.show();
 			return true;
 		} else if (itemId == R.id.addconversation) {
 			Intent i2 = new Intent();
@@ -192,6 +198,7 @@ public class MainActivity extends Activity {
 	public void doTutorial() {
 		intent.setClass(getApplicationContext(), TutorialActivity.class);
 		ShowcaseView.ConfigOptions co = new ShowcaseView.ConfigOptions();
+
 		co.hideOnClickOutside = true;
 		co.insert = ShowcaseView.INSERT_TO_DECOR;
 		// the app is being launched for first time, do something
@@ -211,31 +218,22 @@ public class MainActivity extends Activity {
 		views.addView(new ShowcaseViews.ItemViewProperties(R.id.contactlist,
 				R.string.sending_list_title, R.string.sending_list_tutorial));
 		views.addView(new ItemViewProperties(R.id.sendmessage,
-				R.string.send_title, R.string.send_tutorial,
-				ShowcaseView.ITEM_ACTION_ITEM, 0));
+				R.string.send_title, R.string.send_tutorial));
 		views.addView(new ItemViewProperties(R.id.clearmessage,
-				R.string.clear_title, R.string.clear_tutorial,
-				ShowcaseView.ITEM_ACTION_ITEM, 0));
-		views.addView(new ItemViewProperties(
-				R.id.addconversation, R.string.conversation_title,
-				R.string.conversation_tutorial,
-				ShowcaseView.ITEM_ACTION_OVERFLOW, 0));
+				R.string.clear_title, R.string.clear_tutorial));
+
+		views.addView(new ItemViewProperties(R.id.addconversation,
+				R.string.conversation_title, R.string.conversation_tutorial,
+				ShowcaseView.ITEM_ACTION_OVERFLOW));
 		views.addView(new ItemViewProperties(R.id.tutorial_menu,
 				R.string.tutorial_title, R.string.tutorial_tutorial,
-				ShowcaseView.ITEM_ACTION_OVERFLOW, 0));
-
+				ShowcaseView.ITEM_ACTION_OVERFLOW));
+		views.addView(new ItemViewProperties(android.R.id.home,
+				R.string.navigation_drawer, R.string.navigation_drawer_tutorial));
+		views.addAnimatedGestureToView(10, 0, 0, 400, 0);
 		views.show();
 	}
 
-	public interface seeIfSent {
-		public void messageSent();
-
-		public void messageFailed();
-	}
-public void doTutorialOverflowMenu(){
-	
-	
-}
 	class drawer_item_click_listener implements ListView.OnItemClickListener {
 
 		/*

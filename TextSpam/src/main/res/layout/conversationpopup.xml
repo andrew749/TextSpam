@@ -15,27 +15,26 @@
             android:paddingBottom="50dip"
             />
 
-    <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="horizontal"
-            android:id="@+id/popuplayout"
-            android:layout_below="@id/popuptextview">
-
         <EditText
-                android:layout_width="163dp"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="frequency"
-                android:id="@+id/popupedittext"
-                android:layout_gravity="left"/>
+            android:id="@+id/popupedittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/popuptextview"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/popupbutton"
+            android:ems="10"
+            android:hint="frequency"
+            android:inputType="number" >
+
+            <requestFocus />
+        </EditText>
 
         <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="send"
-                android:id="@+id/popupbutton"
-                android:layout_gravity="right"
-                />
-    </LinearLayout>
+            android:id="@+id/popupbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/popupedittext"
+            android:text="Send" />
+
 </RelativeLayout>

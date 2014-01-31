@@ -24,6 +24,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.SherlockFragment;
 import com.andrew749.textspam.Adapters.ContactListAdapter;
 import com.andrew749.textspam.Alerts;
 import com.andrew749.textspam.Custom;
@@ -36,7 +37,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by andrew on 02/11/13.
+ * Created by Andrew Codispoti on 02/11/13.
  */
 public class QuickMessageFragment extends Fragment {
     private static final int CONTACT_PICKER_RESULT = 1001;
@@ -53,7 +54,11 @@ public class QuickMessageFragment extends Fragment {
     private ArrayList<Map<String, String>> mPeopleList;
     private SimpleAdapter mAdapter;
     DataSource datasource;
-
+/**
+ * @author Andrew Codispoti
+ * This is the main fragment where the majority of messaging should occur.
+ * There is an option to add conversations to the conversation list from here.
+ */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -206,40 +211,13 @@ public class QuickMessageFragment extends Fragment {
                 addItem();
             }
         });
-        /**getActivity().registerReceiver(new BroadcastReceiver() {
-        @Override public void onReceive(Context arg0, Intent arg1) {
-        switch (getResultCode()) {
-        case Activity.RESULT_OK:
-        //Toast.makeText(MainActivity.this, "SMS sent",
-        //    Toast.LENGTH_SHORT).show();
-        Log.d("Message sent", "");
-        break;
-        case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
-        //Toast.makeText(MainActivity.this, "Generic failure",
-        //      Toast.LENGTH_SHORT).show();
-        Log.d("Failure in sending message", "");
-        break;
-        case SmsManager.RESULT_ERROR_NO_SERVICE:
-        Toast.makeText(getActivity(), "No service",
-        Toast.LENGTH_SHORT).show();
-        break;
-        case SmsManager.RESULT_ERROR_NULL_PDU:
-        Toast.makeText(getActivity(), "Null PDU",
-        Toast.LENGTH_SHORT).show();
-        break;
-        case SmsManager.RESULT_ERROR_RADIO_OFF:
-        Toast.makeText(getActivity(), "Radio off",
-        Toast.LENGTH_SHORT).show();
-        break;
-        }
-        }
-        }, new IntentFilter("SMS_SENT"));**/
+        
         return v;
     }
 
     @Override
     public void onPause() {
-
+    		
         super.onPause();
     }
 
@@ -255,7 +233,7 @@ public class QuickMessageFragment extends Fragment {
         super.onDestroy();
     }
 
-    /**
+    /*
      * adds a new phone number to the sending list
      */
     private void addItem() {
@@ -272,7 +250,9 @@ public class QuickMessageFragment extends Fragment {
             Toast.makeText(getActivity(), "This is not a valid phone number", Toast.LENGTH_LONG).show();
         }
     }
-
+/*sends a broadcase to the message reciever which will in turn send all the messages
+ * 
+ */
     public void sendMessagesComplete() {
         //need to warn user if field has entry
         try {
@@ -294,10 +274,10 @@ public class QuickMessageFragment extends Fragment {
 
     }
 
-//TODO make tutorial with spotlight to showcase features
 
     public void onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getActivity().getMenuInflater();
+        
         inflater.inflate(R.menu.main, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -368,9 +348,5 @@ public class QuickMessageFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onPrepareOptionsMenu(Menu menu) {
-        super.onPrepareOptionsMenu(menu);
-        menu.findItem(R.id.addconversation).setVisible(true);
-    }
+  
 }

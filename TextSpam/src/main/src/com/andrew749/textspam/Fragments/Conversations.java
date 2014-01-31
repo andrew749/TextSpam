@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -19,6 +21,7 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.SherlockFragment;
 import com.andrew749.textspam.Database.ConversationModel;
 import com.andrew749.textspam.Database.DataSource;
 import com.andrew749.textspam.R;
@@ -117,13 +120,11 @@ public class Conversations extends Fragment {
     }
 
 
-    @Override
-    public void onPrepareOptionsMenu(Menu menu) {
-        super.onPrepareOptionsMenu(menu);
-        menu.findItem(R.id.addconversation).setVisible(false);
-    }
+  
 
-    public void onClick() {
+	
+
+	public void onClick() {
 
     }
 }

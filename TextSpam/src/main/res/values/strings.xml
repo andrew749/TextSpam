@@ -22,7 +22,7 @@
     <string name="message_title">Message</string>
     <string name="frequency_field">This is the amount of times the message will be sent.</string>
     <string name="frequency_title">Frequency</string>
-    <string name="recipient_field">Put the contact number to send to here. The field will suggest contacts you already have</string>
+    <string name="recipient_field">The contact number to send to.</string>
     <string name="recipient_title">Recipient</string>
     <string name="add_title">Add</string>
     <string name="add_tutorial">Click this button to add the contact to the sending list.</string>
@@ -30,13 +30,15 @@
     <string name="sending_list_title">Recipient List</string>
     <string name="contact_title">Contact Picker</string>
     <string name="contact_field">Click this button to see all your contacts. Click on a contact to add.</string>
+    
     <string name="send_title">Send</string>
-    <string name="send_tutorial">Click this button to send the current message to the listed contacts.</string>
+    <string name="send_tutorial">Click the Send button in the menu to send the current message to the listed contacts.</string>
     <string name="clear_title">Clear</string>
-    <string name="clear_tutorial">Click here to remove all recipients.</string>
+    <string name="clear_tutorial">Click the clear button to remove all recipients.</string>
     <string name="conversation_title">Add Conversation</string>
-    <string name="conversation_tutorial">Click here to add the conversation that you created to the conversation menu for quick and easy access.</string>
+    <string name="conversation_tutorial">Click the "Save As Conversation" button in the menu to add the conversation that you created to the conversation menu for quick and easy access.</string>
     <string name="tutorial_title">Tutorial</string>
-    <string name="tutorial_tutorial">Click here to access the tutorial again.</string>
-
+    <string name="tutorial_tutorial">Click the Tutorial menu entry to access the tutorial again.</string>
+	<string name="navigation_drawer">Navigation Drawer</string>
+	<string name="navigation_drawer_tutorial">Swipe from the side of the screen to open the Navigation menu. Here you can access the conversations where you can quickly send messages you have preset by using "Save As Conversation"</string>
 </resources>

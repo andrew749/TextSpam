@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.telephony.SmsManager;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,8 +17,10 @@ public class Messager {
     SmsManager sm;
     PendingIntent intent;
     int failedMessages = 0;
+    Context context;
 
     public Messager(Context context) {
+    	this.context=context;
         sm = SmsManager.getDefault();
         intent = PendingIntent.getBroadcast(context, 0,
                 new Intent("SMS_SENT"), 0);
@@ -36,8 +39,7 @@ public class Messager {
     public synchronized void sendMessageToContact(String address, String message, int number) {
         for (int i = 0; i < number; i++) {
             sendMessage(address, message);
-            // Toast.makeText(context, "Sending Text " + (i + 1) + " of " + number + " to " + address,
-            //Toast.LENGTH_SHORT).show();
+             //Toast.makeText(context, "Sending Text " + (i + 1) + " of " + number + " to " + address,Toast.LENGTH_SHORT).show();
 
         }
     }
@@ -57,18 +59,18 @@ class SendMessagesTask extends AsyncTask<Void, Void, Void> {
     int frequency;
     String message;
     Messager messager;
-    ProgressDialog progressDialog;
+    Context context;
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-
     }
 
     protected SendMessagesTask(ArrayList<Custom> item, int frequency, String message, Context context) {
         this.item = item;
         this.frequency = frequency;
         this.message = message;
+        this.context=context;
         messager = new Messager(context);
     }
 
@@ -78,4 +80,7 @@ class SendMessagesTask extends AsyncTask<Void, Void, Void> {
         messager.sendMessagesToAll(item, frequency, message);
         return null;
     }
+
+	
+    
 }
