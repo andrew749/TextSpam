@@ -3,6 +3,7 @@ package com.andrew749.textspam.Fragments;
 import java.sql.SQLException;
 import java.util.List;
 
+import android.R.anim;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -25,6 +26,7 @@ import android.widget.TextView;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
+import com.andrew749.textspam.MainActivity;
 import com.andrew749.textspam.R;
 import com.andrew749.textspam.Database.ConversationModel;
 import com.andrew749.textspam.Database.DataSource;
@@ -42,7 +44,7 @@ public class Conversations extends SherlockFragment {
     TextView popuptextview;
     int frequency = 0;
     ConversationModel model;
-
+MainActivity activity;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,7 +127,9 @@ public class Conversations extends SherlockFragment {
 		menu.clear();
 		inflater.inflate(R.menu.conversationmenu, menu);
 	}
-
+public interface conversationCommunication{
+	public void toggleDrawer();
+}
 	@Override
 	public boolean onOptionsItemSelected(
 			com.actionbarsherlock.view.MenuItem item) {
@@ -135,6 +139,9 @@ public class Conversations extends SherlockFragment {
 			conversations.removeAll(conversations);
 			adapter.notifyDataSetInvalidated();
 			dataSource.deleteAllConversations();
+			break;
+		case android.R.id.home:
+			activity.toggleDrawer();
 			break;
 		default:
 			break;
@@ -147,6 +154,7 @@ public class Conversations extends SherlockFragment {
 		// TODO Auto-generated method stub
 		super.onAttach(activity);
 		setHasOptionsMenu(true);
+		this.activity=(MainActivity) activity;
 	}
 
 

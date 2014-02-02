@@ -1,10 +1,9 @@
 package com.andrew749.textspam;
 
-import android.app.ActionBar;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -14,41 +13,36 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
-import com.actionbarsherlock.view.MenuItem;
+import com.andrew749.textspam.Database.DataSource;
 import com.andrew749.textspam.Fragments.Conversations;
+import com.andrew749.textspam.Fragments.Conversations.conversationCommunication;
 import com.andrew749.textspam.Fragments.QuickMessageFragment;
-import com.andrew749.textspam.Fragments.TutorialActivity;
-import com.espian.showcaseview.ShowcaseView;
+import com.andrew749.textspam.Fragments.QuickMessageFragment.quickmessagecommunication;
 import com.espian.showcaseview.ShowcaseViews;
-import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.inscription.ChangeLogDialog;
 
-public class MainActivity extends SherlockFragmentActivity {
+public class MainActivity extends SherlockFragmentActivity implements
+		quickmessagecommunication,conversationCommunication {
 	/**
 	 * This is the main class where all the methods are interconnected
 	 */
-	final String PREFS_NAME = "MyPrefsFile";
 	public QuickMessageFragment frag;
-	Intent intent = new Intent();
 	private String[] drawerTitles;
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
 	static ShowcaseViews views;
 	Activity activity;
+
 	/**
 	 * initializes all the elements of the main activity
 	 */
@@ -58,18 +52,11 @@ public class MainActivity extends SherlockFragmentActivity {
 		setContentView(R.layout.activity_main);
 		activity = this;
 		setupDrawer();
-		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
-		if (settings.getBoolean("my_first_time", true)) {
-			/*
-			 * Run tutorial because app is being launched for the first time
-			 */
-			doTutorial();
-			// record the fact that the app has been started at least once
-			settings.edit().putBoolean("my_first_time", false).commit();
-		}
+		
 		android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
-		android.support.v4.app.FragmentTransaction ft = manager.beginTransaction();
+		android.support.v4.app.FragmentTransaction ft = manager
+				.beginTransaction();
 		manager.beginTransaction();
 		frag = new QuickMessageFragment();
 		ft.add(R.id.content_frame, frag);
@@ -80,7 +67,8 @@ public class MainActivity extends SherlockFragmentActivity {
 			public void onReceive(Context arg0, Intent arg1) {
 				switch (getResultCode()) {
 				case Activity.RESULT_OK:
-					Toast.makeText(getBaseContext(), "SMS sent",Toast.LENGTH_SHORT).show();
+					Toast.makeText(getBaseContext(), "SMS sent",
+							Toast.LENGTH_SHORT).show();
 					break;
 				default:
 					Toast.makeText(getApplicationContext(), "Message unsent",
@@ -131,53 +119,6 @@ public class MainActivity extends SherlockFragmentActivity {
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = this.getSupportMenuInflater();
-		inflater.inflate(R.menu.main, menu);
-		return super.onCreateOptionsMenu(menu);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// if (mDrawerToggle.onOptionsItemSelected(item)) {return true;}
-		if (item.getItemId() == android.R.id.home) {
-			if (mDrawerLayout.isDrawerOpen(mDrawerList)) {
-				mDrawerLayout.closeDrawer(mDrawerList);
-			} else {
-				mDrawerLayout.openDrawer(mDrawerList);
-			}
-		}
-		if (item.getItemId() == R.id.tutorial_menu) {
-			doTutorial();
-			return true;
-		}
-		int itemId = item.getItemId();
-		if (itemId == R.id.sendmessage) {
-			((QuickMessageFragment) frag).sendMessagesComplete();
-			return true;
-		} else if (itemId == R.id.clearmessage) {
-			Intent i = new Intent();
-			i.setAction("update");
-			sendBroadcast(i);
-			return true;
-		} else if (itemId == R.id.changes) {
-			// TODO show changes
-			ChangeLogDialog dialog = new ChangeLogDialog(this);
-			dialog.show();
-			return true;
-		} else if (itemId == R.id.addconversation) {
-			Intent i2 = new Intent();
-			i2.setAction("addconversation");
-			sendBroadcast(i2);
-			
-			Log.d("MainActivity", "Send out broadcast to add conversation");
-			return true;
-		} else {
-			return super.onOptionsItemSelected(item);
-		}
-	}
-
 	private void selectItem(int position) {
 		android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
 		switch (position) {
@@ -197,45 +138,6 @@ public class MainActivity extends SherlockFragmentActivity {
 		case 2:
 			break;
 		}
-	}
-
-	public void doTutorial() {
-		intent.setClass(getApplicationContext(), TutorialActivity.class);
-		ShowcaseView.ConfigOptions co = new ShowcaseView.ConfigOptions();
-
-		co.hideOnClickOutside = true;
-		co.insert = ShowcaseView.INSERT_TO_DECOR;
-		// the app is being launched for first time, do something
-		Log.d("Comments", "First time");
-		startActivity(intent);
-		ShowcaseViews views = new ShowcaseViews(activity);
-		views.addView(new ItemViewProperties(R.id.messageedit,
-				R.string.message_title, R.string.message_field));
-		views.addView(new ItemViewProperties(R.id.frequencyedit,
-				R.string.frequency_title, R.string.frequency_field));
-		views.addView(new ItemViewProperties(R.id.numberedit,
-				R.string.recipient_title, R.string.recipient_field));
-		views.addView(new ShowcaseViews.ItemViewProperties(R.id.add,
-				R.string.add_title, R.string.add_tutorial));
-		views.addView(new ShowcaseViews.ItemViewProperties(R.id.button2,
-				R.string.contact_title, R.string.contact_field));
-		views.addView(new ShowcaseViews.ItemViewProperties(R.id.contactlist,
-				R.string.sending_list_title, R.string.sending_list_tutorial));
-		views.addView(new ItemViewProperties(R.id.sendmessage,
-				R.string.send_title, R.string.send_tutorial));
-		views.addView(new ItemViewProperties(R.id.clearmessage,
-				R.string.clear_title, R.string.clear_tutorial));
-
-		views.addView(new ItemViewProperties(R.id.addconversation,
-				R.string.conversation_title, R.string.conversation_tutorial,
-				ShowcaseView.ITEM_ACTION_OVERFLOW));
-		views.addView(new ItemViewProperties(R.id.tutorial_menu,
-				R.string.tutorial_title, R.string.tutorial_tutorial,
-				ShowcaseView.ITEM_ACTION_OVERFLOW));
-		views.addView(new ItemViewProperties(android.R.id.home,
-				R.string.navigation_drawer, R.string.navigation_drawer_tutorial));
-		views.addAnimatedGestureToView(10, 0, 0, 400, 0);
-		views.show();
 	}
 
 	class drawer_item_click_listener implements ListView.OnItemClickListener {
@@ -260,8 +162,46 @@ public class MainActivity extends SherlockFragmentActivity {
 
 	@Override
 	protected void onStop() {
+
 		super.onStop();
 		EasyTracker.getInstance().activityStop(this); // Add this method.
 
+	}
+
+	@Override
+	public void addConversation(String message, ArrayList<Custom> item) {
+		DataSource datasource = new DataSource(this);
+		try {
+			datasource.open();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		datasource.createConversation(message, getStringArrayContacts(item));
+		datasource.close();
+	}
+
+	@Override
+	public void toggleDrawer() {
+		if (mDrawerLayout.isDrawerOpen(mDrawerList)) {
+			mDrawerLayout.closeDrawer(mDrawerList);
+		} else {
+			mDrawerLayout.openDrawer(mDrawerList);
+		}
+	}
+
+	@Override
+	public void openChangelogDialog() {
+		// TODO Auto-generated method stub
+		ChangeLogDialog dialog = new ChangeLogDialog(this);
+		dialog.show();
+	}
+
+	public ArrayList<String> getStringArrayContacts(ArrayList<Custom> object) {
+		ArrayList<String> tempnames = new ArrayList<String>();
+		for (int i = 0; i < object.size(); i++) {
+			tempnames.add(i, object.get(i).getPhoneNumber());
+		}
+		return tempnames;
 	}
 }

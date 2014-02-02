@@ -1,10 +1,12 @@
 package com.andrew749.textspam.Fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,11 +27,17 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragment;
+import com.actionbarsherlock.view.MenuItem;
 import com.andrew749.textspam.Adapters.ContactListAdapter;
 import com.andrew749.textspam.Alerts;
 import com.andrew749.textspam.Custom;
+import com.andrew749.textspam.MainActivity;
 import com.andrew749.textspam.Database.DataSource;
 import com.andrew749.textspam.R;
+import com.espian.showcaseview.ShowcaseView;
+import com.espian.showcaseview.ShowcaseViews;
+import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
+import com.inscription.ChangeLogDialog;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -39,319 +47,415 @@ import java.util.Map;
 /**
  * Created by Andrew Codispoti on 02/11/13.
  */
-public class QuickMessageFragment extends SherlockFragment  {
-    private static final int CONTACT_PICKER_RESULT = 1001;
-    public static ArrayList<Custom> item = new ArrayList<Custom>();
-    static Alerts alert;
-    private static int frequency;
-    private static String message;
-    EditText frequency_enter, message_enter;
-    AutoCompleteTextView phonenumber_enter;
-    ContactListAdapter contactListAdapter;
-    Button add, contact;
-    ListView lv;
-    private ArrayList<Map<String, String>> mPeopleList;
-    private SimpleAdapter mAdapter;
-    DataSource datasource;
-    BroadcastReceiver reciever=new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Log.d("Recieved Broadcast", "add conversation");
-            message = message_enter.getText().toString();
-            try {
-				datasource.open();
-				  datasource.createConversation(message, getStringArrayContacts(item));
-	                datasource.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+public class QuickMessageFragment extends SherlockFragment {
+	private static final int CONTACT_PICKER_RESULT = 1001;
+	public static ArrayList<Custom> item = new ArrayList<Custom>();
+	static Alerts alert;
+	private static int frequency;
+	private static String message;
+	EditText frequency_enter, message_enter;
+	AutoCompleteTextView phonenumber_enter;
+	ContactListAdapter contactListAdapter;
+	Button add, contact;
+	ListView lv;
+	private ArrayList<Map<String, String>> mPeopleList;
+	private SimpleAdapter mAdapter;
+	MainActivity activity;
+	final String PREFS_NAME = "MyPrefsFile";
+
+	/**
+	 * @author Andrew Codispoti This is the main fragment where the majority of
+	 *         messaging should occur. There is an option to add conversations
+	 *         to the conversation list from here.
+	 */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setHasOptionsMenu(true);
+
+		
+		SharedPreferences settings = activity.getSharedPreferences(PREFS_NAME, 0);
+		if (settings.getBoolean("my_first_time", true)) {
+			/*
+			 * Run tutorial because app is being launched for the first time
+			 */
+			doTutorial();
+			// record the fact that the app has been started at least once
+			settings.edit().putBoolean("my_first_time", false).commit();
+		}
+		contactListAdapter = new ContactListAdapter(getActivity(),
+				R.id.contactlist, item);
+		getActivity().getApplicationContext().registerReceiver(
+				new BroadcastReceiver() {
+					@Override
+					public void onReceive(Context context, Intent intent) {
+						Log.d("Received Broadcast", "update listview");
+						
+
+					}
+				}, new IntentFilter("update"));
+		getActivity().getApplicationContext().registerReceiver(
+				new BroadcastReceiver() {
+					@Override
+					public void onReceive(Context context, Intent intent) {
+						Log.d("Recieved Broadcast", "open contact menu");
+						doLaunchContactPicker(new View(getActivity()));
+					}
+				}, new IntentFilter("opencontact"));
+	}
+
+	
+
+	public void populateContacts() {
+		Cursor people, phones;
+
+		mPeopleList.clear();
+		people = getActivity().getContentResolver().query(
+				ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
+		while (people.moveToNext()) {
+			String contactName = people.getString(people
+					.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+			String contactId = people.getString(people
+					.getColumnIndex(ContactsContract.Contacts._ID));
+			String hasPhone = people
+					.getString(people
+							.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
+
+			if ((Integer.parseInt(hasPhone) > 0)) {
+				// You know have the number so now query it like this
+				phones = getActivity().getContentResolver().query(
+						ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+						null,
+						ContactsContract.CommonDataKinds.Phone.CONTACT_ID
+								+ " = " + contactId, null, null);
+				while (phones.moveToNext()) {
+					// store numbers and display a dialog letting the user
+					// select which.
+					String phoneNumber = phones
+							.getString(phones
+									.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+					String numberType = phones
+							.getString(phones
+									.getColumnIndex(ContactsContract.CommonDataKinds.Phone.TYPE));
+					Map<String, String> NamePhoneType = new HashMap<String, String>();
+					NamePhoneType.put("Name", contactName);
+					phoneNumber = phoneNumber.replace("-", "");
+					phoneNumber = phoneNumber.replace(" ", "");
+					NamePhoneType.put("Phone", phoneNumber);
+					if (numberType.equals("0"))
+						NamePhoneType.put("Type", "Work");
+					else if (numberType.equals("1"))
+						NamePhoneType.put("Type", "Home");
+					else if (numberType.equals("2"))
+						NamePhoneType.put("Type", "Mobile");
+					else
+						NamePhoneType.put("Type", "Other");
+					// Then add this map to the list.
+					mPeopleList.add(NamePhoneType);
+				}
+				// phones.close();
+			}
+		}
+		// people.close();
+		getActivity().startManagingCursor(people);
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View v = inflater.inflate(R.layout.quickmessagefragment, container,
+				false);
+		phonenumber_enter = (AutoCompleteTextView) v
+				.findViewById(R.id.numberedit);
+		frequency_enter = (EditText) v.findViewById(R.id.frequencyedit);
+		message_enter = (EditText) v.findViewById(R.id.messageedit);
+		contact = (Button) v.findViewById(R.id.button2);
+		alert = new Alerts(getActivity());
+		mPeopleList = new ArrayList<Map<String, String>>();
+		populateContacts();
+		// ContactsAutoCompleteCursorAdapter adap=new
+		// ContactsAutoCompleteCursorAdapter(getActivity(),c);
+		mAdapter = new SimpleAdapter(getActivity(), mPeopleList,
+				R.layout.customcontactview, new String[] { "Name", "Phone",
+						"Type" }, new int[] { R.id.ccontName, R.id.ccontNo,
+						R.id.ccontType });
+		phonenumber_enter.setAdapter(mAdapter);
+		phonenumber_enter.setHint("Start typing a number");
+		phonenumber_enter
+				.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+					@Override
+					public void onItemClick(AdapterView<?> av, View arg1,
+							int index, long arg3) {
+						Map<String, String> map = (Map<String, String>) av
+								.getItemAtPosition(index);
+
+						String name = map.get("Name");
+						String number = map.get("Phone");
+						phonenumber_enter.setText("" + number);
+
+					}
+				});
+		contact.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				doLaunchContactPicker(new View(getActivity()));
+			}
+		});
+		lv = (ListView) v.findViewById(R.id.contactlist);
+		lv.setAdapter(contactListAdapter);
+		// where the user enters the message qualities
+
+		lv.setOnItemLongClickListener(new android.widget.AdapterView.OnItemLongClickListener() {
+			@Override
+			public boolean onItemLongClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				item.remove(position);
+				contactListAdapter.notifyDataSetChanged();
+				return true;
+			}
+		});
+
+		// add contact to list
+		add = (Button) v.findViewById(R.id.add);
+		add.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				addItem();
+			}
+		});
+
+		return v;
+	}
+
+	@Override
+	public void onPause() {
+
+		super.onPause();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+	}
+
+	/*
+	 * adds a new phone number to the sending list
+	 */
+	private void addItem() {
+		if (PhoneNumberUtils.isGlobalPhoneNumber(phonenumber_enter.getText()
+				.toString())) {
+			try {
+				item.add(new Custom(phonenumber_enter.getText().toString()));
+
+				contactListAdapter.notifyDataSetChanged();
+				phonenumber_enter.setText("");
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-          
-            Log.d("conversationreceivercreation", "added " +message+" being sent to " +getStringArrayContacts(item));
-            
-        }};
-    
-/**
- * @author Andrew Codispoti
- * This is the main fragment where the majority of messaging should occur.
- * There is an option to add conversations to the conversation list from here.
- */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-        datasource = new DataSource(getActivity());
-       
-        contactListAdapter = new ContactListAdapter(getActivity(), R.id.contactlist, item);
-        getActivity().getApplicationContext().registerReceiver(new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                Log.d("Received Broadcast", "update listview");
-                item.clear();
-                contactListAdapter.notifyDataSetChanged();
+		} else {
+			Toast.makeText(getActivity(), "This is not a valid phone number",
+					Toast.LENGTH_LONG).show();
+		}
+	}
 
-            }
-        }, new IntentFilter("update"));
-        getActivity().getApplicationContext().registerReceiver(new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                Log.d("Recieved Broadcast", "open contact menu");
-                doLaunchContactPicker(new View(getActivity()));
-            }
-        }, new IntentFilter("opencontact"));
-        getActivity().getApplicationContext().registerReceiver(reciever, new IntentFilter("addconversation"));
-    }
+	/*
+	 * sends a broadcase to the message reciever which will in turn send all the
+	 * messages
+	 */
+	public void sendMessagesComplete() {
+		// need to warn user if field has entry
+		try {
+			gatherInformation();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+		Bundle info = new Bundle();
+		info.putInt("freq", frequency);
+		info.putString("message", message);
+		info.putSerializable("contact", item);
 
-    public ArrayList<String> getStringArrayContacts(ArrayList<Custom> object) {
-        ArrayList<String> tempnames = new ArrayList<String>();
-        for (int i = 0; i < object.size(); i++) {
-            tempnames.add(i, object.get(i).getPhoneNumber());
-        }
-        return tempnames;
-    }
+		Intent intent = new Intent();
+		intent.setAction("com.andrew749.textspam.sendmessages");
+		intent.putExtra("information", info);
+		getActivity().sendBroadcast(intent);
+		Log.d("Sent Intent", "sendmessages");
 
-  
-	public void populateContacts() {
-        Cursor people, phones;
-
-        mPeopleList.clear();
-        people = getActivity().getContentResolver().query(
-                ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
-        while (people.moveToNext()) {
-            String contactName = people.getString(people
-                    .getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-            String contactId = people.getString(people
-                    .getColumnIndex(ContactsContract.Contacts._ID));
-            String hasPhone = people
-                    .getString(people
-                            .getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
-
-            if ((Integer.parseInt(hasPhone) > 0)) {
-                // You know have the number so now query it like this
-                phones = getActivity().getContentResolver().query(
-                        ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-                        null,
-                        ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + contactId,
-                        null, null);
-                while (phones.moveToNext()) {
-                    //store numbers and display a dialog letting the user select which.
-                    String phoneNumber = phones.getString(
-                            phones.getColumnIndex(
-                                    ContactsContract.CommonDataKinds.Phone.NUMBER));
-                    String numberType = phones.getString(phones.getColumnIndex(
-                            ContactsContract.CommonDataKinds.Phone.TYPE));
-                    Map<String, String> NamePhoneType = new HashMap<String, String>();
-                    NamePhoneType.put("Name", contactName);
-                    phoneNumber = phoneNumber.replace("-", "");
-                    phoneNumber = phoneNumber.replace(" ", "");
-                    NamePhoneType.put("Phone", phoneNumber);
-                    if (numberType.equals("0"))
-                        NamePhoneType.put("Type", "Work");
-                    else if (numberType.equals("1"))
-                        NamePhoneType.put("Type", "Home");
-                    else if (numberType.equals("2"))
-                        NamePhoneType.put("Type", "Mobile");
-                    else
-                        NamePhoneType.put("Type", "Other");
-                    //Then add this map to the list.
-                    mPeopleList.add(NamePhoneType);
-                }
-                // phones.close();
-            }
-        }
-        //people.close();
-        getActivity().startManagingCursor(people);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.quickmessagefragment, container, false);
-        phonenumber_enter = (AutoCompleteTextView) v.findViewById(R.id.numberedit);
-        frequency_enter = (EditText) v.findViewById(R.id.frequencyedit);
-        message_enter = (EditText) v.findViewById(R.id.messageedit);
-        contact = (Button) v.findViewById(R.id.button2);
-        alert = new Alerts(getActivity());
-        mPeopleList = new ArrayList<Map<String, String>>();
-        populateContacts();
-        // ContactsAutoCompleteCursorAdapter adap=new ContactsAutoCompleteCursorAdapter(getActivity(),c);
-        mAdapter = new SimpleAdapter(getActivity(), mPeopleList, R.layout.customcontactview,
-                new String[]{"Name", "Phone", "Type"}, new int[]{
-                R.id.ccontName, R.id.ccontNo, R.id.ccontType});
-        phonenumber_enter.setAdapter(mAdapter);
-        phonenumber_enter.setHint("Start typing a number");
-        phonenumber_enter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> av, View arg1, int index,
-                                    long arg3) {
-                Map<String, String> map = (Map<String, String>) av.getItemAtPosition(index);
-
-                String name = map.get("Name");
-                String number = map.get("Phone");
-                phonenumber_enter.setText("" + number);
-
-            }
-        });
-        contact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                doLaunchContactPicker(new View(getActivity()));
-            }
-        });
-        lv = (ListView) v.findViewById(R.id.contactlist);
-        lv.setAdapter(contactListAdapter);
-        //where the user enters the message qualities
-
-        lv.setOnItemLongClickListener(new android.widget.AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                item.remove(position);
-                contactListAdapter.notifyDataSetChanged();
-                return true;
-            }
-        });
+	}
 
 
-        //add contact to list
-        add = (Button) v.findViewById(R.id.add);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addItem();
-            }
-        });
-        
-        return v;
-    }
+	@Override
+public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
+		com.actionbarsherlock.view.MenuInflater inflater) {
+	// TODO Auto-generated method stub
+		
 
-    @Override
-    public void onPause() {
-    		
-        super.onPause();
-    }
+		inflater.inflate(R.menu.main, menu);
 
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
+	super.onCreateOptionsMenu(menu, inflater);
+}
 
 
-    /*
-     * adds a new phone number to the sending list
-     */
-    private void addItem() {
-        if (PhoneNumberUtils.isGlobalPhoneNumber(phonenumber_enter.getText().toString())) {
-            try {
-                item.add(new Custom(phonenumber_enter.getText().toString()));
 
-                contactListAdapter.notifyDataSetChanged();
-                phonenumber_enter.setText("");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            Toast.makeText(getActivity(), "This is not a valid phone number", Toast.LENGTH_LONG).show();
-        }
-    }
-/*sends a broadcase to the message reciever which will in turn send all the messages
- * 
- */
-    public void sendMessagesComplete() {
-        //need to warn user if field has entry
-        try {
-            gatherInformation();
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        }
-        Bundle info = new Bundle();
-        info.putInt("freq", frequency);
-        info.putString("message", message);
-        info.putSerializable("contact", item);
+	/**
+	 * gets all of the information from the fields in the main layout
+	 */
+	public void gatherInformation() {
+		try {
+			message = message_enter.getText().toString();
+			frequency = Integer.parseInt(frequency_enter.getText().toString());
+		} catch (Exception e) {
+			Toast.makeText(getActivity(),
+					"Sorry but the fields are not entered correctly",
+					Toast.LENGTH_SHORT).show();
+			e.printStackTrace();
+		}
+	}
 
-        Intent intent = new Intent();
-        intent.setAction("com.andrew749.textspam.sendmessages");
-        intent.putExtra("information", info);
-        getActivity().sendBroadcast(intent);
-        Log.d("Sent Intent", "sendmessages");
+	public void doLaunchContactPicker(View view) {
+		// alert.contactAlert();
+		Intent contactPickerIntent = new Intent(Intent.ACTION_PICK,
+				ContactsContract.Contacts.CONTENT_URI);
+		startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT);
 
+	}
 
-    }
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		String phone;
+		Cursor contacts = null;
+		try {
+			if (resultCode == getActivity().RESULT_OK) {
+				switch (requestCode) {
+				case CONTACT_PICKER_RESULT:
+					// gets the uri of selected contact
+					Uri result = data.getData();
+					// get the contact id from the Uri (last part is contact id)
+					String id = result.getLastPathSegment();
+					// queries the contacts DB for phone no
+					contacts = getActivity().getContentResolver().query(
+							ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+							null,
+							ContactsContract.CommonDataKinds.Phone.CONTACT_ID
+									+ "=?", new String[] { id }, null);
+					// gets index of phone no
+					int phoneIdx = contacts
+							.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NORMALIZED_NUMBER);
+					if (contacts.moveToFirst()) {
+						// gets the phone no
+						phone = contacts.getString(phoneIdx);
+						phone = phone.substring(1, phone.length());
+						// assigns phone no to EditText field phoneno
+						// no longer needed to streamline process
+						// phonenumber_enter.setText(phone);
+						item.add(new Custom(phone));
+						contactListAdapter.notifyDataSetChanged();
+					} else {
+						Toast.makeText(getActivity(), "error", 100).show();
+					}
+					break;
+				}
 
+			} else {
+				// gracefully handle failure
+			}
+		} catch (Exception e) {
+			Toast.makeText(getActivity(), e.getMessage(), 50).show();
+			e.printStackTrace();
+		} finally {
+			if (contacts != null) {
+				contacts.close();
+			}
+		}
+	}
 
-    public void onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getActivity().getMenuInflater();
-        
-        inflater.inflate(R.menu.main, menu);
-        
-        super.onCreateOptionsMenu(menu, inflater);
-    }
+	public interface quickmessagecommunication {
+		public void toggleDrawer();
 
-    /**
-     * gets all of the information from the fields in the main layout
-     */
-    public void gatherInformation() {
-        try {
-            message = message_enter.getText().toString();
-            frequency = Integer.parseInt(frequency_enter.getText()
-                    .toString());
-        } catch (Exception e) {
-            Toast.makeText(getActivity(), "Sorry but the fields are not entered correctly",
-                    Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-        }
-    }
+		public void addConversation(String message, ArrayList<Custom> item);
 
-    public void doLaunchContactPicker(View view) {
-        //alert.contactAlert();
-        Intent contactPickerIntent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-        startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT);
+		public void openChangelogDialog();
 
-    }
+	}
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String phone;
-        Cursor contacts = null;
-        try {
-            if (resultCode == getActivity().RESULT_OK) {
-                switch (requestCode) {
-                    case CONTACT_PICKER_RESULT:
-                        // gets the uri of selected contact
-                        Uri result = data.getData();
-                        // get the contact id from the Uri (last part is contact id)
-                        String id = result.getLastPathSegment();
-                        //queries the contacts DB for phone no
-                        contacts = getActivity().getContentResolver().query(ContactsContract.CommonDataKinds.Phone
-                                .CONTENT_URI,
-                                null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + "=?", new String[]{id}, null);
-                        //gets index of phone no
-                        int phoneIdx = contacts.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NORMALIZED_NUMBER);
-                        if (contacts.moveToFirst()) {
-                            //gets the phone no
-                            phone = contacts.getString(phoneIdx);
-                            phone = phone.substring(1, phone.length());
-                            //assigns phone no to EditText field phoneno
-                            // no longer needed to streamline process phonenumber_enter.setText(phone);
-                            item.add(new Custom(phone));
-                            contactListAdapter.notifyDataSetChanged();
-                        } else {
-                            Toast.makeText(getActivity(), "error", 100).show();
-                        }
-                        break;
-                }
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// if (mDrawerToggle.onOptionsItemSelected(item)) {return true;}
+		if (item.getItemId() == android.R.id.home) {
+			activity.toggleDrawer();
+		}
+		if (item.getItemId() == R.id.tutorial_menu) {
+			doTutorial();
+			return true;
+		}
+		int itemId = item.getItemId();
+		if (itemId == R.id.sendmessage) {
+			sendMessagesComplete();
+			return true;
+		} else if (itemId == R.id.clearmessage) {
+			this.item.clear();
+			contactListAdapter.notifyDataSetChanged();
+			return true;
+		} else if (itemId == R.id.changes) {
+			activity.openChangelogDialog();
+			return true;
+		} else if (itemId == R.id.addconversation) {
+			this.message=message_enter.getEditableText().toString();
+			activity.addConversation(message, this.item);
 
-            } else {
-                // gracefully handle failure
-            }
-        } catch (Exception e) {
-            Toast.makeText(getActivity(), e.getMessage(), 50).show();
-            e.printStackTrace();
-        } finally {
-            if (contacts != null) {
-                contacts.close();
-            }
-        }
-    }
+			return true;
+		} else {
+			return super.onOptionsItemSelected(item);
+		}
+	}
+	public void doTutorial() {
+		Intent intent = new Intent();
 
+		intent.setClass(getActivity(), TutorialActivity.class);
+		ShowcaseView.ConfigOptions co = new ShowcaseView.ConfigOptions();
 
-  
+		co.hideOnClickOutside = true;
+		co.insert = ShowcaseView.INSERT_TO_DECOR;
+		// the app is being launched for first time, do something
+		Log.d("Comments", "First time");
+		startActivity(intent);
+		ShowcaseViews views = new ShowcaseViews(activity);
+		views.addView(new ItemViewProperties(R.id.messageedit,
+				R.string.message_title, R.string.message_field));
+		views.addView(new ItemViewProperties(R.id.frequencyedit,
+				R.string.frequency_title, R.string.frequency_field));
+		views.addView(new ItemViewProperties(R.id.numberedit,
+				R.string.recipient_title, R.string.recipient_field));
+		views.addView(new ShowcaseViews.ItemViewProperties(R.id.add,
+				R.string.add_title, R.string.add_tutorial));
+		views.addView(new ShowcaseViews.ItemViewProperties(R.id.button2,
+				R.string.contact_title, R.string.contact_field));
+		views.addView(new ShowcaseViews.ItemViewProperties(R.id.contactlist,
+				R.string.sending_list_title, R.string.sending_list_tutorial));
+		views.addView(new ItemViewProperties(R.id.sendmessage,
+				R.string.send_title, R.string.send_tutorial));
+		views.addView(new ItemViewProperties(R.id.clearmessage,
+				R.string.clear_title, R.string.clear_tutorial));
+
+		views.addView(new ItemViewProperties(R.id.addconversation,
+				R.string.conversation_title, R.string.conversation_tutorial,
+				ShowcaseView.ITEM_ACTION_OVERFLOW));
+		views.addView(new ItemViewProperties(R.id.tutorial_menu,
+				R.string.tutorial_title, R.string.tutorial_tutorial,
+				ShowcaseView.ITEM_ACTION_OVERFLOW));
+		views.addView(new ItemViewProperties(android.R.id.home,
+				R.string.navigation_drawer, R.string.navigation_drawer_tutorial));
+		views.addAnimatedGestureToView(10, 0, 0, 400, 0);
+		views.show();
+	}
+
+	@Override
+	public void onAttach(Activity activity) {
+		// TODO Auto-generated method stub
+		this.activity = (MainActivity) activity;
+		super.onAttach(activity);
+		setHasOptionsMenu(true);
+
+		
+	}
+
 }
