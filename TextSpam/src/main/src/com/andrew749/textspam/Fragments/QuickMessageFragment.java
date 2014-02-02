@@ -7,7 +7,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.database.CursorJoiner.Result;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.provider.ContactsContract;
@@ -39,6 +41,7 @@ import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by Andrew Codispoti on 02/11/13.
@@ -60,7 +63,8 @@ public class QuickMessageFragment extends SherlockFragment {
 	final String PREFS_NAME = "MyPrefsFile";
 
 	/**
-	 * @author Andrew Codispoti This is the main fragment where the majority of
+	 * @author Andrew Codispoti 
+	 * This is the main fragment where the majority of
 	 *         messaging should occur. There is an option to add conversations
 	 *         to the conversation list from here.
 	 */
@@ -81,69 +85,19 @@ public class QuickMessageFragment extends SherlockFragment {
 		}
 		contactListAdapter = new ContactListAdapter(getActivity(),
 				R.id.contactlist, item);
-
-		getActivity().getApplicationContext().registerReceiver(
-				new BroadcastReceiver() {
-					@Override
-					public void onReceive(Context context, Intent intent) {
-						Log.d("Recieved Broadcast", "open contact menu");
-						doLaunchContactPicker(new View(getActivity()));
-					}
-				}, new IntentFilter("opencontact"));
-	}
-
-	public void populateContacts() {
-		Cursor people, phones;
-
-		mPeopleList.clear();
-		people = getActivity().getContentResolver().query(
-				ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
-		while (people.moveToNext()) {
-			String contactName = people.getString(people
-					.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-			String contactId = people.getString(people
-					.getColumnIndex(BaseColumns._ID));
-			String hasPhone = people
-					.getString(people
-							.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
-
-			if ((Integer.parseInt(hasPhone) > 0)) {
-				// You know have the number so now query it like this
-				phones = getActivity().getContentResolver().query(
-						ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-						null,
-						ContactsContract.CommonDataKinds.Phone.CONTACT_ID
-								+ " = " + contactId, null, null);
-				while (phones.moveToNext()) {
-					// store numbers and display a dialog letting the user
-					// select which.
-					String phoneNumber = phones
-							.getString(phones
-									.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-					String numberType = phones
-							.getString(phones
-									.getColumnIndex(ContactsContract.CommonDataKinds.Phone.TYPE));
-					Map<String, String> NamePhoneType = new HashMap<String, String>();
-					NamePhoneType.put("Name", contactName);
-					phoneNumber = phoneNumber.replace("-", "");
-					phoneNumber = phoneNumber.replace(" ", "");
-					NamePhoneType.put("Phone", phoneNumber);
-					if (numberType.equals("0"))
-						NamePhoneType.put("Type", "Work");
-					else if (numberType.equals("1"))
-						NamePhoneType.put("Type", "Home");
-					else if (numberType.equals("2"))
-						NamePhoneType.put("Type", "Mobile");
-					else
-						NamePhoneType.put("Type", "Other");
-					// Then add this map to the list.
-					mPeopleList.add(NamePhoneType);
-				}
-				// phones.close();
-			}
+		GetContactsTask task = new GetContactsTask();
+		// ContactsAutoCompleteCursorAdapter adap=new
+		// ContactsAutoCompleteCursorAdapter(getActivity(),c);
+		try {
+			mPeopleList=task.execute().get();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		// people.close();
-		getActivity().startManagingCursor(people);
+
 	}
 
 	@Override
@@ -157,10 +111,7 @@ public class QuickMessageFragment extends SherlockFragment {
 		message_enter = (EditText) v.findViewById(R.id.messageedit);
 		contact = (Button) v.findViewById(R.id.button2);
 		alert = new Alerts(getActivity());
-		mPeopleList = new ArrayList<Map<String, String>>();
-		populateContacts();
-		// ContactsAutoCompleteCursorAdapter adap=new
-		// ContactsAutoCompleteCursorAdapter(getActivity(),c);
+		
 		mAdapter = new SimpleAdapter(getActivity(), mPeopleList,
 				R.layout.customcontactview, new String[] { "Name", "Phone",
 						"Type" }, new int[] { R.id.ccontName, R.id.ccontNo,
@@ -209,13 +160,13 @@ public class QuickMessageFragment extends SherlockFragment {
 							int[] reverseSortedPositions) {
 						Log.d("quickmessage", "reverse sorted position:"
 								+ reverseSortedPositions);
-						
+
 						for (int position : reverseSortedPositions) {
-							Custom i=contactListAdapter.getItem(position);
-							
+							Custom i = contactListAdapter.getItem(position);
+
 							contactListAdapter.remove(i);
 							item.remove(i);
-							
+
 						}
 					}
 
@@ -296,7 +247,6 @@ public class QuickMessageFragment extends SherlockFragment {
 	@Override
 	public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
 			com.actionbarsherlock.view.MenuInflater inflater) {
-		// TODO Auto-generated method stub
 
 		inflater.inflate(R.menu.main, menu);
 
@@ -442,7 +392,9 @@ public class QuickMessageFragment extends SherlockFragment {
 				R.string.contact_title, R.string.contact_field));
 		views.addView(new ShowcaseViews.ItemViewProperties(R.id.contactlist,
 				R.string.sending_list_title, R.string.sending_list_tutorial));
-		views.addView(new ItemViewProperties(R.id.contactlist, R.string.sending_list_title,R.string.sending_list_swipe_tutorial));
+		views.addView(new ItemViewProperties(R.id.contactlist,
+				R.string.sending_list_title,
+				R.string.sending_list_swipe_tutorial));
 		views.addAnimatedGestureToView(6, 0, 0, 200, 0);
 
 		views.addView(new ItemViewProperties(R.id.sendmessage,
@@ -464,14 +416,74 @@ public class QuickMessageFragment extends SherlockFragment {
 
 	@Override
 	public void onAttach(Activity activity) {
-		// TODO Auto-generated method stub
 		this.activity = (MainActivity) activity;
 		super.onAttach(activity);
 		setHasOptionsMenu(true);
 
 	}
 
+	class GetContactsTask extends
+			AsyncTask<Void, Void, ArrayList<Map<String, String>>> {
 
-	
+		ArrayList<Map<String, String>> mPeopleList = new ArrayList<Map<String, String>>();
+
+		@Override
+		protected ArrayList<Map<String, String>> doInBackground(Void... params) {
+			Cursor people, phones;
+
+			mPeopleList.clear();
+			people = getActivity().getContentResolver().query(
+					ContactsContract.Contacts.CONTENT_URI, null, null, null,
+					null);
+			while (people.moveToNext()) {
+				String contactName = people
+						.getString(people
+								.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+				String contactId = people.getString(people
+						.getColumnIndex(BaseColumns._ID));
+				String hasPhone = people
+						.getString(people
+								.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
+
+				if ((Integer.parseInt(hasPhone) > 0)) {
+					// You know have the number so now query it like this
+					phones = getActivity().getContentResolver().query(
+							ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+							null,
+							ContactsContract.CommonDataKinds.Phone.CONTACT_ID
+									+ " = " + contactId, null, null);
+					while (phones.moveToNext()) {
+						// store numbers and display a dialog letting the user
+						// select which.
+						String phoneNumber = phones
+								.getString(phones
+										.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+						String numberType = phones
+								.getString(phones
+										.getColumnIndex(ContactsContract.CommonDataKinds.Phone.TYPE));
+						Map<String, String> NamePhoneType = new HashMap<String, String>();
+						NamePhoneType.put("Name", contactName);
+						phoneNumber = phoneNumber.replace("-", "");
+						phoneNumber = phoneNumber.replace(" ", "");
+						NamePhoneType.put("Phone", phoneNumber);
+						if (numberType.equals("0"))
+							NamePhoneType.put("Type", "Work");
+						else if (numberType.equals("1"))
+							NamePhoneType.put("Type", "Home");
+						else if (numberType.equals("2"))
+							NamePhoneType.put("Type", "Mobile");
+						else
+							NamePhoneType.put("Type", "Other");
+						// Then add this map to the list.
+						mPeopleList.add(NamePhoneType);
+					}
+					phones.close();
+				}
+			}
+			people.close();
+			return mPeopleList;
+		}
+
+	}
 
 }
