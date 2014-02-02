@@ -32,7 +32,7 @@ public class DataSource {
         dbHelper.close();
     }
 
-    public ConversationModel createConversation(String message, ArrayList<String> numbers) {
+    public void createConversation(String message, ArrayList<String> numbers) {
         String recipientsString = "";
         for (int i = 0; i < numbers.size(); i++) {
             if (i < numbers.size() - 1) {
@@ -50,9 +50,8 @@ public class DataSource {
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, allColumns, DatabaseHelper.COLUMN_ID + " = " + insertId,
                 null, null, null, null);
         cursor.moveToFirst();
-        ConversationModel model = cursorToConversation(cursor);
+        values.clear();
         cursor.close();
-        return model;
     }
 
     public void deleteConversation(ConversationModel model) {
@@ -63,7 +62,9 @@ public class DataSource {
     public void deleteConversationID(long id) {
         database.delete(DatabaseHelper.TABLE_NAME, DatabaseHelper.COLUMN_ID + " = " + id, null);
     }
-
+    public void deleteAllConversations(){
+    	database.execSQL("delete from "+ DatabaseHelper.TABLE_NAME+" where _id>=0;");
+    }
     public List<ConversationModel> getAllConversations() {
         List<ConversationModel> conversations = new ArrayList<ConversationModel>();
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, allColumns, null, null, null, null, null);
@@ -83,12 +84,13 @@ public class DataSource {
         try {
             model.setId(cursor.getLong(0));
             model.setSendingString(cursor.getString(1));
-            Log.d("", cursor.getString(2));
+            Log.d("cursorToConversation", cursor.getString(2));
             model.setDBResult(cursor.getString(2));
-            Log.d("", "" + model.getPhoneNumbers());
+            Log.d("cursorToConversation", "" + model.getPhoneNumbers());
         } catch (CursorIndexOutOfBoundsException e) {
             e.printStackTrace();
         }
         return model;
     }
+   
 }

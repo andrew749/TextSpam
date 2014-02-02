@@ -57,7 +57,7 @@ public class ConversationModel {
         String tempString = "";
         numberlist = dbResult;
         for (int i = 0; i < dbResult.length(); i++) {
-            if (dbResult.indexOf(",", i) > 0x0) {
+            if (dbResult.indexOf(",", i) > 0) {
                 tempString = dbResult.substring(i, dbResult.indexOf(",", i));
                 Log.d("number:", tempString);
 

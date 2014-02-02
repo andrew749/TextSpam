@@ -1031,6 +1031,7 @@ containing a value of this type.
         public static final int ccontType=0x7f070040;
         public static final int changes=0x7f070054;
         public static final int changesplaceholder=0x7f070044;
+        public static final int clearallconversations=0x7f070050;
         public static final int clearmessage=0x7f070053;
         public static final int contactlist=0x7f07004e;
         public static final int content_frame=0x7f070037;
@@ -1043,7 +1044,6 @@ containing a value of this type.
         public static final int frame=0x7f070043;
         public static final int frequencyedit=0x7f070048;
         public static final int homeAsUp=0x7f070006;
-        public static final int item1=0x7f070050;
         public static final int left_drawer=0x7f070038;
         public static final int listMode=0x7f070002;
         public static final int listView=0x7f07003a;

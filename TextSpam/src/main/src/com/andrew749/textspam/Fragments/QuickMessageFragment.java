@@ -39,7 +39,7 @@ import java.util.Map;
 /**
  * Created by Andrew Codispoti on 02/11/13.
  */
-public class QuickMessageFragment extends Fragment {
+public class QuickMessageFragment extends SherlockFragment  {
     private static final int CONTACT_PICKER_RESULT = 1001;
     public static ArrayList<Custom> item = new ArrayList<Custom>();
     static Alerts alert;
@@ -50,10 +50,27 @@ public class QuickMessageFragment extends Fragment {
     ContactListAdapter contactListAdapter;
     Button add, contact;
     ListView lv;
-    Cursor people, phones;
     private ArrayList<Map<String, String>> mPeopleList;
     private SimpleAdapter mAdapter;
     DataSource datasource;
+    BroadcastReceiver reciever=new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d("Recieved Broadcast", "add conversation");
+            message = message_enter.getText().toString();
+            try {
+				datasource.open();
+				  datasource.createConversation(message, getStringArrayContacts(item));
+	                datasource.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+          
+            Log.d("conversationreceivercreation", "added " +message+" being sent to " +getStringArrayContacts(item));
+            
+        }};
+    
 /**
  * @author Andrew Codispoti
  * This is the main fragment where the majority of messaging should occur.
@@ -64,11 +81,7 @@ public class QuickMessageFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         datasource = new DataSource(getActivity());
-        try {
-            datasource.open();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+       
         contactListAdapter = new ContactListAdapter(getActivity(), R.id.contactlist, item);
         getActivity().getApplicationContext().registerReceiver(new BroadcastReceiver() {
             @Override
@@ -86,14 +99,7 @@ public class QuickMessageFragment extends Fragment {
                 doLaunchContactPicker(new View(getActivity()));
             }
         }, new IntentFilter("opencontact"));
-        getActivity().getApplicationContext().registerReceiver(new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                Log.d("Recieved Broadcast", "add conversation");
-                message = message_enter.getText().toString();
-                datasource.createConversation(message, getStringArrayContacts(item));
-            }
-        }, new IntentFilter("addconversation"));
+        getActivity().getApplicationContext().registerReceiver(reciever, new IntentFilter("addconversation"));
     }
 
     public ArrayList<String> getStringArrayContacts(ArrayList<Custom> object) {
@@ -104,7 +110,10 @@ public class QuickMessageFragment extends Fragment {
         return tempnames;
     }
 
-    public void populateContacts() {
+  
+	public void populateContacts() {
+        Cursor people, phones;
+
         mPeopleList.clear();
         people = getActivity().getContentResolver().query(
                 ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
@@ -226,12 +235,6 @@ public class QuickMessageFragment extends Fragment {
         super.onResume();
     }
 
-    @Override
-    public void onDestroy() {
-        phones.close();
-        people.close();
-        super.onDestroy();
-    }
 
     /*
      * adds a new phone number to the sending list
@@ -279,6 +282,7 @@ public class QuickMessageFragment extends Fragment {
         MenuInflater inflater = getActivity().getMenuInflater();
         
         inflater.inflate(R.menu.main, menu);
+        
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -347,6 +351,7 @@ public class QuickMessageFragment extends Fragment {
             }
         }
     }
+
 
   
 }

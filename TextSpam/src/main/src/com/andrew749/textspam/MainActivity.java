@@ -22,6 +22,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.SherlockFragment;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
@@ -34,12 +36,12 @@ import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.inscription.ChangeLogDialog;
 
-public class MainActivity extends SherlockActivity {
+public class MainActivity extends SherlockFragmentActivity {
 	/**
 	 * This is the main class where all the methods are interconnected
 	 */
 	final String PREFS_NAME = "MyPrefsFile";
-	public Fragment frag;
+	public QuickMessageFragment frag;
 	Intent intent = new Intent();
 	private String[] drawerTitles;
 	private DrawerLayout mDrawerLayout;
@@ -47,7 +49,6 @@ public class MainActivity extends SherlockActivity {
 	private ActionBarDrawerToggle mDrawerToggle;
 	static ShowcaseViews views;
 	Activity activity;
-
 	/**
 	 * initializes all the elements of the main activity
 	 */
@@ -67,8 +68,8 @@ public class MainActivity extends SherlockActivity {
 			// record the fact that the app has been started at least once
 			settings.edit().putBoolean("my_first_time", false).commit();
 		}
-		FragmentManager manager = getFragmentManager();
-		FragmentTransaction ft = manager.beginTransaction();
+		android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
+		android.support.v4.app.FragmentTransaction ft = manager.beginTransaction();
 		manager.beginTransaction();
 		frag = new QuickMessageFragment();
 		ft.add(R.id.content_frame, frag);
@@ -169,6 +170,8 @@ public class MainActivity extends SherlockActivity {
 			Intent i2 = new Intent();
 			i2.setAction("addconversation");
 			sendBroadcast(i2);
+			
+			Log.d("MainActivity", "Send out broadcast to add conversation");
 			return true;
 		} else {
 			return super.onOptionsItemSelected(item);
@@ -176,19 +179,20 @@ public class MainActivity extends SherlockActivity {
 	}
 
 	private void selectItem(int position) {
-		FragmentManager manager = getFragmentManager();
+		android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
 		switch (position) {
 		case 0:
-			Fragment quickMessageFragment = new QuickMessageFragment();
+			SherlockFragment quickMessageFragment = new QuickMessageFragment();
 			manager.beginTransaction()
 					.replace(R.id.content_frame, quickMessageFragment).commit();
 			mDrawerLayout.closeDrawer(mDrawerList);
 			break;
 		case 1:
-			Fragment conversationFragment = new Conversations();
+			SherlockFragment conversationFragment = new Conversations();
 			manager.beginTransaction()
 					.replace(R.id.content_frame, conversationFragment).commit();
 			mDrawerLayout.closeDrawer(mDrawerList);
+			this.activity.invalidateOptionsMenu();
 			break;
 		case 2:
 			break;

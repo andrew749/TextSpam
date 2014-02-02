@@ -1,6 +1,9 @@
 package com.andrew749.textspam.Fragments;
 
-import android.app.Fragment;
+import java.sql.SQLException;
+import java.util.List;
+
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
@@ -8,8 +11,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,17 +23,16 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.andrew749.textspam.R;
 import com.andrew749.textspam.Database.ConversationModel;
 import com.andrew749.textspam.Database.DataSource;
-import com.andrew749.textspam.R;
-
-import java.sql.SQLException;
-import java.util.List;
 
 /**
  * Created by andrew on 12/10/13.
  */
-public class Conversations extends Fragment {
+public class Conversations extends SherlockFragment {
     private DataSource dataSource;
     ListView lv;
     ArrayAdapter<ConversationModel> adapter;
@@ -119,12 +119,36 @@ public class Conversations extends Fragment {
         return view;
     }
 
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		super.onCreateOptionsMenu(menu, inflater);
+		menu.clear();
+		inflater.inflate(R.menu.conversationmenu, menu);
+	}
 
-  
+	@Override
+	public boolean onOptionsItemSelected(
+			com.actionbarsherlock.view.MenuItem item) {
+		switch (item.getItemId()){
+		case R.id.clearallconversations:
+			lv.clearChoices();
+			conversations.removeAll(conversations);
+			adapter.notifyDataSetInvalidated();
+			dataSource.deleteAllConversations();
+			break;
+		default:
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 
-	
+	@Override
+	public void onAttach(Activity activity) {
+		// TODO Auto-generated method stub
+		super.onAttach(activity);
+		setHasOptionsMenu(true);
+	}
 
-	public void onClick() {
 
-    }
+
 }
