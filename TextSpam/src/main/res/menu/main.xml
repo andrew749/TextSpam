@@ -13,4 +13,9 @@
             android:title="Clear"
             android:showAsAction="always"></item>
 
+    <item
+            android:id="@+id/addconversation"
+            android:title="Save as Conversation"
+            ></item>
+
 </menu>

@@ -13,9 +13,41 @@
         on the list below.
         Once you are content with the information, click Send. To clear individual numbers just long
         click on the entry
-        until it disappears, or press clear all to remove all recipients!!!
-    </string>
+        until it disappears, or press clear all to remove all recipients!!!</string>
     <string name="drawer_open">Options</string>
     <string name="drawer_close">TextSpam</string>
-
+    <string name="popuptext">Please enter a frequency to send</string>
+    <string name="firsttimetitle">Welcome to TextSpam</string>
+    <string name="message_field">This is where the message to send goes.</string>
+    <string name="message_title">Message</string>
+    <string name="frequency_field">This is the amount of times the message will be sent.</string>
+    <string name="frequency_title">Frequency</string>
+    <string name="recipient_field">The contact number to send to.</string>
+    <string name="recipient_title">Recipient</string>
+    <string name="add_title">Add</string>
+    <string name="add_tutorial">Click this button to add the contact to the sending list.</string>
+    <string name="sending_list_tutorial">Here is where the recipients of the message will be listed. Click and hold to clear a recipient.</string>
+    <string name="sending_list_title">Recipient List</string>
+        <string name="sending_list_swipe_tutorial">You can also swipe to remove a contact from the sending list.</string>
+    
+    <string name="contact_title">Contact Picker</string>
+    <string name="contact_field">Click this button to see all your contacts. Click on a contact to add.</string>
+    
+    <string name="send_title">Send</string>
+    <string name="send_tutorial">Click the Send button in the menu to send the current message to the listed contacts.</string>
+    <string name="clear_title">Clear</string>
+    <string name="clear_tutorial">Click the clear button to remove all recipients.</string>
+    <string name="conversation_title">Add Conversation</string>
+    <string name="conversation_tutorial">Click the "Save As Conversation" button in the menu to add the conversation that you created to the conversation menu for quick and easy access.</string>
+    <string name="tutorial_title">Tutorial</string>
+    <string name="tutorial_tutorial">Click the Tutorial menu entry to access the tutorial again.</string>
+	<string name="navigation_drawer">Navigation Drawer</string>
+	<string name="navigation_drawer_tutorial">Swipe from the side of the screen to open the Navigation menu. Here you can access the conversations where you can quickly send messages you have preset by using "Save As Conversation"</string>
+	<string name="conversations_swipe_to_clear_title">Clear</string>
+		<string name="conversations_swipe_to_clear_tutorial">Swipe or long click to clear a conversation.</string>
+	<string name="conversations_clearall_title">Clear All</string>
+		<string name="conversations_clearall_tutorial">Clears all conversations.</string>
+	
+	<string name="conversations_tutorial_title">Tutorial</string>
+	<string name="conversations_tutorial">Click to redo the tutorial.</string>
 </resources>

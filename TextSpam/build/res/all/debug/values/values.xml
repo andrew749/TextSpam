@@ -2,25 +2,38 @@
 <resources>
 
     <!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/menu_entries.xml -->
-    <eat-comment/>
+    <eat-comment />
 
     <string-array name="listitems">
         <item>Quick Message</item>
         <item>Conversations</item>
     </string-array>
+    <!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/analytics.xml -->
+    <eat-comment />
+
+    <bool name="ga_autoActivityTracking">true</bool>
+    <bool name="ga_reportUncaughtExceptions">true</bool>
     <!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/dimens.xml -->
-    <eat-comment/>
+    <eat-comment />
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/strings.xml -->
-    <eat-comment/>
+    <eat-comment />
 
     <string name="action_settings">Settings</string>
     <string name="app_name">TextSpam</string>
     <string name="drawer_close">TextSpam</string>
     <string name="drawer_open">Options</string>
+    <!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/analytics.xml -->
+    <eat-comment />
+
+    <string name="ga_trackingId">UA-46422801-1</string>
+    <!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/strings.xml -->
+    <eat-comment />
+
     <string name="hello_world">Hello world!</string>
+    <string name="popuptext">Please enter a frequency to send</string>
     <string name="title_activity_tutorial">MainActivity</string>
     <string name="tutorial">Welcome to TextSpam. To start spamming, first enter the message in the
         Message field. Then
@@ -30,10 +43,9 @@
         on the list below.
         Once you are content with the information, click Send. To clear individual numbers just long
         click on the entry
-        until it disappears, or press clear all to remove all recipients!!!
-    </string>
+        until it disappears, or press clear all to remove all recipients!!!</string>
     <!-- From: file:/home/andrew/AndroidStudioProjects/TextSpam/TextSpam/src/main/res/values/styles.xml -->
-    <eat-comment/>
+    <eat-comment />
 
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
