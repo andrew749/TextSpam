@@ -30,7 +30,6 @@ import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.view.MenuItem;
 import com.andrew749.textspam.Adapters.ContactListAdapter;
 import com.andrew749.textspam.Database.ConversationModel;
-import com.andrew749.textspam.Alerts;
 import com.andrew749.textspam.Custom;
 import com.andrew749.textspam.MainActivity;
 import com.andrew749.textspam.SwipeDismissListViewTouchListener;
@@ -49,7 +48,6 @@ import java.util.concurrent.ExecutionException;
 public class QuickMessageFragment extends SherlockFragment {
 	private static final int CONTACT_PICKER_RESULT = 1001;
 	public static ArrayList<Custom> item = new ArrayList<Custom>();
-	static Alerts alert;
 	private static int frequency;
 	private static String message;
 	EditText frequency_enter, message_enter;
@@ -110,7 +108,6 @@ public class QuickMessageFragment extends SherlockFragment {
 		frequency_enter = (EditText) v.findViewById(R.id.frequencyedit);
 		message_enter = (EditText) v.findViewById(R.id.messageedit);
 		contact = (Button) v.findViewById(R.id.button2);
-		alert = new Alerts(getActivity());
 		
 		mAdapter = new SimpleAdapter(getActivity(), mPeopleList,
 				R.layout.customcontactview, new String[] { "Name", "Phone",
