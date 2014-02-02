@@ -28,6 +28,7 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.andrew749.textspam.MainActivity;
 import com.andrew749.textspam.R;
+import com.andrew749.textspam.SwipeDismissListViewTouchListener;
 import com.andrew749.textspam.Database.ConversationModel;
 import com.andrew749.textspam.Database.DataSource;
 
@@ -35,91 +36,123 @@ import com.andrew749.textspam.Database.DataSource;
  * Created by andrew on 12/10/13.
  */
 public class Conversations extends SherlockFragment {
-    private DataSource dataSource;
-    ListView lv;
-    ArrayAdapter<ConversationModel> adapter;
-    List<ConversationModel> conversations;
-    Button popupbutton;
-    EditText editfield;
-    TextView popuptextview;
-    int frequency = 0;
-    ConversationModel model;
-MainActivity activity;
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        dataSource = new DataSource(getActivity());
-        try {
-            dataSource.open();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        conversations = dataSource.getAllConversations();
+	private DataSource dataSource;
+	ListView lv;
+	 static ArrayAdapter<ConversationModel> adapter;
+	List<ConversationModel> conversations;
+	Button popupbutton;
+	EditText editfield;
+	TextView popuptextview;
+	int frequency = 0;
+	ConversationModel model;
+	MainActivity activity;
 
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		dataSource = new DataSource(getActivity());
+		try {
+			dataSource.open();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		conversations = dataSource.getAllConversations();
 
-    }
+	}
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.conversationfragment, container, false);
-        lv = (ListView) view.findViewById(R.id.listView);
-        adapter = new ArrayAdapter<ConversationModel>(getActivity(),
-                android.R.layout.simple_list_item_1, conversations);
-        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                dataSource.deleteConversationID(adapter.getItem(i).getId());
-                conversations.remove(i);
-                adapter.notifyDataSetChanged();
-                return true;
-            }
-        });
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                model = new ConversationModel();
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View view = inflater.inflate(R.layout.conversationfragment, container,
+				false);
+		lv = (ListView) view.findViewById(R.id.listView);
+		adapter = new ArrayAdapter<ConversationModel>(getActivity(),
+				android.R.layout.simple_list_item_1, conversations);
+		lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+			@Override
+			public boolean onItemLongClick(AdapterView<?> adapterView,
+					View view, int i, long l) {
+				dataSource.deleteConversationID(adapter.getItem(i).getId());
+				conversations.remove(i);
+				adapter.notifyDataSetChanged();
+				return true;
+			}
 
-                model = conversations.get(i);
+		});
+		lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> adapterView, View view,
+					int i, long l) {
+				model = new ConversationModel();
 
-                LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context
-                        .LAYOUT_INFLATER_SERVICE);
-                View v = inflater.inflate(R.layout.conversationpopup, null, true);
-                PopupWindow pw = new PopupWindow(v, 500, 500,
-                        true);
-                pw.setBackgroundDrawable(new BitmapDrawable());
-                pw.setOutsideTouchable(true);
+				model = conversations.get(i);
 
-                pw.showAtLocation(getView().findViewById(R.id.conversationparent), Gravity.CENTER, 0, 0);
-                popupbutton = (Button) v.findViewById(R.id.popupbutton);
-                editfield = (EditText) v.findViewById(R.id.popupedittext);
-                popuptextview = (TextView) v.findViewById(R.id.popuptextview);
-                for (String temp : model.getPhoneNumbers()) {
-                    popuptextview.append(" " + temp);
+				LayoutInflater inflater = (LayoutInflater) getActivity()
+						.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+				View v = inflater.inflate(R.layout.conversationpopup, null,
+						true);
+				PopupWindow pw = new PopupWindow(v, 500, 500, true);
+				pw.setBackgroundDrawable(new BitmapDrawable());
+				pw.setOutsideTouchable(true);
 
-                }
+				pw.showAtLocation(
+						getView().findViewById(R.id.conversationparent),
+						Gravity.CENTER, 0, 0);
+				popupbutton = (Button) v.findViewById(R.id.popupbutton);
+				editfield = (EditText) v.findViewById(R.id.popupedittext);
+				popuptextview = (TextView) v.findViewById(R.id.popuptextview);
+				for (String temp : model.getPhoneNumbers()) {
+					popuptextview.append(" " + temp);
 
-                popupbutton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        frequency = Integer.parseInt(editfield.getText().toString());
-                        Intent intent = new Intent();
-                        intent.setAction("com.andrew749.textspam.sendmessages");
-                        Bundle information = new Bundle();
-                        information.putString("message", model.getSendingString());
-                        information.putInt("freq", frequency);
-                        information.putSerializable("contact", model.getNumbersAsCustom());
-                        intent.putExtra("information", information);
-                        Log.d("Message", model.getSendingString());
-                        Log.d("Frequency", "" + frequency);
-                        Log.d("Recipient", "" + model.getNumbersAsCustom());
-                        getActivity().sendBroadcast(intent);
-                    }
-                });
-            }
-        });
-        lv.setAdapter(adapter);
-        return view;
-    }
+				}
+
+				popupbutton.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						frequency = Integer.parseInt(editfield.getText()
+								.toString());
+						Intent intent = new Intent();
+						intent.setAction("com.andrew749.textspam.sendmessages");
+						Bundle information = new Bundle();
+						information.putString("message",
+								model.getSendingString());
+						information.putInt("freq", frequency);
+						information.putSerializable("contact",
+								model.getNumbersAsCustom());
+						intent.putExtra("information", information);
+						Log.d("Message", model.getSendingString());
+						Log.d("Frequency", "" + frequency);
+						Log.d("Recipient", "" + model.getNumbersAsCustom());
+						getActivity().sendBroadcast(intent);
+					}
+				});
+			}
+		});
+		SwipeDismissListViewTouchListener lvtouchlistener = new SwipeDismissListViewTouchListener(
+				lv, new SwipeDismissListViewTouchListener.DismissCallbacks() {
+
+					@Override
+					public void onDismiss(ListView listView,
+							int[] reverseSortedPositions) {
+						for (int position : reverseSortedPositions) {
+							ConversationModel item=adapter.getItem(position);
+							long itemid=item.getId();
+								adapter.remove(item);
+								dataSource.deleteConversationID(itemid);
+								adapter.notifyDataSetChanged();
+						}
+					}
+
+					@Override
+					public boolean canDismiss(int position) {
+						return true;
+					}
+				});
+		lv.setAdapter(adapter);
+		lv.setOnTouchListener(lvtouchlistener);
+		lv.setOnScrollListener(lvtouchlistener.makeScrollListener());
+		return view;
+	}
 
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -127,13 +160,15 @@ MainActivity activity;
 		menu.clear();
 		inflater.inflate(R.menu.conversationmenu, menu);
 	}
-public interface conversationCommunication{
-	public void toggleDrawer();
-}
+
+	public interface conversationCommunication {
+		public void toggleDrawer();
+	}
+
 	@Override
 	public boolean onOptionsItemSelected(
 			com.actionbarsherlock.view.MenuItem item) {
-		switch (item.getItemId()){
+		switch (item.getItemId()) {
 		case R.id.clearallconversations:
 			lv.clearChoices();
 			conversations.removeAll(conversations);
@@ -154,9 +189,7 @@ public interface conversationCommunication{
 		// TODO Auto-generated method stub
 		super.onAttach(activity);
 		setHasOptionsMenu(true);
-		this.activity=(MainActivity) activity;
+		this.activity = (MainActivity) activity;
 	}
-
-
 
 }

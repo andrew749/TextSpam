@@ -1,7 +1,6 @@
 package com.andrew749.textspam.Fragments;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -10,12 +9,11 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.BaseColumns;
 import android.provider.ContactsContract;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -29,17 +27,15 @@ import android.widget.Toast;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.view.MenuItem;
 import com.andrew749.textspam.Adapters.ContactListAdapter;
+import com.andrew749.textspam.Database.ConversationModel;
 import com.andrew749.textspam.Alerts;
 import com.andrew749.textspam.Custom;
 import com.andrew749.textspam.MainActivity;
-import com.andrew749.textspam.Database.DataSource;
+import com.andrew749.textspam.SwipeDismissListViewTouchListener;
 import com.andrew749.textspam.R;
 import com.espian.showcaseview.ShowcaseView;
 import com.espian.showcaseview.ShowcaseViews;
 import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
-import com.inscription.ChangeLogDialog;
-
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -73,8 +69,8 @@ public class QuickMessageFragment extends SherlockFragment {
 		super.onCreate(savedInstanceState);
 		setHasOptionsMenu(true);
 
-		
-		SharedPreferences settings = activity.getSharedPreferences(PREFS_NAME, 0);
+		SharedPreferences settings = activity.getSharedPreferences(PREFS_NAME,
+				0);
 		if (settings.getBoolean("my_first_time", true)) {
 			/*
 			 * Run tutorial because app is being launched for the first time
@@ -85,15 +81,7 @@ public class QuickMessageFragment extends SherlockFragment {
 		}
 		contactListAdapter = new ContactListAdapter(getActivity(),
 				R.id.contactlist, item);
-		getActivity().getApplicationContext().registerReceiver(
-				new BroadcastReceiver() {
-					@Override
-					public void onReceive(Context context, Intent intent) {
-						Log.d("Received Broadcast", "update listview");
-						
 
-					}
-				}, new IntentFilter("update"));
 		getActivity().getApplicationContext().registerReceiver(
 				new BroadcastReceiver() {
 					@Override
@@ -103,8 +91,6 @@ public class QuickMessageFragment extends SherlockFragment {
 					}
 				}, new IntentFilter("opencontact"));
 	}
-
-	
 
 	public void populateContacts() {
 		Cursor people, phones;
@@ -116,7 +102,7 @@ public class QuickMessageFragment extends SherlockFragment {
 			String contactName = people.getString(people
 					.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
 			String contactId = people.getString(people
-					.getColumnIndex(ContactsContract.Contacts._ID));
+					.getColumnIndex(BaseColumns._ID));
 			String hasPhone = people
 					.getString(people
 							.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
@@ -215,7 +201,31 @@ public class QuickMessageFragment extends SherlockFragment {
 				return true;
 			}
 		});
+		SwipeDismissListViewTouchListener lvtouchlistener = new SwipeDismissListViewTouchListener(
+				lv, new SwipeDismissListViewTouchListener.DismissCallbacks() {
 
+					@Override
+					public void onDismiss(ListView listView,
+							int[] reverseSortedPositions) {
+						Log.d("quickmessage", "reverse sorted position:"
+								+ reverseSortedPositions);
+						
+						for (int position : reverseSortedPositions) {
+							Custom i=contactListAdapter.getItem(position);
+							
+							contactListAdapter.remove(i);
+							item.remove(i);
+							
+						}
+					}
+
+					@Override
+					public boolean canDismiss(int position) {
+						return true;
+					}
+				});
+		lv.setOnTouchListener(lvtouchlistener);
+		lv.setOnScrollListener(lvtouchlistener.makeScrollListener());
 		// add contact to list
 		add = (Button) v.findViewById(R.id.add);
 		add.setOnClickListener(new View.OnClickListener() {
@@ -283,19 +293,15 @@ public class QuickMessageFragment extends SherlockFragment {
 
 	}
 
-
 	@Override
-public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
-		com.actionbarsherlock.view.MenuInflater inflater) {
-	// TODO Auto-generated method stub
-		
+	public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
+			com.actionbarsherlock.view.MenuInflater inflater) {
+		// TODO Auto-generated method stub
 
 		inflater.inflate(R.menu.main, menu);
 
-	super.onCreateOptionsMenu(menu, inflater);
-}
-
-
+		super.onCreateOptionsMenu(menu, inflater);
+	}
 
 	/**
 	 * gets all of the information from the fields in the main layout
@@ -320,11 +326,14 @@ public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
 
 	}
 
+	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		String phone;
 		Cursor contacts = null;
 		try {
-			if (resultCode == getActivity().RESULT_OK) {
+			;
+			getActivity();
+			if (resultCode == Activity.RESULT_OK) {
 				switch (requestCode) {
 				case CONTACT_PICKER_RESULT:
 					// gets the uri of selected contact
@@ -399,14 +408,16 @@ public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
 			activity.openChangelogDialog();
 			return true;
 		} else if (itemId == R.id.addconversation) {
-			this.message=message_enter.getEditableText().toString();
-			activity.addConversation(message, this.item);
+			QuickMessageFragment.message = message_enter.getEditableText()
+					.toString();
+			activity.addConversation(message, QuickMessageFragment.item);
 
 			return true;
 		} else {
 			return super.onOptionsItemSelected(item);
 		}
 	}
+
 	public void doTutorial() {
 		Intent intent = new Intent();
 
@@ -455,7 +466,6 @@ public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
 		super.onAttach(activity);
 		setHasOptionsMenu(true);
 
-		
 	}
 
 }
