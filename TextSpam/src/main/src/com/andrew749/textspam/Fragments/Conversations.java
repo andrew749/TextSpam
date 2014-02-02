@@ -31,6 +31,9 @@ import com.andrew749.textspam.R;
 import com.andrew749.textspam.SwipeDismissListViewTouchListener;
 import com.andrew749.textspam.Database.ConversationModel;
 import com.andrew749.textspam.Database.DataSource;
+import com.espian.showcaseview.ShowcaseView;
+import com.espian.showcaseview.ShowcaseViews;
+import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
 
 /**
  * Created by andrew on 12/10/13.
@@ -38,7 +41,7 @@ import com.andrew749.textspam.Database.DataSource;
 public class Conversations extends SherlockFragment {
 	private DataSource dataSource;
 	ListView lv;
-	 static ArrayAdapter<ConversationModel> adapter;
+	static ArrayAdapter<ConversationModel> adapter;
 	List<ConversationModel> conversations;
 	Button popupbutton;
 	EditText editfield;
@@ -135,11 +138,11 @@ public class Conversations extends SherlockFragment {
 					public void onDismiss(ListView listView,
 							int[] reverseSortedPositions) {
 						for (int position : reverseSortedPositions) {
-							ConversationModel item=adapter.getItem(position);
-							long itemid=item.getId();
-								adapter.remove(item);
-								dataSource.deleteConversationID(itemid);
-								adapter.notifyDataSetChanged();
+							ConversationModel item = adapter.getItem(position);
+							long itemid = item.getId();
+							adapter.remove(item);
+							dataSource.deleteConversationID(itemid);
+							adapter.notifyDataSetChanged();
 						}
 					}
 
@@ -165,6 +168,23 @@ public class Conversations extends SherlockFragment {
 		public void toggleDrawer();
 	}
 
+	public void doConversationTutorial() {
+		ShowcaseViews views = new ShowcaseViews(activity);
+		views.addView(new ItemViewProperties(R.id.listView,
+				R.string.conversations_swipe_to_clear_title,
+				R.string.conversations_swipe_to_clear_tutorial));
+		views.addView(new ItemViewProperties(R.id.clearallconversations,
+				R.string.conversations_clearall_title,
+				R.string.conversations_clearall_tutorial));
+
+		views.addView(new ItemViewProperties(R.id.conversation_tutorial,
+				R.string.conversations_tutorial_title,
+				R.string.conversations_tutorial,
+				ShowcaseView.ITEM_ACTION_OVERFLOW));
+
+		views.show();
+	}
+
 	@Override
 	public boolean onOptionsItemSelected(
 			com.actionbarsherlock.view.MenuItem item) {
@@ -174,6 +194,9 @@ public class Conversations extends SherlockFragment {
 			conversations.removeAll(conversations);
 			adapter.notifyDataSetInvalidated();
 			dataSource.deleteAllConversations();
+			break;
+		case R.id.conversation_tutorial:
+			doConversationTutorial();
 			break;
 		case android.R.id.home:
 			activity.toggleDrawer();

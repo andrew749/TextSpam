@@ -1024,17 +1024,18 @@ containing a value of this type.
         public static final int abs__up=0x7f07000b;
         public static final int adView=0x7f07004d;
         public static final int add=0x7f07004c;
-        public static final int addconversation=0x7f070055;
+        public static final int addconversation=0x7f070056;
         public static final int button2=0x7f07004a;
         public static final int ccontName=0x7f07003e;
         public static final int ccontNo=0x7f07003f;
         public static final int ccontType=0x7f070040;
-        public static final int changes=0x7f070054;
+        public static final int changes=0x7f070055;
         public static final int changesplaceholder=0x7f070044;
         public static final int clearallconversations=0x7f070050;
-        public static final int clearmessage=0x7f070053;
+        public static final int clearmessage=0x7f070054;
         public static final int contactlist=0x7f07004e;
         public static final int content_frame=0x7f070037;
+        public static final int conversation_tutorial=0x7f070051;
         public static final int conversationparent=0x7f070039;
         public static final int disableHome=0x7f070009;
         public static final int dlist=0x7f070041;
@@ -1055,7 +1056,7 @@ containing a value of this type.
         public static final int popupbutton=0x7f07003d;
         public static final int popupedittext=0x7f07003c;
         public static final int popuptextview=0x7f07003b;
-        public static final int sendmessage=0x7f070052;
+        public static final int sendmessage=0x7f070053;
         public static final int showCustom=0x7f070008;
         public static final int showHome=0x7f070005;
         public static final int showTitle=0x7f070007;
@@ -1066,7 +1067,7 @@ containing a value of this type.
         public static final int text=0x7f070047;
         public static final int textView=0x7f070045;
         public static final int textView2=0x7f070049;
-        public static final int tutorial_menu=0x7f070051;
+        public static final int tutorial_menu=0x7f070052;
         public static final int useLogo=0x7f070004;
         public static final int wrap_content=0x7f070000;
     }
@@ -1158,12 +1159,18 @@ containing a value of this type.
         public static final int add_tutorial=0x7f050021;
         public static final int app_name=0x7f050011;
         public static final int changelog_close=0x7f050001;
-        public static final int clear_title=0x7f050028;
-        public static final int clear_tutorial=0x7f050029;
-        public static final int contact_field=0x7f050025;
-        public static final int contact_title=0x7f050024;
-        public static final int conversation_title=0x7f05002a;
-        public static final int conversation_tutorial=0x7f05002b;
+        public static final int clear_title=0x7f050029;
+        public static final int clear_tutorial=0x7f05002a;
+        public static final int contact_field=0x7f050026;
+        public static final int contact_title=0x7f050025;
+        public static final int conversation_title=0x7f05002b;
+        public static final int conversation_tutorial=0x7f05002c;
+        public static final int conversations_clearall_title=0x7f050033;
+        public static final int conversations_clearall_tutorial=0x7f050034;
+        public static final int conversations_swipe_to_clear_title=0x7f050031;
+        public static final int conversations_swipe_to_clear_tutorial=0x7f050032;
+        public static final int conversations_tutorial=0x7f050036;
+        public static final int conversations_tutorial_title=0x7f050035;
         public static final int drawer_close=0x7f050017;
         public static final int drawer_open=0x7f050016;
         public static final int firsttimetitle=0x7f050019;
@@ -1175,21 +1182,22 @@ containing a value of this type.
         public static final int hello_world=0x7f050013;
         public static final int message_field=0x7f05001a;
         public static final int message_title=0x7f05001b;
-        public static final int navigation_drawer=0x7f05002e;
-        public static final int navigation_drawer_tutorial=0x7f05002f;
+        public static final int navigation_drawer=0x7f05002f;
+        public static final int navigation_drawer_tutorial=0x7f050030;
         public static final int ok=0x7f05000f;
         public static final int popuptext=0x7f050018;
         public static final int recipient_field=0x7f05001e;
         public static final int recipient_title=0x7f05001f;
-        public static final int send_title=0x7f050026;
-        public static final int send_tutorial=0x7f050027;
+        public static final int send_title=0x7f050027;
+        public static final int send_tutorial=0x7f050028;
+        public static final int sending_list_swipe_tutorial=0x7f050024;
         public static final int sending_list_title=0x7f050023;
         public static final int sending_list_tutorial=0x7f050022;
         public static final int title_activity_tutorial=0x7f050014;
         public static final int title_changelog=0x7f050000;
         public static final int tutorial=0x7f050015;
-        public static final int tutorial_title=0x7f05002c;
-        public static final int tutorial_tutorial=0x7f05002d;
+        public static final int tutorial_title=0x7f05002d;
+        public static final int tutorial_tutorial=0x7f05002e;
     }
     public static final class style {
         /** 

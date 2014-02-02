@@ -442,6 +442,9 @@ public class QuickMessageFragment extends SherlockFragment {
 				R.string.contact_title, R.string.contact_field));
 		views.addView(new ShowcaseViews.ItemViewProperties(R.id.contactlist,
 				R.string.sending_list_title, R.string.sending_list_tutorial));
+		views.addView(new ItemViewProperties(R.id.contactlist, R.string.sending_list_title,R.string.sending_list_swipe_tutorial));
+		views.addAnimatedGestureToView(6, 0, 0, 200, 0);
+
 		views.addView(new ItemViewProperties(R.id.sendmessage,
 				R.string.send_title, R.string.send_tutorial));
 		views.addView(new ItemViewProperties(R.id.clearmessage,
@@ -455,7 +458,7 @@ public class QuickMessageFragment extends SherlockFragment {
 				ShowcaseView.ITEM_ACTION_OVERFLOW));
 		views.addView(new ItemViewProperties(android.R.id.home,
 				R.string.navigation_drawer, R.string.navigation_drawer_tutorial));
-		views.addAnimatedGestureToView(10, 0, 0, 400, 0);
+		views.addAnimatedGestureToView(11, 0, 0, 400, 0);
 		views.show();
 	}
 
@@ -467,5 +470,8 @@ public class QuickMessageFragment extends SherlockFragment {
 		setHasOptionsMenu(true);
 
 	}
+
+
+	
 
 }
