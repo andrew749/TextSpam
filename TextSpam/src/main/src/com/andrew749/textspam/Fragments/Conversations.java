@@ -5,11 +5,13 @@ import java.util.List;
 
 import android.R.anim;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -90,6 +92,9 @@ public class Conversations extends SherlockFragment {
 			public void onItemClick(AdapterView<?> adapterView, View view,
 					int i, long l) {
 				model = new ConversationModel();
+				DisplayMetrics displaymetrics = new DisplayMetrics();
+				getActivity().getWindowManager().getDefaultDisplay()
+						.getMetrics(displaymetrics);
 
 				model = conversations.get(i);
 
@@ -97,18 +102,17 @@ public class Conversations extends SherlockFragment {
 						.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 				View v = inflater.inflate(R.layout.conversationpopup, null,
 						true);
-				PopupWindow pw = new PopupWindow(v, 500, 500, true);
-				pw.setBackgroundDrawable(new BitmapDrawable());
-				pw.setOutsideTouchable(true);
 
-				pw.showAtLocation(
-						getView().findViewById(R.id.conversationparent),
-						Gravity.CENTER, 0, 0);
+				AlertDialog.Builder builder = new AlertDialog.Builder(
+						getActivity());
+				builder.setView(v);
+				AlertDialog dialog = builder.create();
+				dialog.show();
 				popupbutton = (Button) v.findViewById(R.id.popupbutton);
 				editfield = (EditText) v.findViewById(R.id.popupedittext);
 				popuptextview = (TextView) v.findViewById(R.id.popuptextview);
 				for (String temp : model.getPhoneNumbers()) {
-					popuptextview.append(" " + temp);
+					popuptextview.append(" \n" + temp);
 
 				}
 
@@ -171,7 +175,8 @@ public class Conversations extends SherlockFragment {
 			 */
 			doConversationTutorial();
 			// record the fact that the app has been started at least once
-			settings.edit().putBoolean("my_first_time_conversations", false).commit();
+			settings.edit().putBoolean("my_first_time_conversations", false)
+					.commit();
 		}
 	}
 
@@ -193,7 +198,8 @@ public class Conversations extends SherlockFragment {
 				R.string.conversations_swipe_to_clear_tutorial));
 		views.addView(new ItemViewProperties(R.id.clearallconversations,
 				R.string.conversations_clearall_title,
-				R.string.conversations_clearall_tutorial, ShowcaseView.ITEM_ACTION_ITEM));
+				R.string.conversations_clearall_tutorial,
+				ShowcaseView.ITEM_ACTION_ITEM));
 		views.addView(new ItemViewProperties(R.id.conversation_tutorial,
 				R.string.conversations_tutorial_title,
 				R.string.conversations_tutorial,

@@ -61,8 +61,7 @@ public class QuickMessageFragment extends SherlockFragment {
 	final String PREFS_NAME = "TextSpamPreferences";
 
 	/**
-	 * @author Andrew Codispoti 
-	 * This is the main fragment where the majority of
+	 * @author Andrew Codispoti This is the main fragment where the majority of
 	 *         messaging should occur. There is an option to add conversations
 	 *         to the conversation list from here.
 	 */
@@ -71,19 +70,16 @@ public class QuickMessageFragment extends SherlockFragment {
 		super.onCreate(savedInstanceState);
 		setHasOptionsMenu(true);
 
-		
 		contactListAdapter = new ContactListAdapter(getActivity(),
 				R.id.contactlist, item);
 		GetContactsTask task = new GetContactsTask();
 		// ContactsAutoCompleteCursorAdapter adap=new
 		// ContactsAutoCompleteCursorAdapter(getActivity(),c);
 		try {
-			mPeopleList=task.execute().get();
+			mPeopleList = task.execute().get();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -99,7 +95,7 @@ public class QuickMessageFragment extends SherlockFragment {
 		frequency_enter = (EditText) v.findViewById(R.id.frequencyedit);
 		message_enter = (EditText) v.findViewById(R.id.messageedit);
 		contact = (Button) v.findViewById(R.id.button2);
-		
+
 		mAdapter = new SimpleAdapter(getActivity(), mPeopleList,
 				R.layout.customcontactview, new String[] { "Name", "Phone",
 						"Type" }, new int[] { R.id.ccontName, R.id.ccontNo,
@@ -173,7 +169,6 @@ public class QuickMessageFragment extends SherlockFragment {
 				addItem();
 			}
 		});
-		
 
 		return v;
 	}
@@ -186,7 +181,7 @@ public class QuickMessageFragment extends SherlockFragment {
 
 	@Override
 	public void onResume() {
-		
+
 		super.onResume();
 	}
 
@@ -237,7 +232,7 @@ public class QuickMessageFragment extends SherlockFragment {
 	@Override
 	public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
 			com.actionbarsherlock.view.MenuInflater inflater) {
-menu.clear();
+		menu.clear();
 		inflater.inflate(R.menu.main, menu);
 
 		super.onCreateOptionsMenu(menu, inflater);
@@ -387,9 +382,11 @@ menu.clear();
 				R.string.sending_list_swipe_tutorial));
 		views.addAnimatedGestureToView(6, 0, 0, 200, 0);
 		views.addView(new ItemViewProperties(R.id.sendmessage,
-				R.string.send_title, R.string.send_tutorial, ShowcaseView.ITEM_ACTION_ITEM));
+				R.string.send_title, R.string.send_tutorial,
+				ShowcaseView.ITEM_ACTION_ITEM));
 		views.addView(new ItemViewProperties(R.id.clearmessage,
-				R.string.clear_title, R.string.clear_tutorial,ShowcaseView.ITEM_ACTION_ITEM));
+				R.string.clear_title, R.string.clear_tutorial,
+				ShowcaseView.ITEM_ACTION_ITEM));
 		views.addView(new ItemViewProperties(R.id.addconversation,
 				R.string.conversation_title, R.string.conversation_tutorial,
 				ShowcaseView.ITEM_ACTION_OVERFLOW));
@@ -401,26 +398,28 @@ menu.clear();
 		views.addAnimatedGestureToView(11, 0, 0, 400, 0);
 		views.show();
 	}
-@Override
-	public void onStart(){
-	super.onStart();
-	SharedPreferences settings = activity.getSharedPreferences(PREFS_NAME,
-			0);
-	if (settings.getBoolean("my_first_time", true)) {
-		/*
-		 * Run tutorial because app is being launched for the first time
-		 */
-		doTutorial();
-		// record the fact that the app has been started at least once
-		settings.edit().putBoolean("my_first_time", false).commit();
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		SharedPreferences settings = activity.getSharedPreferences(PREFS_NAME,
+				0);
+		if (settings.getBoolean("my_first_time", true)) {
+			/*
+			 * Run tutorial because app is being launched for the first time
+			 */
+			doTutorial();
+			// record the fact that the app has been started at least once
+			settings.edit().putBoolean("my_first_time", false).commit();
+		}
 	}
-}
+
 	@Override
 	public void onAttach(Activity activity) {
 		this.activity = (MainActivity) activity;
 		super.onAttach(activity);
 		setHasOptionsMenu(true);
-		
+
 	}
 
 	class GetContactsTask extends

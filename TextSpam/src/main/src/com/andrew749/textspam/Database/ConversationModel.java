@@ -62,7 +62,7 @@ public class ConversationModel {
                 Log.d("number:", tempString);
 
                 tempmodel.add(tempString);
-                i = dbResult.indexOf(",");
+                i = dbResult.indexOf(",",i);
             } else {
                 tempString = dbResult.substring(i);
                 tempmodel.add(tempString);
