@@ -58,7 +58,7 @@ public class QuickMessageFragment extends SherlockFragment {
 	private ArrayList<Map<String, String>> mPeopleList;
 	private SimpleAdapter mAdapter;
 	MainActivity activity;
-	final String PREFS_NAME = "MyPrefsFile";
+	final String PREFS_NAME = "TextSpamPreferences";
 
 	/**
 	 * @author Andrew Codispoti 
@@ -71,16 +71,7 @@ public class QuickMessageFragment extends SherlockFragment {
 		super.onCreate(savedInstanceState);
 		setHasOptionsMenu(true);
 
-		SharedPreferences settings = activity.getSharedPreferences(PREFS_NAME,
-				0);
-		if (settings.getBoolean("my_first_time", true)) {
-			/*
-			 * Run tutorial because app is being launched for the first time
-			 */
-			doTutorial();
-			// record the fact that the app has been started at least once
-			settings.edit().putBoolean("my_first_time", false).commit();
-		}
+		
 		contactListAdapter = new ContactListAdapter(getActivity(),
 				R.id.contactlist, item);
 		GetContactsTask task = new GetContactsTask();
@@ -182,6 +173,7 @@ public class QuickMessageFragment extends SherlockFragment {
 				addItem();
 			}
 		});
+		
 
 		return v;
 	}
@@ -194,6 +186,7 @@ public class QuickMessageFragment extends SherlockFragment {
 
 	@Override
 	public void onResume() {
+		
 		super.onResume();
 	}
 
@@ -244,7 +237,7 @@ public class QuickMessageFragment extends SherlockFragment {
 	@Override
 	public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
 			com.actionbarsherlock.view.MenuInflater inflater) {
-
+menu.clear();
 		inflater.inflate(R.menu.main, menu);
 
 		super.onCreateOptionsMenu(menu, inflater);
@@ -393,12 +386,10 @@ public class QuickMessageFragment extends SherlockFragment {
 				R.string.sending_list_title,
 				R.string.sending_list_swipe_tutorial));
 		views.addAnimatedGestureToView(6, 0, 0, 200, 0);
-
 		views.addView(new ItemViewProperties(R.id.sendmessage,
-				R.string.send_title, R.string.send_tutorial));
+				R.string.send_title, R.string.send_tutorial, ShowcaseView.ITEM_ACTION_ITEM));
 		views.addView(new ItemViewProperties(R.id.clearmessage,
-				R.string.clear_title, R.string.clear_tutorial));
-
+				R.string.clear_title, R.string.clear_tutorial,ShowcaseView.ITEM_ACTION_ITEM));
 		views.addView(new ItemViewProperties(R.id.addconversation,
 				R.string.conversation_title, R.string.conversation_tutorial,
 				ShowcaseView.ITEM_ACTION_OVERFLOW));
@@ -410,13 +401,26 @@ public class QuickMessageFragment extends SherlockFragment {
 		views.addAnimatedGestureToView(11, 0, 0, 400, 0);
 		views.show();
 	}
-
+@Override
+	public void onStart(){
+	super.onStart();
+	SharedPreferences settings = activity.getSharedPreferences(PREFS_NAME,
+			0);
+	if (settings.getBoolean("my_first_time", true)) {
+		/*
+		 * Run tutorial because app is being launched for the first time
+		 */
+		doTutorial();
+		// record the fact that the app has been started at least once
+		settings.edit().putBoolean("my_first_time", false).commit();
+	}
+}
 	@Override
 	public void onAttach(Activity activity) {
 		this.activity = (MainActivity) activity;
 		super.onAttach(activity);
 		setHasOptionsMenu(true);
-
+		
 	}
 
 	class GetContactsTask extends

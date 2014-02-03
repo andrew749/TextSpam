@@ -133,7 +133,6 @@ public class MainActivity extends SherlockFragmentActivity implements
 			manager.beginTransaction()
 					.replace(R.id.content_frame, conversationFragment).commit();
 			mDrawerLayout.closeDrawer(mDrawerList);
-			this.activity.invalidateOptionsMenu();
 			break;
 		case 2:
 			break;

@@ -7,6 +7,7 @@ import android.R.anim;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -49,10 +50,12 @@ public class Conversations extends SherlockFragment {
 	int frequency = 0;
 	ConversationModel model;
 	MainActivity activity;
+	final String PREFS_NAME = "MyPrefsFile";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		dataSource = new DataSource(getActivity());
 		try {
 			dataSource.open();
@@ -158,6 +161,21 @@ public class Conversations extends SherlockFragment {
 	}
 
 	@Override
+	public void onStart() {
+		super.onStart();
+		SharedPreferences settings = activity.getSharedPreferences(PREFS_NAME,
+				0);
+		if (settings.getBoolean("my_first_time_conversations", true)) {
+			/*
+			 * Run tutorial because app is being launched for the first time
+			 */
+			doConversationTutorial();
+			// record the fact that the app has been started at least once
+			settings.edit().putBoolean("my_first_time_conversations", false).commit();
+		}
+	}
+
+	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		super.onCreateOptionsMenu(menu, inflater);
 		menu.clear();
@@ -175,8 +193,7 @@ public class Conversations extends SherlockFragment {
 				R.string.conversations_swipe_to_clear_tutorial));
 		views.addView(new ItemViewProperties(R.id.clearallconversations,
 				R.string.conversations_clearall_title,
-				R.string.conversations_clearall_tutorial));
-
+				R.string.conversations_clearall_tutorial, ShowcaseView.ITEM_ACTION_ITEM));
 		views.addView(new ItemViewProperties(R.id.conversation_tutorial,
 				R.string.conversations_tutorial_title,
 				R.string.conversations_tutorial,
