@@ -1,14 +1,12 @@
 package com.andrew749.textspam;
 
+import java.util.ArrayList;
+
 import android.app.PendingIntent;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.telephony.SmsManager;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 /**
  * Created by andrew on 19/08/13.

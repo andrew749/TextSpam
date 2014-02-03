@@ -1,13 +1,14 @@
 package com.andrew749.textspam.Fragments;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+
 import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.CursorJoiner.Result;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -28,19 +29,14 @@ import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.view.MenuItem;
-import com.andrew749.textspam.Adapters.ContactListAdapter;
-import com.andrew749.textspam.Database.ConversationModel;
 import com.andrew749.textspam.Custom;
 import com.andrew749.textspam.MainActivity;
-import com.andrew749.textspam.SwipeDismissListViewTouchListener;
 import com.andrew749.textspam.R;
+import com.andrew749.textspam.SwipeDismissListViewTouchListener;
+import com.andrew749.textspam.Adapters.ContactListAdapter;
 import com.espian.showcaseview.ShowcaseView;
 import com.espian.showcaseview.ShowcaseViews;
 import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 /**
  * Created by Andrew Codispoti on 02/11/13.

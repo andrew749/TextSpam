@@ -1,10 +1,10 @@
 package com.andrew749.textspam.Database;
 
+import java.util.ArrayList;
+
 import android.util.Log;
 
 import com.andrew749.textspam.Custom;
-
-import java.util.ArrayList;
 
 /**
  * Created by andrew on 08/12/13.
