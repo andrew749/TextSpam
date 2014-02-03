@@ -38,7 +38,7 @@
     <string name="clear_title">Clear</string>
     <string name="clear_tutorial">Click the clear button to remove all recipients.</string>
     <string name="conversation_title">Add Conversation</string>
-    <string name="conversation_tutorial">Click the "Save As Conversation" button in the menu to add the conversation that you created to the conversation menu for quick and easy access.</string>
+    <string name="conversation_tutorial">Click the "Save As Conversation" button in the menu to add the conversation that you created to the conversation menu for quick and easy access. This will save the message and the recipients.</string>
     <string name="tutorial_title">Tutorial</string>
     <string name="tutorial_tutorial">Click the Tutorial menu entry to access the tutorial again.</string>
 	<string name="navigation_drawer">Navigation Drawer</string>
