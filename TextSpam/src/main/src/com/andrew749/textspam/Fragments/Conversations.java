@@ -3,16 +3,19 @@ package com.andrew749.textspam.Fragments;
 import java.sql.SQLException;
 import java.util.List;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -36,6 +39,7 @@ import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
 /**
  * Created by andrew on 12/10/13.
  */
+@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 public class Conversations extends SherlockFragment {
 	private DataSource dataSource;
 	ListView lv;
@@ -195,11 +199,21 @@ public class Conversations extends SherlockFragment {
 				R.string.conversations_clearall_title,
 				R.string.conversations_clearall_tutorial,
 				ShowcaseView.ITEM_ACTION_ITEM));
+		if(Build.VERSION.SDK_INT>=14){
+			if(ViewConfiguration.get(getSherlockActivity().getApplicationContext()).hasPermanentMenuKey()){
+				views.addView(new ItemViewProperties(R.id.conversation_tutorial,
+						R.string.conversations_tutorial_title,
+						R.string.conversations_tutorial));
+			}else{
 		views.addView(new ItemViewProperties(R.id.conversation_tutorial,
 				R.string.conversations_tutorial_title,
 				R.string.conversations_tutorial,
 				ShowcaseView.ITEM_ACTION_OVERFLOW));
-
+		}}else{
+			views.addView(new ItemViewProperties(R.id.conversation_tutorial,
+					R.string.conversations_tutorial_title,
+					R.string.conversations_tutorial));
+		}
 		views.show();
 	}
 

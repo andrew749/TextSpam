@@ -1221,15 +1221,6 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
@@ -1243,10 +1234,10 @@ containing a value of this type.
         public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
- Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;
+        public static final int CustomDetailText=0x7f060064;
+        public static final int CustomTitle=0x7f060065;
         public static final int Sherlock___TextAppearance_Small=0x7f060048;
         public static final int Sherlock___Theme=0x7f060053;
         public static final int Sherlock___Theme_DarkActionBar=0x7f060055;
@@ -1262,6 +1253,13 @@ containing a value of this type.
         public static final int ShowcaseView=0x7f06005d;
         public static final int ShowcaseView_Light=0x7f06005c;
         public static final int ShowcaseView_Dark=0x7f060062;
+        /** 
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+ Application theme. 
+         */
+        public static final int Showcasetheme=0x7f060063;
         public static final int TextAppearance_Sherlock=0x7f06004c;
         public static final int TextAppearance_Sherlock_Light_SearchResult=0x7f060050;
         public static final int TextAppearance_Sherlock_Light_SearchResult_Subtitle=0x7f060052;
@@ -1297,7 +1295,7 @@ containing a value of this type.
         public static final int Theme_Sherlock_Light_DarkActionBar=0x7f060058;
         public static final int Theme_Sherlock_Light_NoActionBar=0x7f06005a;
         public static final int Theme_Sherlock_NoActionBar=0x7f060059;
-        public static final int Theme_Transparent=0x7f060063;
+        public static final int Theme_Transparent=0x7f060066;
         public static final int Widget=0x7f060002;
         public static final int Widget_Sherlock_ActionBar=0x7f060004;
         public static final int Widget_Sherlock_ActionBar_Solid=0x7f060005;

@@ -5,12 +5,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
+import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.provider.ContactsContract;
@@ -18,6 +21,7 @@ import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
@@ -41,6 +45,7 @@ import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
 /**
  * Created by Andrew Codispoti on 02/11/13.
  */
+@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 public class QuickMessageFragment extends SherlockFragment {
 	private static final int CONTACT_PICKER_RESULT = 1001;
 	public static ArrayList<Custom> item = new ArrayList<Custom>();
@@ -69,8 +74,7 @@ public class QuickMessageFragment extends SherlockFragment {
 		contactListAdapter = new ContactListAdapter(getActivity(),
 				R.id.contactlist, item);
 		GetContactsTask task = new GetContactsTask();
-		// ContactsAutoCompleteCursorAdapter adap=new
-		// ContactsAutoCompleteCursorAdapter(getActivity(),c);
+
 		try {
 			mPeopleList = task.execute().get();
 		} catch (InterruptedException e) {
@@ -250,7 +254,6 @@ public class QuickMessageFragment extends SherlockFragment {
 	}
 
 	public void doLaunchContactPicker(View view) {
-		// alert.contactAlert();
 		Intent contactPickerIntent = new Intent(Intent.ACTION_PICK,
 				ContactsContract.Contacts.CONTENT_URI);
 		startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT);
@@ -383,15 +386,36 @@ public class QuickMessageFragment extends SherlockFragment {
 		views.addView(new ItemViewProperties(R.id.clearmessage,
 				R.string.clear_title, R.string.clear_tutorial,
 				ShowcaseView.ITEM_ACTION_ITEM));
-		views.addView(new ItemViewProperties(R.id.addconversation,
-				R.string.conversation_title, R.string.conversation_tutorial,
-				ShowcaseView.ITEM_ACTION_OVERFLOW));
-		views.addView(new ItemViewProperties(R.id.tutorial_menu,
-				R.string.tutorial_title, R.string.tutorial_tutorial,
-				ShowcaseView.ITEM_ACTION_OVERFLOW));
+		if (Build.VERSION.SDK_INT >= 14) {
+			if (ViewConfiguration.get(
+					getSherlockActivity().getApplicationContext())
+					.hasPermanentMenuKey()) {
+				views.addView(new ItemViewProperties(
+						R.string.conversation_title,
+						R.string.conversation_tutorial));
+				views.addView(new ItemViewProperties(R.string.tutorial_title,
+						R.string.tutorial_tutorial));
+			} else {
+				views.addView(new ItemViewProperties(R.id.addconversation,
+						R.string.conversation_title,
+						R.string.conversation_tutorial,
+						ShowcaseView.ITEM_ACTION_OVERFLOW));
+				views.addView(new ItemViewProperties(R.id.tutorial_menu,
+						R.string.tutorial_title, R.string.tutorial_tutorial,
+						ShowcaseView.ITEM_ACTION_OVERFLOW));
+			}
+		} else {
+			views.addView(new ItemViewProperties(R.string.conversation_title,
+					R.string.conversation_tutorial));
+			views.addView(new ItemViewProperties(R.string.tutorial_title,
+					R.string.tutorial_tutorial));
+		}
 		views.addView(new ItemViewProperties(android.R.id.home,
-				R.string.navigation_drawer, R.string.navigation_drawer_tutorial));
+				R.string.navigation_drawer,
+				R.string.navigation_drawer_tutorial,
+				ShowcaseView.ITEM_ACTION_HOME));
 		views.addAnimatedGestureToView(11, 0, 0, 400, 0);
+
 		views.show();
 	}
 

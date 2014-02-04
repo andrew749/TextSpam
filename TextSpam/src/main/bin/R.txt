@@ -446,6 +446,8 @@ int string tutorial_title 0x7f05002d
 int string tutorial_tutorial 0x7f05002e
 int style AppBaseTheme 0x7f060000
 int style AppTheme 0x7f060001
+int style CustomDetailText 0x7f060064
+int style CustomTitle 0x7f060065
 int style Sherlock___TextAppearance_Small 0x7f060048
 int style Sherlock___Theme 0x7f060053
 int style Sherlock___Theme_DarkActionBar 0x7f060055
@@ -461,6 +463,7 @@ int style ShowcaseButton 0x7f06005b
 int style ShowcaseView 0x7f06005d
 int style ShowcaseView_Light 0x7f06005c
 int style ShowcaseView_Dark 0x7f060062
+int style Showcasetheme 0x7f060063
 int style TextAppearance_Sherlock 0x7f06004c
 int style TextAppearance_Sherlock_Light_SearchResult 0x7f060050
 int style TextAppearance_Sherlock_Light_SearchResult_Subtitle 0x7f060052
@@ -496,7 +499,7 @@ int style Theme_Sherlock_Light 0x7f060057
 int style Theme_Sherlock_Light_DarkActionBar 0x7f060058
 int style Theme_Sherlock_Light_NoActionBar 0x7f06005a
 int style Theme_Sherlock_NoActionBar 0x7f060059
-int style Theme_Transparent 0x7f060063
+int style Theme_Transparent 0x7f060066
 int style Widget 0x7f060002
 int style Widget_Sherlock_ActionBar 0x7f060004
 int style Widget_Sherlock_ActionBar_Solid 0x7f060005

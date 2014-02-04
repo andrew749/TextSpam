@@ -3,16 +3,21 @@ package com.andrew749.textspam;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.xml.datatype.DatatypeConstants.Field;
+
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -30,7 +35,7 @@ import com.google.analytics.tracking.android.EasyTracker;
 import com.inscription.ChangeLogDialog;
 
 public class MainActivity extends SherlockFragmentActivity implements
-		quickmessagecommunication,conversationCommunication {
+		quickmessagecommunication, conversationCommunication {
 	/**
 	 * This is the main class where all the methods are interconnected
 	 */
@@ -52,7 +57,6 @@ public class MainActivity extends SherlockFragmentActivity implements
 		activity = this;
 		setupDrawer();
 
-		
 		android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
 		android.support.v4.app.FragmentTransaction ft = manager
 				.beginTransaction();
@@ -102,8 +106,8 @@ public class MainActivity extends SherlockFragmentActivity implements
 
 		};
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		getActionBar().setHomeButtonEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setHomeButtonEnabled(true);
 	}
 
 	@Override
