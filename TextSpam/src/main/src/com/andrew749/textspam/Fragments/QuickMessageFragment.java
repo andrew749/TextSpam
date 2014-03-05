@@ -1,22 +1,20 @@
 package com.andrew749.textspam.Fragments;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
-
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
-import android.os.Build.VERSION;
 import android.os.Bundle;
-import android.provider.BaseColumns;
 import android.provider.ContactsContract;
+import android.provider.ContactsContract.CommonDataKinds;
+import android.support.v4.app.LoaderManager.LoaderCallbacks;
+import android.support.v4.content.Loader;
+import android.support.v4.content.CursorLoader;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,7 +26,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragment;
@@ -37,6 +34,7 @@ import com.andrew749.textspam.Custom;
 import com.andrew749.textspam.MainActivity;
 import com.andrew749.textspam.R;
 import com.andrew749.textspam.SwipeDismissListViewTouchListener;
+import com.andrew749.textspam.Adapters.AutoCompleteCursorAdapter;
 import com.andrew749.textspam.Adapters.ContactListAdapter;
 import com.espian.showcaseview.ShowcaseView;
 import com.espian.showcaseview.ShowcaseViews;
@@ -46,7 +44,8 @@ import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
  * Created by Andrew Codispoti on 02/11/13.
  */
 @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-public class QuickMessageFragment extends SherlockFragment {
+public class QuickMessageFragment extends SherlockFragment implements
+		LoaderCallbacks<Cursor> {
 	private static final int CONTACT_PICKER_RESULT = 1001;
 	public static ArrayList<Custom> item = new ArrayList<Custom>();
 	private static int frequency;
@@ -57,9 +56,17 @@ public class QuickMessageFragment extends SherlockFragment {
 	Button add, contact;
 	ListView lv;
 	private ArrayList<Map<String, String>> mPeopleList;
-	private SimpleAdapter mAdapter;
+	// private SimpleAdapter mAdapter;
 	MainActivity activity;
 	final String PREFS_NAME = "TextSpamPreferences";
+	public static final String[] projection = {
+			ContactsContract.CommonDataKinds.Phone._ID,
+			ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
+			ContactsContract.CommonDataKinds.Phone.HAS_PHONE_NUMBER,
+			ContactsContract.CommonDataKinds.Phone.NORMALIZED_NUMBER,
+			ContactsContract.CommonDataKinds.Phone.TYPE };
+	public int[] fields = { R.id.ccontName, R.id.ccontNo };
+	AutoCompleteCursorAdapter ad;
 
 	/**
 	 * @author Andrew Codispoti This is the main fragment where the majority of
@@ -73,16 +80,6 @@ public class QuickMessageFragment extends SherlockFragment {
 
 		contactListAdapter = new ContactListAdapter(getActivity(),
 				R.id.contactlist, item);
-		GetContactsTask task = new GetContactsTask();
-
-		try {
-			mPeopleList = task.execute().get();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
-
 	}
 
 	@Override
@@ -96,11 +93,11 @@ public class QuickMessageFragment extends SherlockFragment {
 		message_enter = (EditText) v.findViewById(R.id.messageedit);
 		contact = (Button) v.findViewById(R.id.button2);
 
-		mAdapter = new SimpleAdapter(getActivity(), mPeopleList,
-				R.layout.customcontactview, new String[] { "Name", "Phone",
-						"Type" }, new int[] { R.id.ccontName, R.id.ccontNo,
-						R.id.ccontType });
-		phonenumber_enter.setAdapter(mAdapter);
+		ad = new AutoCompleteCursorAdapter(getActivity(), null);
+
+		phonenumber_enter.setAdapter(ad);
+		phonenumber_enter.setThreshold(1);
+
 		phonenumber_enter.setHint("Start typing a number");
 		phonenumber_enter
 				.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -108,15 +105,16 @@ public class QuickMessageFragment extends SherlockFragment {
 					@Override
 					public void onItemClick(AdapterView<?> av, View arg1,
 							int index, long arg3) {
-						Map<String, String> map = (Map<String, String>) av
-								.getItemAtPosition(index);
+						Log.d("This is ", "");
+						Cursor cursor = (Cursor) av.getItemAtPosition(index);
 
-						String name = map.get("Name");
-						String number = map.get("Phone");
+						String number = cursor.getString(cursor
+								.getColumnIndex(CommonDataKinds.Phone.NORMALIZED_NUMBER));
 						phonenumber_enter.setText("" + number);
 
 					}
 				});
+
 		contact.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -169,7 +167,6 @@ public class QuickMessageFragment extends SherlockFragment {
 				addItem();
 			}
 		});
-
 		return v;
 	}
 
@@ -206,7 +203,7 @@ public class QuickMessageFragment extends SherlockFragment {
 	}
 
 	/*
-	 * sends a broadcase to the message reciever which will in turn send all the
+	 * sends a broadcast to the message reciever which will in turn send all the
 	 * messages
 	 */
 	public void sendMessagesComplete() {
@@ -258,6 +255,13 @@ public class QuickMessageFragment extends SherlockFragment {
 				ContactsContract.Contacts.CONTENT_URI);
 		startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT);
 
+	}
+
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+
+		super.onActivityCreated(savedInstanceState);
+		getActivity().getSupportLoaderManager().initLoader(0, null, this);
 	}
 
 	@Override
@@ -322,7 +326,6 @@ public class QuickMessageFragment extends SherlockFragment {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// if (mDrawerToggle.onOptionsItemSelected(item)) {return true;}
 		if (item.getItemId() == android.R.id.home) {
 			activity.toggleDrawer();
 		}
@@ -335,7 +338,7 @@ public class QuickMessageFragment extends SherlockFragment {
 			sendMessagesComplete();
 			return true;
 		} else if (itemId == R.id.clearmessage) {
-			this.item.clear();
+			QuickMessageFragment.item.clear();
 			contactListAdapter.notifyDataSetChanged();
 			return true;
 		} else if (itemId == R.id.changes) {
@@ -442,67 +445,25 @@ public class QuickMessageFragment extends SherlockFragment {
 
 	}
 
-	class GetContactsTask extends
-			AsyncTask<Void, Void, ArrayList<Map<String, String>>> {
+	/*
+	 * The following loaders are responsible for getting a cursor containing the
+	 * contact data from the source.
+	 */
+	@Override
+	public Loader<Cursor> onCreateLoader(int arg0, Bundle arg1) {
+		return new CursorLoader(getActivity(),
+				ContactsContract.CommonDataKinds.Phone.CONTENT_URI, projection,
+				null, null, null);
+	}
 
-		ArrayList<Map<String, String>> mPeopleList = new ArrayList<Map<String, String>>();
+	@Override
+	public void onLoadFinished(Loader<Cursor> arg0, Cursor arg1) {
+		ad.changeCursor(arg1);
 
-		@Override
-		protected ArrayList<Map<String, String>> doInBackground(Void... params) {
-			Cursor people, phones;
+	}
 
-			mPeopleList.clear();
-			people = getActivity().getContentResolver().query(
-					ContactsContract.Contacts.CONTENT_URI, null, null, null,
-					null);
-			while (people.moveToNext()) {
-				String contactName = people
-						.getString(people
-								.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-				String contactId = people.getString(people
-						.getColumnIndex(BaseColumns._ID));
-				String hasPhone = people
-						.getString(people
-								.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
-
-				if ((Integer.parseInt(hasPhone) > 0)) {
-					// You know have the number so now query it like this
-					phones = getActivity().getContentResolver().query(
-							ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-							null,
-							ContactsContract.CommonDataKinds.Phone.CONTACT_ID
-									+ " = " + contactId, null, null);
-					while (phones.moveToNext()) {
-						// store numbers and display a dialog letting the user
-						// select which.
-						String phoneNumber = phones
-								.getString(phones
-										.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-						String numberType = phones
-								.getString(phones
-										.getColumnIndex(ContactsContract.CommonDataKinds.Phone.TYPE));
-						Map<String, String> NamePhoneType = new HashMap<String, String>();
-						NamePhoneType.put("Name", contactName);
-						phoneNumber = phoneNumber.replace("-", "");
-						phoneNumber = phoneNumber.replace(" ", "");
-						NamePhoneType.put("Phone", phoneNumber);
-						if (numberType.equals("0"))
-							NamePhoneType.put("Type", "Work");
-						else if (numberType.equals("1"))
-							NamePhoneType.put("Type", "Home");
-						else if (numberType.equals("2"))
-							NamePhoneType.put("Type", "Mobile");
-						else
-							NamePhoneType.put("Type", "Other");
-						// Then add this map to the list.
-						mPeopleList.add(NamePhoneType);
-					}
-					phones.close();
-				}
-			}
-			people.close();
-			return mPeopleList;
-		}
+	@Override
+	public void onLoaderReset(Loader<Cursor> arg0) {
 
 	}
 

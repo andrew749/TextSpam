@@ -3,21 +3,17 @@ package com.andrew749.textspam;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.xml.datatype.DatatypeConstants.Field;
-
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActionBarDrawerToggle;
+import android.provider.ContactsContract;
+import android.support.v4.app.*;
 import android.support.v4.widget.DrawerLayout;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewConfiguration;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -46,6 +42,11 @@ public class MainActivity extends SherlockFragmentActivity implements
 	private ActionBarDrawerToggle mDrawerToggle;
 	static ShowcaseViews views;
 	Activity activity;
+	private final int URL_LOADER = 0;
+	public String[] projection = { ContactsContract.Contacts._ID,
+			ContactsContract.Contacts.DISPLAY_NAME,
+			ContactsContract.Contacts.HAS_PHONE_NUMBER,
+			ContactsContract.CommonDataKinds.Phone.NUMBER };
 
 	/**
 	 * initializes all the elements of the main activity
@@ -176,7 +177,6 @@ public class MainActivity extends SherlockFragmentActivity implements
 		try {
 			datasource.open();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		datasource.createConversation(message, getStringArrayContacts(item));
@@ -194,7 +194,6 @@ public class MainActivity extends SherlockFragmentActivity implements
 
 	@Override
 	public void openChangelogDialog() {
-		// TODO Auto-generated method stub
 		ChangeLogDialog dialog = new ChangeLogDialog(this);
 		dialog.show();
 	}
@@ -206,4 +205,5 @@ public class MainActivity extends SherlockFragmentActivity implements
 		}
 		return tempnames;
 	}
+
 }
