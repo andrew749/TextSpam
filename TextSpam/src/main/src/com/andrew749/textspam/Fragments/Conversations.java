@@ -203,7 +203,7 @@ public class Conversations extends SherlockFragment {
 			if(ViewConfiguration.get(getSherlockActivity().getApplicationContext()).hasPermanentMenuKey()){
 				views.addView(new ItemViewProperties(R.id.conversation_tutorial,
 						R.string.conversations_tutorial_title,
-						R.string.conversations_tutorial));
+						R.string.conversations_tutorial,ShowcaseView.ITEM_ACTION_OVERFLOW));
 			}else{
 		views.addView(new ItemViewProperties(R.id.conversation_tutorial,
 				R.string.conversations_tutorial_title,

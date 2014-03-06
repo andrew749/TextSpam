@@ -8,12 +8,12 @@ package com.inscription;
 
 public final class R {
 	public static final class string {
-		public static final int changelog_close = 0x7f050001;
-		public static final int title_changelog = 0x7f050000;
+		public static final int changelog_close = 0x7f0a000f;
+		public static final int title_changelog = 0x7f0a000e;
 	}
 	public static final class style {
-		public static final int AppBaseTheme = 0x7f060000;
-		public static final int AppTheme = 0x7f060001;
+		public static final int AppBaseTheme = 0x7f0b0061;
+		public static final int AppTheme = 0x7f0b0062;
 	}
 	public static final class xml {
 		public static final int changelog = 0x7f040000;

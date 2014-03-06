@@ -25,6 +25,7 @@ public class Messager {
     }
 
     public synchronized void sendMessage(String address, String message) {
+    	 message= (message.equals("")) ? " ": message;
         sm.sendTextMessage(address, null, message, intent, null);
         try {
             Thread.sleep(1000);

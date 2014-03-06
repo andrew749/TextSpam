@@ -28,26 +28,26 @@ public final class R {
 		public static final int hand = 0x7f020075;
 	}
 	public static final class id {
-		public static final int showcase_button = 0x7f070010;
-		public static final int showcase_sub_text = 0x7f070012;
-		public static final int showcase_title_text = 0x7f070011;
+		public static final int showcase_button = 0x7f050010;
+		public static final int showcase_sub_text = 0x7f050012;
+		public static final int showcase_title_text = 0x7f050011;
 	}
 	public static final class layout {
 		public static final int handy = 0x7f03001a;
 		public static final int showcase_button = 0x7f030020;
 	}
 	public static final class string {
-		public static final int ok = 0x7f05000f;
+		public static final int ok = 0x7f0a000d;
 	}
 	public static final class style {
-		public static final int ShowcaseButton = 0x7f06005b;
-		public static final int ShowcaseView = 0x7f06005d;
-		public static final int ShowcaseView_Dark = 0x7f060062;
-		public static final int ShowcaseView_Light = 0x7f06005c;
-		public static final int TextAppearance_ShowcaseView_Detail = 0x7f06005f;
-		public static final int TextAppearance_ShowcaseView_Detail_Light = 0x7f060060;
-		public static final int TextAppearance_ShowcaseView_Title = 0x7f06005e;
-		public static final int TextAppearance_ShowcaseView_Title_Light = 0x7f060061;
+		public static final int ShowcaseButton = 0x7f0b0059;
+		public static final int ShowcaseView = 0x7f0b005b;
+		public static final int ShowcaseView_Dark = 0x7f0b0060;
+		public static final int ShowcaseView_Light = 0x7f0b005a;
+		public static final int TextAppearance_ShowcaseView_Detail = 0x7f0b005d;
+		public static final int TextAppearance_ShowcaseView_Detail_Light = 0x7f0b005e;
+		public static final int TextAppearance_ShowcaseView_Title = 0x7f0b005c;
+		public static final int TextAppearance_ShowcaseView_Title_Light = 0x7f0b005f;
 	}
 	public static final class styleable {
 		public static final int[] CustomTheme = { 0x7f01006b };

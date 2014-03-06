@@ -227,6 +227,13 @@ public class QuickMessageFragment extends SherlockFragment implements
 	}
 
 	@Override
+	public void onDestroyView() {
+		// TODO Auto-generated method stub
+		super.onDestroyView();
+		getSherlockActivity().getSupportLoaderManager().destroyLoader(0);
+	}
+
+	@Override
 	public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
 			com.actionbarsherlock.view.MenuInflater inflater) {
 		menu.clear();
@@ -459,12 +466,13 @@ public class QuickMessageFragment extends SherlockFragment implements
 	@Override
 	public void onLoadFinished(Loader<Cursor> arg0, Cursor arg1) {
 		ad.changeCursor(arg1);
+		arg1.close();
 
 	}
 
 	@Override
 	public void onLoaderReset(Loader<Cursor> arg0) {
-
+		ad.swapCursor(null);
 	}
 
 }

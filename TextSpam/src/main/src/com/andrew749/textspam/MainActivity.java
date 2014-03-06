@@ -136,6 +136,7 @@ public class MainActivity extends SherlockFragmentActivity implements
 			SherlockFragment conversationFragment = new Conversations();
 			manager.beginTransaction()
 					.replace(R.id.content_frame, conversationFragment).commit();
+			
 			mDrawerLayout.closeDrawer(mDrawerList);
 			break;
 		case 2:

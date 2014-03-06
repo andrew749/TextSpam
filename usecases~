@@ -1,0 +1,20 @@
+TextSpam Use Cases
+
+User enters message, frequency.
+	Numbers should enter field correctly.
+
+User enters number manually and adds the number to the sending list.
+	On clicking add, the number should enter the sending list and be stored.
+
+User sends the message in queue to the recipients on the sending list.
+	message should send to all recipients the same amount of times.
+
+User has sending list set and adds conversation.
+	Conversation appears in new activity and is stored in database.
+Tutorial w/ and w/o menu key.
+ 	should appear correctly for each one.
+User sends message to multiple recipients.
+	each recipient recieves same message same amount of times.
+
+Switch between fragments.
+	make sure they don't crash.
