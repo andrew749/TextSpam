@@ -3,22 +3,24 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.7.+'
+        classpath 'com.android.tools.build:gradle:0.12.+'
     }
 }
-apply plugin: 'android-library'
+apply plugin: 'android'
 
 dependencies {
     compile files('libs/android-support-v4.jar')
     compile files('libs/GoogleAdMobAdsSdk-6.4.1.jar')
     compile files('libs/libGoogleAnalyticsServices.jar')
-    compile project(':libs:ShowcaseView')
+    compile project(':library')
+    compile project(':actionbarsherlock')
+    compile project(':lib')
 
 }
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '19.0.1'
+    compileSdkVersion 20
+    buildToolsVersion '20'
 
     defaultConfig {
         minSdkVersion 14
@@ -26,13 +28,10 @@ android {
     }
     sourceSets {
         main {
-            manifest.srcFile 'src/main/AndroidManifest.xml'
+            manifest.srcFile 'AndroidManifest.xml'
             java.srcDirs = ['src']
-            resources.srcDirs = ['src']
             res.srcDirs = ['res']
-            aidl.srcDirs = ['res']
-            assets.srcDirs = ['assets']
-            renderscript.srcDirs = ['src']
+
         }
     }
 }

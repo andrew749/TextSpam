@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listitems">
+        <item>Quick Message</item>
+        <item>Conversations</item>
+        <item>Follow me on Twitter</item>
+        <item>Connect with Facebook</item>
+    </string-array>
+
+</resources>
