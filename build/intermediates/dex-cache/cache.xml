@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/GoogleAdMobAdsSdk-6.4.1-189ec26a83d4442530edda0a2ea84500bd0d42a3.jar"
+        jar="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/libs/GoogleAdMobAdsSdk-6.4.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="6262c554ef5744538d526465aa73704810705734"/>
+    <item
+        dex="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/libGoogleAnalyticsServices-84210c684e4faeffea7a409e75b74076e3679833.jar"
+        jar="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/libs/libGoogleAnalyticsServices.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e887c6c9b31b39a39b0eaba981448b78902ea813"/>
+    <item
+        dex="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-8bff6b627cd921a1d9fb51151505d5b2e9943743.jar"
+        jar="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="6003aa270f541b2c609ffb6dd67720e54717f13b"/>
+    <item
+        dex="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-a37a192a68bc92f35d95cc2c60569656f7da5dea.jar"
+        jar="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-527763f83f0a0342b8720881ef426adf795b0dd1.jar"
+        jar="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/nineoldandroids-2.4.0-5ad39b6c6317362d12628ad8586b13289742e8fb.jar"
+        jar="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/libs/nineoldandroids-2.4.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7"/>
+    <item
+        dex="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/mockito-all-1.9.5-c831b6f709fa0bd9c2cf3939b0602260d5e9a8f3.jar"
+        jar="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/libs/mockito-all-1.9.5.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="79a8984096fc6591c1e3690e07d41be506356fa5"/>
+    <item
+        dex="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-02aede5e4b1c39e4f3b13a3c4016fa42526527dc.jar"
+        jar="/home/andrew/Downloads/android-studio/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-3f5d8bfc6a9d66595e96bf2a701b10c04faaa4c4.jar"
+        jar="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e827d6b99058ef704a764a785bb595886d3d37e0"/>
+    <item
+        dex="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-4cb34c7da9a1ce7dc0ecb0a530c56943529bffe5.jar"
+        jar="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/build/intermediates/exploded-aar/TextSpam/actionbarsherlock/unspecified/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8bfb95a350e20ada4abea0d40da8d4ef0dfc3214"/>
+
+</pre-dex-items>
