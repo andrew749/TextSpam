@@ -1,6 +1,5 @@
 package com.andrew749.textspam;
 
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -16,9 +15,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.andrew749.textspam.Database.DataSource;
 import com.andrew749.textspam.Fragments.Conversations;
 import com.andrew749.textspam.Fragments.Conversations.conversationCommunication;
@@ -31,7 +27,7 @@ import com.inscription.ChangeLogDialog;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class MainActivity extends SherlockFragmentActivity implements
+public class MainActivity extends ActionBarActivity implements
         quickmessagecommunication, conversationCommunication {
     /**
      * This is the main class where all the methods are interconnected

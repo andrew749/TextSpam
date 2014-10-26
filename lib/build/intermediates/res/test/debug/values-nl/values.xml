@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/lib/build/intermediates/bundles/debug/res/values-nl/values.xml -->
+    <eat-comment />
+
+    <string name="changelog_close">Sluiten</string>
+    <string name="title_changelog">Aanpassingen</string>
+
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="unspecified" >
+        <source path="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/assets" />
+    </dataSet>
+    <dataSet config="20.0.0" >
+        <source path="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/assets" />
+    </dataSet>
+    <dataSet config="unspecified" >
+        <source path="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/build/intermediates/exploded-aar/TextSpam/actionbarsherlock/unspecified/assets" />
+    </dataSet>
+    <dataSet config="unspecified" >
+        <source path="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/src/main/assets" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/home/andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/src/release/assets" />
+    </dataSet>
+
+</merger>

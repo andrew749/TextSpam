@@ -13,14 +13,13 @@ dependencies {
     compile files('libs/GoogleAdMobAdsSdk-6.4.1.jar')
     compile files('libs/libGoogleAnalyticsServices.jar')
     compile project(':library')
-    compile project(':actionbarsherlock')
     compile project(':lib')
-
+    compile 'com.android.support:appcompat-v7:0.0.+'
 }
 
 android {
-    compileSdkVersion 20
-    buildToolsVersion '20'
+    compileSdkVersion 21
+    buildToolsVersion '21.0.2'
 
     defaultConfig {
         minSdkVersion 14

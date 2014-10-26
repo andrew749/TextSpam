@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/res/values/menu_entries.xml -->
+    <eat-comment />
+
+    <string-array name="listitems">
+        <item>Quick Message</item>
+        <item>Conversations</item>
+        <item>Follow me on Twitter</item>
+        <item>Connect with Facebook</item>
+    </string-array>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/res/values/analytics.xml -->
+    <eat-comment />
+
+    <bool name="ga_autoActivityTracking">true</bool>
+    <bool name="ga_reportUncaughtExceptions">true</bool>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <declare-styleable name="CustomTheme">
+        <attr name="showcaseViewStyle" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="ShowcaseView">
+        <attr name="sv_backgroundColor" format="color|reference" />
+        <attr name="sv_detailTextColor" format="color|reference" />
+        <attr name="sv_titleTextColor" format="color|reference" />
+        <attr name="sv_buttonBackgroundColor" format="color|reference" />
+        <attr name="sv_buttonForegroundColor" format="color|reference" />
+        <attr name="sv_buttonText" format="string|reference" />
+        <attr name="sv_detailTextAppearance" format="reference" />
+        <attr name="sv_titleTextAppearance" format="reference" />
+        <attr name="sv_showcaseColor" format="color|reference" />
+    </declare-styleable>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/res/values/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <item name="showcase_button" type="id"/>
+    <item name="showcase_sub_text" type="id"/>
+    <item name="showcase_title_text" type="id"/>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="action_settings">Settings</string>
+    <string name="add_title">Add</string>
+    <string name="add_tutorial">Click this button to add the contact to the sending list.</string>
+    <string name="app_name">TextSpam</string>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <string name="changelog_close">Close</string>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="clear_title">Clear</string>
+    <string name="clear_tutorial">Click the clear button to remove all recipients.</string>
+    <string name="contact_field">Click this button to see all your contacts. Click on a contact to add.</string>
+    <string name="contact_title">Contact Picker</string>
+    <string name="conversation_title">Add Conversation</string>
+    <string name="conversation_tutorial">Click the "Save As Conversation" button in the menu to add the conversation that you created to the conversation menu for quick and easy access. This will save the message and the recipients.</string>
+    <string name="conversations_clearall_title">Clear All</string>
+    <string name="conversations_clearall_tutorial">Clears all conversations.</string>
+    <string name="conversations_swipe_to_clear_title">Clear</string>
+    <string name="conversations_swipe_to_clear_tutorial">Swipe or long click to clear a conversation.</string>
+    <string name="conversations_tutorial">Click to redo the tutorial.</string>
+    <string name="conversations_tutorial_title">Tutorial</string>
+    <string name="drawer_close">TextSpam</string>
+    <string name="drawer_open">Options</string>
+    <string name="firsttimetitle">Welcome to TextSpam</string>
+    <string name="frequency_field">This is the amount of times the message will be sent.</string>
+    <string name="frequency_title">Frequency</string>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/res/values/analytics.xml -->
+    <eat-comment />
+
+    <string name="ga_trackingId">UA-46422801-1</string>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="hello_world">Hello world!</string>
+    <string name="message_field">This is where the message to send goes.</string>
+    <string name="message_title">Message</string>
+    <string name="navigation_drawer">Navigation Drawer</string>
+    <string name="navigation_drawer_tutorial">Swipe from the side of the screen to open the Navigation menu. Here you can access the conversations where you can quickly send messages you have preset by using "Save As Conversation"</string>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <string name="ok">OK</string>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="popuptext">Please enter a frequency to send to:\n</string>
+    <string name="recipient_field">The contact number to send to.</string>
+    <string name="recipient_title">Recipient</string>
+    <string name="send_title">Send</string>
+    <string name="send_tutorial">Click the Send button in the menu to send the current message to the listed contacts.</string>
+    <string name="sending_list_swipe_tutorial">You can also swipe to remove a contact from the sending list.</string>
+    <string name="sending_list_title">Recipient List</string>
+    <string name="sending_list_tutorial">Here is where the recipients of the message will be listed. Click and hold to clear a recipient.</string>
+    <string name="title_activity_tutorial">MainActivity</string>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <string name="title_changelog">Change log</string>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="tutorial">Welcome to TextSpam. To start spamming, first enter the message in the
+        Message field. Then
+        the amount of texts to send in the Frequency field. Finally add the recipient contact
+        number(without hyphens) in
+        the Recipient field. When you do add the number, make sure to click Add so that it appears
+        on the list below.
+        Once you are content with the information, click Send. To clear individual numbers just long
+        click on the entry
+        until it disappears, or press clear all to remove all recipients!!!</string>
+    <string name="tutorial_title">Tutorial</string>
+    <string name="tutorial_tutorial">Click the Tutorial menu entry to access the tutorial again.</string>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="showcaseViewStyle">@style/Showcasetheme</item>
+    </style>
+
+    <style name="CustomDetailText" parent="TextAppearance.ShowcaseView.Detail">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="CustomTitle" parent="TextAppearance.ShowcaseView.Title">
+        <item name="android:textColor">#C2C6CC</item>
+    </style>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <style name="ShowcaseButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingLeft">35dp</item>
+        <item name="android:paddingRight">35dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@drawable/cling_button_bg</item>
+    </style>
+
+    <style name="ShowcaseView">
+        <item name="sv_titleTextAppearance">@style/TextAppearance.ShowcaseView.Title</item>
+        <item name="sv_detailTextAppearance">@style/TextAppearance.ShowcaseView.Detail</item>
+        <item name="sv_backgroundColor">#3333B5E5</item>
+        <item name="sv_buttonText">@string/ok</item>
+    </style>
+
+    <style name="ShowcaseView.Light">
+        <item name="sv_titleTextAppearance">@style/TextAppearance.ShowcaseView.Title</item>
+        <item name="sv_detailTextAppearance">@style/TextAppearance.ShowcaseView.Detail.Light</item>
+        <item name="sv_backgroundColor">#3333B5E5</item>
+        <item name="sv_buttonText">@string/ok</item>
+    </style>
+
+    <style name="ShowcaseView_Dark" parent="ShowcaseView">
+        <item name="sv_backgroundColor">#E6424040</item>
+    </style>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="Showcasetheme" parent="ShowcaseView.Light">
+        <item name="sv_backgroundColor">#B3000000</item>
+        <item name="sv_buttonBackgroundColor">#CF3119</item>
+        <item name="sv_titleTextAppearance">@style/CustomTitle</item>
+        <item name="sv_detailTextAppearance">@style/CustomDetailText</item>
+    </style>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <style name="TextAppearance.ShowcaseView.Detail" parent="android:style/TextAppearance">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="TextAppearance.ShowcaseView.Detail.Light">
+        <item name="android:textColor">#666666</item>
+        <item name="android:shadowColor">#FF0000</item>
+        <item name="android:shadowRadius">0</item>
+    </style>
+
+    <style name="TextAppearance.ShowcaseView.Title" parent="android:style/TextAppearance.Large">
+        <item name="android:textColor">#33B5E5</item>
+    </style>
+
+    <style name="TextAppearance.ShowcaseView.Title.Light">
+        <item name="android:shadowRadius">0</item>
+    </style>
+    <!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="Theme.Transparent" parent="AppBaseTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:color">#c8000000</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textSize">20dip</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+</resources>

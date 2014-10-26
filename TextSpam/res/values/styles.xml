@@ -22,13 +22,13 @@
         <item name="android:textColor">#C2C6CC</item>
     </style>
 
-    <style name="AppTheme" parent="Theme.Sherlock.Light.DarkActionBar">
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
 
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="showcaseViewStyle">@style/Showcasetheme</item>
     </style>
 
-    <style name="Theme.Transparent" parent="Theme.Sherlock">
+    <style name="Theme.Transparent" parent="AppBaseTheme">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:color">#c8000000</item>
         <item name="android:windowContentOverlay">@null</item>
