@@ -10,9 +10,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds;
+import android.support.v4.app.Fragment;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
@@ -22,9 +26,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.view.MenuItem;
 import com.andrew749.textspam.Adapters.AutoCompleteCursorAdapter;
 import com.andrew749.textspam.Adapters.ContactListAdapter;
 import com.andrew749.textspam.Custom;
@@ -42,7 +43,7 @@ import java.util.Map;
  * Created by Andrew Codispoti on 02/11/13.
  */
 @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-public class QuickMessageFragment extends SherlockFragment {
+public class QuickMessageFragment extends Fragment {
     private static final int CONTACT_PICKER_RESULT = 1001;
     public static ArrayList<Custom> item = new ArrayList<Custom>();
     private static int frequency;
@@ -227,12 +228,12 @@ public class QuickMessageFragment extends SherlockFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        getSherlockActivity().getSupportLoaderManager().destroyLoader(0);
+        getActivity().getSupportLoaderManager().destroyLoader(0);
     }
 
     @Override
-    public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
-                                    com.actionbarsherlock.view.MenuInflater inflater) {
+    public void onCreateOptionsMenu(Menu menu,
+                                    MenuInflater inflater) {
         menu.clear();
         inflater.inflate(R.menu.main, menu);
 
@@ -395,7 +396,7 @@ public class QuickMessageFragment extends SherlockFragment {
                 ShowcaseView.ITEM_ACTION_ITEM));
         if (Build.VERSION.SDK_INT >= 14) {
             if (ViewConfiguration.get(
-                    getSherlockActivity().getApplicationContext())
+                    getActivity().getApplicationContext())
                     .hasPermanentMenuKey()) {
                 views.addView(new ItemViewProperties(
                         R.string.conversation_title,

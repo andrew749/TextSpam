@@ -7,11 +7,12 @@
     android:layout_height="fill_parent"
     android:orientation="horizontal">
 <android.support.v4.widget.DrawerLayout
-
+android:background="@color/grey"
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+ >
     <!-- The main content view -->
     <TextView
             android:layout_height="fill_parent"
@@ -19,6 +20,7 @@
             android:text=""/>
 
     <FrameLayout
+        android:background="@color/white"
             android:id="@+id/content_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

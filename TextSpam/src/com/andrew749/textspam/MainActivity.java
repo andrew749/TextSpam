@@ -1,5 +1,6 @@
 package com.andrew749.textspam;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +10,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -124,13 +127,13 @@ public class MainActivity extends ActionBarActivity implements
         android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
         switch (position) {
             case 0:
-                SherlockFragment quickMessageFragment = new QuickMessageFragment();
+                Fragment quickMessageFragment = new QuickMessageFragment();
                 manager.beginTransaction()
                         .replace(R.id.content_frame, quickMessageFragment).commit();
                 mDrawerLayout.closeDrawer(mDrawerList);
                 break;
             case 1:
-                SherlockFragment conversationFragment = new Conversations();
+                Fragment conversationFragment = new Conversations();
                 manager.beginTransaction()
                         .replace(R.id.content_frame, conversationFragment).commit();
 

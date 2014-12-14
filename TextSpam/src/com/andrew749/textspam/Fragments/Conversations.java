@@ -11,9 +11,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
@@ -24,9 +28,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
+
 import com.andrew749.textspam.MainActivity;
 import com.andrew749.textspam.Database.*;
 import com.andrew749.textspam.R;
@@ -41,7 +43,7 @@ import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
  * Created by andrew on 12/10/13.
  */
 @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-public class Conversations extends SherlockFragment {
+public class Conversations extends Fragment {
 	private DataSource dataSource;
 	ListView lv;
 	static ArrayAdapter<ConversationModel> adapter;
@@ -201,7 +203,7 @@ public class Conversations extends SherlockFragment {
 				R.string.conversations_clearall_tutorial,
 				ShowcaseView.ITEM_ACTION_ITEM));
 		if(Build.VERSION.SDK_INT>=14){
-			if(ViewConfiguration.get(getSherlockActivity().getApplicationContext()).hasPermanentMenuKey()){
+			if(ViewConfiguration.get(getActivity().getApplicationContext()).hasPermanentMenuKey()){
 				views.addView(new ItemViewProperties(R.id.conversation_tutorial,
 						R.string.conversations_tutorial_title,
 						R.string.conversations_tutorial,ShowcaseView.ITEM_ACTION_OVERFLOW));
@@ -220,7 +222,7 @@ public class Conversations extends SherlockFragment {
 
 	@Override
 	public boolean onOptionsItemSelected(
-			com.actionbarsherlock.view.MenuItem item) {
+			MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.clearallconversations:
 			lv.clearChoices();

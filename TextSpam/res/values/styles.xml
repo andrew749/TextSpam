@@ -22,10 +22,14 @@
         <item name="android:textColor">#C2C6CC</item>
     </style>
 
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="actionBarStyle">@style/actionbarcustom</item>
         <item name="showcaseViewStyle">@style/Showcasetheme</item>
+    </style>
+
+    <style name="actionbarcustom" parent="Base.Widget.AppCompat.ActionBar.Solid">
+        <item name="background">@color/blue</item>
+
     </style>
 
     <style name="Theme.Transparent" parent="AppBaseTheme">
