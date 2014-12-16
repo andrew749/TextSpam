@@ -24,6 +24,7 @@ import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.andrew749.textspam.Adapters.AutoCompleteCursorAdapter;
@@ -51,7 +52,8 @@ public class QuickMessageFragment extends Fragment {
     EditText frequency_enter, message_enter;
     AutoCompleteTextView phonenumber_enter;
     ContactListAdapter contactListAdapter;
-    Button add, contact;
+    Button add;
+    ImageButton contact;
     ListView lv;
     private ArrayList<Map<String, String>> mPeopleList;
     // private SimpleAdapter mAdapter;
@@ -84,7 +86,7 @@ public class QuickMessageFragment extends Fragment {
                 .findViewById(R.id.numberedit);
         frequency_enter = (EditText) v.findViewById(R.id.frequencyedit);
         message_enter = (EditText) v.findViewById(R.id.messageedit);
-        contact = (Button) v.findViewById(R.id.button2);
+        contact = (ImageButton) v.findViewById(R.id.addcontact);
 
         ad = new AutoCompleteCursorAdapter(getActivity(), null);
 
@@ -380,7 +382,7 @@ public class QuickMessageFragment extends Fragment {
                 R.string.recipient_title, R.string.recipient_field));
         views.addView(new ShowcaseViews.ItemViewProperties(R.id.add,
                 R.string.add_title, R.string.add_tutorial));
-        views.addView(new ShowcaseViews.ItemViewProperties(R.id.button2,
+        views.addView(new ShowcaseViews.ItemViewProperties(R.id.addcontact,
                 R.string.contact_title, R.string.contact_field));
         views.addView(new ShowcaseViews.ItemViewProperties(R.id.contactlist,
                 R.string.sending_list_title, R.string.sending_list_tutorial));

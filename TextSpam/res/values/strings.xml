@@ -29,7 +29,7 @@
     <string name="sending_list_tutorial">Here is where the recipients of the message will be listed. Click and hold to clear a recipient.</string>
     <string name="sending_list_title">Recipient List</string>
         <string name="sending_list_swipe_tutorial">You can also swipe to remove a contact from the sending list.</string>
-    
+    <string name="addbuttontext">+</string>
     <string name="contact_title">Contact Picker</string>
     <string name="contact_field">Click this button to see all your contacts. Click on a contact to add.</string>
     
