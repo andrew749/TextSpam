@@ -103,6 +103,7 @@ public class QuickMessageFragment extends Fragment {
                         try {
                             number = cursor.getString(cursor
                                     .getColumnIndex(CommonDataKinds.Phone.NUMBER));
+
                         } catch (IllegalStateException e) {
                             e.printStackTrace();
                         }
@@ -195,10 +196,15 @@ public class QuickMessageFragment extends Fragment {
      * adds a new phone number to the sending list
      */
     private void addItem() {
-        if (PhoneNumberUtils.isGlobalPhoneNumber(phonenumber_enter.getText()
-                .toString())) {
+        String recipient=phonenumber_enter.getText()
+                .toString();
+       recipient= recipient.replace("(","");
+        recipient=recipient.replace(")","");
+        recipient=recipient.replace(" ","");
+
+        if (PhoneNumberUtils.isGlobalPhoneNumber(recipient)) {
             try {
-                item.add(new Custom(phonenumber_enter.getText().toString()));
+                item.add(new Custom(recipient));
 
                 contactListAdapter.notifyDataSetChanged();
                 phonenumber_enter.setText("");
