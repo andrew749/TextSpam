@@ -16,6 +16,7 @@ public class AppCompatReflector extends BaseReflector {
 
     @Override
     public View getHomeButton() {
+
         View homeButton = mActivity.findViewById(android.R.id.home);
         if (homeButton != null) {
             return homeButton;

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Button xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/ShowcaseButton"
-    android:text="@string/ok"
-    android:id="@id/showcase_button" /><!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/library/res/layout/showcase_button.xml --><!-- From: file:/C:/Users/Andrew/Dropbox/workspace/AndroidStudioProjects/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/layout/showcase_button.xml -->
