@@ -21,7 +21,7 @@
     <string name="message_field">This is where the message to send goes.</string>
     <string name="message_title">Message</string>
     <string name="frequency_field">This is the amount of times the message will be sent.</string>
-    <string name="frequency_title">Frequency</string>
+    <string name="frequency_title">Quantity</string>
     <string name="recipient_field">The contact number to send to.</string>
     <string name="recipient_title">Recipient</string>
     <string name="add_title">Add</string>
