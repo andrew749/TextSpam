@@ -81,7 +81,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/numberedit"
-                android:layout_gravity="left|center_vertical"/>
+                android:layout_gravity="left|center_vertical"
+                android:singleLine="true"
+            />
 
         <Button
                 android:layout_width="wrap_content"
