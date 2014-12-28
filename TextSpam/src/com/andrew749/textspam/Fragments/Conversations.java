@@ -105,7 +105,7 @@ public class Conversations extends Fragment {
 				AlertDialog.Builder builder = new AlertDialog.Builder(
 						getActivity());
 				builder.setView(v);
-				AlertDialog dialog = builder.create();
+				final AlertDialog dialog = builder.create();
 				dialog.show();
 				popupbutton = (Button) v.findViewById(R.id.popupbutton);
 				editfield = (EditText) v.findViewById(R.id.popupedittext);
@@ -133,6 +133,7 @@ public class Conversations extends Fragment {
 						Log.d("Frequency", "" + frequency);
 						Log.d("Recipient", "" + model.getNumbersAsCustom());
 						getActivity().sendBroadcast(intent);
+                        dialog.hide();
 					}
 				});
 			}

@@ -23,8 +23,8 @@
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@+id/popupbutton"
             android:ems="10"
-            android:hint="frequency"
-            android:inputType="number" >
+            android:hint="@string/conversations_quantity_dialog"
+            android:inputType="number">
 
             <requestFocus />
         </EditText>

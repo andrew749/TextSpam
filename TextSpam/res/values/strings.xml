@@ -16,7 +16,7 @@
         until it disappears, or press clear all to remove all recipients!!!</string>
     <string name="drawer_open">Options</string>
     <string name="drawer_close">TextSpam</string>
-    <string name="popuptext">Please enter a frequency to send to:\n</string>
+    <string name="popuptext">Please enter the number of messages to send to the following numbers:\n</string>
     <string name="firsttimetitle">Welcome to TextSpam</string>
     <string name="message_field">This is where the message to send goes.</string>
     <string name="message_title">Message</string>
@@ -47,7 +47,7 @@
 		<string name="conversations_swipe_to_clear_tutorial">Swipe or long click to clear a conversation.</string>
 	<string name="conversations_clearall_title">Clear All</string>
 		<string name="conversations_clearall_tutorial">Clears all conversations.</string>
-	
+	<string name="conversations_quantity_dialog">quantity</string>
 	<string name="conversations_tutorial_title">Tutorial</string>
 	<string name="conversations_tutorial">Click to redo the tutorial.</string>
 </resources>
