@@ -359,8 +359,11 @@ public class QuickMessageFragment extends Fragment {
         } else if (itemId == R.id.addconversation) {
             QuickMessageFragment.message = message_enter.getEditableText()
                     .toString();
+            if(!QuickMessageFragment.item.isEmpty())
             activity.addConversation(message, QuickMessageFragment.item);
-
+            else{
+                Toast.makeText(getActivity(),getString(R.string.cantaddconversation),Toast.LENGTH_LONG).show();
+            }
             return true;
         } else {
             return super.onOptionsItemSelected(item);

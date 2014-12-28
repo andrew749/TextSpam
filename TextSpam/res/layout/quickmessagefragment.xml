@@ -62,7 +62,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:src="@drawable/ic_action_add_person" />
+            android:src="@drawable/ic_action_add_person"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"/>
 
 
     </RelativeLayout>

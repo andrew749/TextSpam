@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
     <release
+        date="12/28/2014"
+        summery="Redesign"
+        version="3.0"
+        versioncode="15">
+        <change>Created a lighter UI</change>
+        <change>Fixed some number checking constraints.</change>
+        <change>Removed tutorial functionality.</change>
+        <change>Added images for common actions(i.e. send, add contact)</change>
+
+    </release>
+    <release
+        date="7/7/2014"
+        summery="Minor Fixes"
+        version="2.5"
+        versioncode="14">
+        <change>Minor Bug Fixes</change>
+        <change>Added Facebook and Twitter sections so users can interact with me.</change>
+    </release>
+    <release
         date="1/30/2014"
         summary="Major Restructure"
         version="2.4"
@@ -12,12 +31,5 @@
         </change>
         <change>Lists can now have elements removed with a swipe.</change>
     </release>
-    <release
-        date="7/7/2014"
-        summery="Minor Fixes"
-        version="2.5"
-        versioncode="14">
-        <change>Minor Bug Fixes</change>
-        <change>Added Facebook and Twitter sections so users can interact with me.</change>
-    </release>
+
 </changelog>
