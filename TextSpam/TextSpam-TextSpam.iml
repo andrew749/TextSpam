@@ -86,7 +86,6 @@
     <orderEntry type="library" exported="" name="GoogleAdMobAdsSdk-6.4.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="libGoogleAnalyticsServices" level="project" />
-    <orderEntry type="module" module-name="library" exported="" />
     <orderEntry type="module" module-name="lib" exported="" />
   </component>
 </module>

@@ -5,7 +5,7 @@
         jar="/home/andrew/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="1ecb0f4d9b584e41bbb6e2ad168868d6841a20c3">
+        sha1="778e06c4464f8a17deb654aaf5c7d3d6045c3ef3">
         <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-1ec891730062aec98cbfee46d3ce7a5dc70cd882.jar" />
     </item>
     <item
@@ -23,6 +23,34 @@
         <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/nineoldandroids-2.4.0-0afaf688e9d3fa450cbf710cd28a5aef8e0de1ca.jar" />
     </item>
     <item
+        jar="/home/andrew/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e3697f509d7316150f112db2da4edee7efa2037">
+        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-f5dcdaf662d6f56e551b5a190f0acc31f8e14dd1.jar" />
+    </item>
+    <item
+        jar="/home/andrew/TextSpam/TextSpam/libs/libGoogleAnalyticsServices.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e887c6c9b31b39a39b0eaba981448b78902ea813">
+        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/libGoogleAnalyticsServices-cafd13c2016a8db549c3f59fe78dde8f0ba5e8be.jar" />
+    </item>
+    <item
+        jar="/home/andrew/TextSpam/TextSpam/libs/GoogleAdMobAdsSdk-6.4.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6262c554ef5744538d526465aa73704810705734">
+        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/GoogleAdMobAdsSdk-6.4.1-ee93471254f8fe62958cc7c95b3052a03212d86d.jar" />
+    </item>
+    <item
+        jar="/home/andrew/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/libs/mockito-all-1.9.5.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="79a8984096fc6591c1e3690e07d41be506356fa5">
+        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/mockito-all-1.9.5-2b96714b9e50662e4a5137ab5375955d0b566816.jar" />
+    </item>
+    <item
         jar="/home/andrew/TextSpam/TextSpam/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -37,39 +65,11 @@
         <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-c3e3ed59647c97c80d1eedb3c76dac4f9fa1d196.jar" />
     </item>
     <item
-        jar="/home/andrew/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="8f9f86ade975296dd711669605f145ab48da7b14">
-        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-f5dcdaf662d6f56e551b5a190f0acc31f8e14dd1.jar" />
-    </item>
-    <item
         jar="/home/andrew/TextSpam/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
         <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-b31ef9693cef781d5df97d4fb064e9e1e3f92ced.jar" />
-    </item>
-    <item
-        jar="/home/andrew/TextSpam/TextSpam/libs/GoogleAdMobAdsSdk-6.4.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="6262c554ef5744538d526465aa73704810705734">
-        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/GoogleAdMobAdsSdk-6.4.1-ee93471254f8fe62958cc7c95b3052a03212d86d.jar" />
-    </item>
-    <item
-        jar="/home/andrew/TextSpam/TextSpam/libs/libGoogleAnalyticsServices.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e887c6c9b31b39a39b0eaba981448b78902ea813">
-        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/libGoogleAnalyticsServices-cafd13c2016a8db549c3f59fe78dde8f0ba5e8be.jar" />
-    </item>
-    <item
-        jar="/home/andrew/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/libs/mockito-all-1.9.5.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="79a8984096fc6591c1e3690e07d41be506356fa5">
-        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/mockito-all-1.9.5-2b96714b9e50662e4a5137ab5375955d0b566816.jar" />
     </item>
 
 </items>

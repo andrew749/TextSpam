@@ -3,9 +3,9 @@
     <item android:id="@+id/clearallconversations"
         android:title="Clear All"
         android:showAsAction="always"></item>
-    <item android:id="@+id/conversation_tutorial"
-        android:title="Tutorial"
-        android:showAsAction="never"></item>
+    <!--<item android:id="@+id/conversation_tutorial"-->
+        <!--android:title="Tutorial"-->
+        <!--android:showAsAction="never"></item>-->
     
 
 </menu>

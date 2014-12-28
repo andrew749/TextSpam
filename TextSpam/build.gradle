@@ -11,7 +11,6 @@ apply plugin: 'android'
 dependencies {
     compile files('libs/GoogleAdMobAdsSdk-6.4.1.jar')
     compile files('libs/libGoogleAnalyticsServices.jar')
-    compile project(':library')
     compile project(':lib')
     compile 'com.android.support:support-v4:21.0.3'
     compile 'com.android.support:appcompat-v7:21.0.3'

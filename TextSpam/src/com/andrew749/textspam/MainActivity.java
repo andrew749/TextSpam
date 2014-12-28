@@ -23,7 +23,6 @@ import com.andrew749.textspam.Fragments.Conversations;
 import com.andrew749.textspam.Fragments.Conversations.conversationCommunication;
 import com.andrew749.textspam.Fragments.QuickMessageFragment;
 import com.andrew749.textspam.Fragments.QuickMessageFragment.quickmessagecommunication;
-import com.espian.showcaseview.ShowcaseViews;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.inscription.ChangeLogDialog;
 
@@ -40,7 +39,7 @@ public class MainActivity extends ActionBarActivity implements
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
-    static ShowcaseViews views;
+    //static ShowcaseViews views;
     Activity activity;
     private final int URL_LOADER = 0;
     public String[] projection = {ContactsContract.Contacts._ID,

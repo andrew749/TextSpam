@@ -1,1 +1,1 @@
-include ':TextSpam',':library',':lib'
+include ':TextSpam',':lib'

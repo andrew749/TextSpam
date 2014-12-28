@@ -35,9 +35,6 @@ import com.andrew749.textspam.R;
 import com.andrew749.textspam.SwipeDismissListViewTouchListener;
 import com.andrew749.textspam.Database.ConversationModel;
 
-import com.espian.showcaseview.ShowcaseView;
-import com.espian.showcaseview.ShowcaseViews;
-import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
 
 /**
  * Created by andrew on 12/10/13.
@@ -175,7 +172,7 @@ public class Conversations extends Fragment {
 			/*
 			 * Run tutorial because app is being launched for the first time
 			 */
-			doConversationTutorial();
+			//doConversationTutorial();
 			// record the fact that the app has been started at least once
 			settings.edit().putBoolean("my_first_time_conversations", false)
 					.commit();
@@ -193,32 +190,32 @@ public class Conversations extends Fragment {
 		public void toggleDrawer();
 	}
 
-	public void doConversationTutorial() {
-		ShowcaseViews views = new ShowcaseViews(activity);
-		views.addView(new ItemViewProperties(R.id.listView,
-				R.string.conversations_swipe_to_clear_title,
-				R.string.conversations_swipe_to_clear_tutorial));
-		views.addView(new ItemViewProperties(R.id.clearallconversations,
-				R.string.conversations_clearall_title,
-				R.string.conversations_clearall_tutorial,
-				ShowcaseView.ITEM_ACTION_ITEM));
-		if(Build.VERSION.SDK_INT>=14){
-			if(ViewConfiguration.get(getActivity().getApplicationContext()).hasPermanentMenuKey()){
-				views.addView(new ItemViewProperties(R.id.conversation_tutorial,
-						R.string.conversations_tutorial_title,
-						R.string.conversations_tutorial,ShowcaseView.ITEM_ACTION_OVERFLOW));
-			}else{
-		views.addView(new ItemViewProperties(R.id.conversation_tutorial,
-				R.string.conversations_tutorial_title,
-				R.string.conversations_tutorial,
-				ShowcaseView.ITEM_ACTION_OVERFLOW));
-		}}else{
-			views.addView(new ItemViewProperties(R.id.conversation_tutorial,
-					R.string.conversations_tutorial_title,
-					R.string.conversations_tutorial));
-		}
-		views.show();
-	}
+//	public void doConversationTutorial() {
+//		ShowcaseViews views = new ShowcaseViews(activity);
+//		views.addView(new ItemViewProperties(R.id.listView,
+//				R.string.conversations_swipe_to_clear_title,
+//				R.string.conversations_swipe_to_clear_tutorial));
+//		views.addView(new ItemViewProperties(R.id.clearallconversations,
+//				R.string.conversations_clearall_title,
+//				R.string.conversations_clearall_tutorial,
+//				ShowcaseView.ITEM_ACTION_ITEM));
+//		if(Build.VERSION.SDK_INT>=14){
+//			if(ViewConfiguration.get(getActivity().getApplicationContext()).hasPermanentMenuKey()){
+//				views.addView(new ItemViewProperties(R.id.conversation_tutorial,
+//						R.string.conversations_tutorial_title,
+//						R.string.conversations_tutorial,ShowcaseView.ITEM_ACTION_OVERFLOW));
+//			}else{
+//		views.addView(new ItemViewProperties(R.id.conversation_tutorial,
+//				R.string.conversations_tutorial_title,
+//				R.string.conversations_tutorial,
+//				ShowcaseView.ITEM_ACTION_OVERFLOW));
+//		}}else{
+//			views.addView(new ItemViewProperties(R.id.conversation_tutorial,
+//					R.string.conversations_tutorial_title,
+//					R.string.conversations_tutorial));
+//		}
+//		views.show();
+//	}
 
 	@Override
 	public boolean onOptionsItemSelected(
@@ -230,9 +227,9 @@ public class Conversations extends Fragment {
 			adapter.notifyDataSetInvalidated();
 			dataSource.deleteAllConversations();
 			break;
-		case R.id.conversation_tutorial:
-			doConversationTutorial();
-			break;
+//		case R.id.conversation_tutorial:
+//			doConversationTutorial();
+//			break;
 		case android.R.id.home:
 			activity.toggleDrawer();
 			break;

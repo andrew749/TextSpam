@@ -33,9 +33,6 @@ import com.andrew749.textspam.Custom;
 import com.andrew749.textspam.MainActivity;
 import com.andrew749.textspam.R;
 import com.andrew749.textspam.SwipeDismissListViewTouchListener;
-import com.espian.showcaseview.ShowcaseView;
-import com.espian.showcaseview.ShowcaseViews;
-import com.espian.showcaseview.ShowcaseViews.ItemViewProperties;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -336,10 +333,10 @@ public class QuickMessageFragment extends Fragment {
         if (item.getItemId() == android.R.id.home) {
             activity.toggleDrawer();
         }
-        if (item.getItemId() == R.id.tutorial_menu) {
-            doTutorial();
-            return true;
-        }
+//        if (item.getItemId() == R.id.tutorial_menu) {
+//            doTutorial();
+//            return true;
+//        }
         int itemId = item.getItemId();
         if (itemId == R.id.sendmessage) {
             sendMessagesComplete();
@@ -362,72 +359,72 @@ public class QuickMessageFragment extends Fragment {
         }
     }
 
-    public void doTutorial() {
-        Intent intent = new Intent();
-
-        intent.setClass(getActivity(), TutorialActivity.class);
-        ShowcaseView.ConfigOptions co = new ShowcaseView.ConfigOptions();
-
-        co.hideOnClickOutside = true;
-        co.insert = ShowcaseView.INSERT_TO_DECOR;
-        // the app is being launched for first time, do something
-        Log.d("Comments", "First time");
-        startActivity(intent);
-        ShowcaseViews views = new ShowcaseViews(activity);
-        views.addView(new ItemViewProperties(R.id.messageedit,
-                R.string.message_title, R.string.message_field));
-        views.addView(new ItemViewProperties(R.id.frequencyedit,
-                R.string.frequency_title, R.string.frequency_field));
-        views.addView(new ItemViewProperties(R.id.numberedit,
-                R.string.recipient_title, R.string.recipient_field));
-        views.addView(new ShowcaseViews.ItemViewProperties(R.id.add,
-                R.string.add_title, R.string.add_tutorial));
-        views.addView(new ShowcaseViews.ItemViewProperties(R.id.addcontact,
-                R.string.contact_title, R.string.contact_field));
-        views.addView(new ShowcaseViews.ItemViewProperties(R.id.contactlist,
-                R.string.sending_list_title, R.string.sending_list_tutorial));
-        views.addView(new ItemViewProperties(R.id.contactlist,
-                R.string.sending_list_title,
-                R.string.sending_list_swipe_tutorial));
-        views.addAnimatedGestureToView(6, 0, 0, 200, 0);
-        views.addView(new ItemViewProperties(R.id.sendmessage,
-                R.string.send_title, R.string.send_tutorial,
-                ShowcaseView.ITEM_ACTION_ITEM));
-        views.addView(new ItemViewProperties(R.id.clearmessage,
-                R.string.clear_title, R.string.clear_tutorial,
-                ShowcaseView.ITEM_ACTION_ITEM));
-        if (Build.VERSION.SDK_INT >= 14) {
-            if (ViewConfiguration.get(
-                    getActivity().getApplicationContext())
-                    .hasPermanentMenuKey()) {
-                views.addView(new ItemViewProperties(
-                        R.string.conversation_title,
-                        R.string.conversation_tutorial));
-                views.addView(new ItemViewProperties(R.string.tutorial_title,
-                        R.string.tutorial_tutorial));
-            } else {
-                views.addView(new ItemViewProperties(R.id.addconversation,
-                        R.string.conversation_title,
-                        R.string.conversation_tutorial,
-                        ShowcaseView.ITEM_ACTION_OVERFLOW));
-                views.addView(new ItemViewProperties(R.id.tutorial_menu,
-                        R.string.tutorial_title, R.string.tutorial_tutorial,
-                        ShowcaseView.ITEM_ACTION_OVERFLOW));
-            }
-        } else {
-            views.addView(new ItemViewProperties(R.string.conversation_title,
-                    R.string.conversation_tutorial));
-            views.addView(new ItemViewProperties(R.string.tutorial_title,
-                    R.string.tutorial_tutorial));
-        }
-        views.addView(new ItemViewProperties(android.R.id.home,
-                R.string.navigation_drawer,
-                R.string.navigation_drawer_tutorial,
-                ShowcaseView.ITEM_ACTION_HOME));
-        views.addAnimatedGestureToView(11, 0, 0, 400, 0);
-
-        views.show();
-    }
+//    public void doTutorial() {
+//        Intent intent = new Intent();
+//
+//        intent.setClass(getActivity(), TutorialActivity.class);
+//        ShowcaseView.ConfigOptions co = new ShowcaseView.ConfigOptions();
+//
+//        co.hideOnClickOutside = true;
+//        co.insert = ShowcaseView.INSERT_TO_DECOR;
+//        // the app is being launched for first time, do something
+//        Log.d("Comments", "First time");
+//        startActivity(intent);
+//        ShowcaseViews views = new ShowcaseViews(activity);
+//        views.addView(new ItemViewProperties(R.id.messageedit,
+//                R.string.message_title, R.string.message_field));
+//        views.addView(new ItemViewProperties(R.id.frequencyedit,
+//                R.string.frequency_title, R.string.frequency_field));
+//        views.addView(new ItemViewProperties(R.id.numberedit,
+//                R.string.recipient_title, R.string.recipient_field));
+//        views.addView(new ShowcaseViews.ItemViewProperties(R.id.add,
+//                R.string.add_title, R.string.add_tutorial));
+//        views.addView(new ShowcaseViews.ItemViewProperties(R.id.addcontact,
+//                R.string.contact_title, R.string.contact_field));
+//        views.addView(new ShowcaseViews.ItemViewProperties(R.id.contactlist,
+//                R.string.sending_list_title, R.string.sending_list_tutorial));
+//        views.addView(new ItemViewProperties(R.id.contactlist,
+//                R.string.sending_list_title,
+//                R.string.sending_list_swipe_tutorial));
+//        views.addAnimatedGestureToView(6, 0, 0, 200, 0);
+//        views.addView(new ItemViewProperties(R.id.sendmessage,
+//                R.string.send_title, R.string.send_tutorial,
+//                ShowcaseView.ITEM_ACTION_ITEM));
+//        views.addView(new ItemViewProperties(R.id.clearmessage,
+//                R.string.clear_title, R.string.clear_tutorial,
+//                ShowcaseView.ITEM_ACTION_ITEM));
+//        if (Build.VERSION.SDK_INT >= 14) {
+//            if (ViewConfiguration.get(
+//                    getActivity().getApplicationContext())
+//                    .hasPermanentMenuKey()) {
+//                views.addView(new ItemViewProperties(
+//                        R.string.conversation_title,
+//                        R.string.conversation_tutorial));
+//                views.addView(new ItemViewProperties(R.string.tutorial_title,
+//                        R.string.tutorial_tutorial));
+//            } else {
+//                views.addView(new ItemViewProperties(R.id.addconversation,
+//                        R.string.conversation_title,
+//                        R.string.conversation_tutorial,
+//                        ShowcaseView.ITEM_ACTION_OVERFLOW));
+//                views.addView(new ItemViewProperties(R.id.tutorial_menu,
+//                        R.string.tutorial_title, R.string.tutorial_tutorial,
+//                        ShowcaseView.ITEM_ACTION_OVERFLOW));
+//            }
+//        } else {
+//            views.addView(new ItemViewProperties(R.string.conversation_title,
+//                    R.string.conversation_tutorial));
+//            views.addView(new ItemViewProperties(R.string.tutorial_title,
+//                    R.string.tutorial_tutorial));
+//        }
+//        views.addView(new ItemViewProperties(android.R.id.home,
+//                R.string.navigation_drawer,
+//                R.string.navigation_drawer_tutorial,
+//                ShowcaseView.ITEM_ACTION_HOME));
+//        views.addAnimatedGestureToView(11, 0, 0, 400, 0);
+//
+//        views.show();
+//    }
 
     @Override
     public void onStart() {
@@ -438,7 +435,7 @@ public class QuickMessageFragment extends Fragment {
             /*
              * Run tutorial because app is being launched for the first time
 			 */
-            doTutorial();
+            //doTutorial();
             // record the fact that the app has been started at least once
             settings.edit().putBoolean("my_first_time", false).commit();
         }
