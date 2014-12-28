@@ -3,11 +3,14 @@ package com.andrew749.textspam.Fragments;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.DialogPreference;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -73,6 +76,22 @@ public class Conversations extends Fragment {
         lv = (ListView) view.findViewById(R.id.listView);
         adapter = new ArrayAdapter<ConversationModel>(getActivity(),
                 android.R.layout.simple_list_item_1, conversations);
+        if(conversations.isEmpty()){
+            AlertDialog.Builder builder = new AlertDialog.Builder(
+                    getActivity());
+            builder.setTitle(getString(R.string.noconversationstitle));
+            builder.setMessage(getString(R.string.noconversationsmessage));
+            builder.setNeutralButton("Ok",new Dialog.OnClickListener(){
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                }
+            });
+            final AlertDialog dialog = builder.create();
+            dialog.show();
+
+        }
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView,

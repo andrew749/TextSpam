@@ -42,7 +42,7 @@
     <string name="tutorial_title">Tutorial</string>
     <string name="tutorial_tutorial">Click the Tutorial menu entry to access the tutorial again.</string>
     <string name="navigation_drawer">Navigation Drawer</string>
-    <string name="navigation_drawer_tutorial">Swipe from the side of the screen to open the Navigation menu. Here you can access the conversations where you can quickly send messages you have preset by using "Save As Conversation"</string>
+    <string name="navigation_drawer_tutorial">Swipe from the side of the screen to open the Navigation menu. Here you can access the conversations where you can quickly send messages you have preset by using "Save As Conversation".</string>
     <string name="conversations_swipe_to_clear_title">Clear</string>
     <string name="conversations_swipe_to_clear_tutorial">Swipe or long click to clear a conversation.</string>
     <string name="conversations_clearall_title">Clear All</string>
@@ -50,4 +50,6 @@
     <string name="conversations_quantity_dialog">quantity</string>
     <string name="conversations_tutorial_title">Tutorial</string>
     <string name="conversations_tutorial">Click to redo the tutorial.</string>
+    <string name="noconversationsmessage">Looks like you haven\'t created any conversations. To add a conversation, go to Quick Message mode, click on the menu and select "Save as Conversation"</string>
+    <string name="noconversationstitle">No Conversations</string>
 </resources>
