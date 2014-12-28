@@ -1,2 +1,7 @@
 TextSpam/src/main/bin
 */build
+build/
+.idea
+lib/build
+Textspam/build
+Textspam/gen

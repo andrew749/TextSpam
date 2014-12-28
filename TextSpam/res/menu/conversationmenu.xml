@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/clearallconversations"
-        android:title="Clear All"
-        android:showAsAction="always"></item>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/clearallconversations"
+        android:showAsAction="always"
+        android:title="Clear All"></item>
     <!--<item android:id="@+id/conversation_tutorial"-->
-        <!--android:title="Tutorial"-->
-        <!--android:showAsAction="never"></item>-->
-    
+    <!--android:title="Tutorial"-->
+    <!--android:showAsAction="never"></item>-->
+
 
 </menu>

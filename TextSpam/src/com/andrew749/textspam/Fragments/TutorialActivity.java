@@ -22,7 +22,6 @@ public class TutorialActivity extends Activity {
             }
         });
     }
-   
 
 
 }

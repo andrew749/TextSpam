@@ -18,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import com.andrew749.textspam.Database.DataSource;
 import com.andrew749.textspam.Fragments.Conversations;
 import com.andrew749.textspam.Fragments.Conversations.conversationCommunication;
@@ -31,21 +32,31 @@ import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity implements
         quickmessagecommunication, conversationCommunication {
+    private final int URL_LOADER = 0;
     /**
      * This is the main class where all the methods are interconnected
      */
     public QuickMessageFragment frag;
-    private String[] drawerTitles;
-    private DrawerLayout mDrawerLayout;
-    private ListView mDrawerList;
-    private ActionBarDrawerToggle mDrawerToggle;
-    //static ShowcaseViews views;
-    Activity activity;
-    private final int URL_LOADER = 0;
     public String[] projection = {ContactsContract.Contacts._ID,
             ContactsContract.Contacts.DISPLAY_NAME,
             ContactsContract.Contacts.HAS_PHONE_NUMBER,
             ContactsContract.CommonDataKinds.Phone.NUMBER};
+    //static ShowcaseViews views;
+    Activity activity;
+    private String[] drawerTitles;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+    private ActionBarDrawerToggle mDrawerToggle;
+
+    public static Intent getOpenFacebookIntent(Context context) {
+
+        try {
+            context.getPackageManager().getPackageInfo("com.facebook.katana", 0);
+            return new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/258436447677720"));
+        } catch (Exception e) {
+            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/textspam"));
+        }
+    }
 
     /**
      * initializes all the elements of the main activity
@@ -147,16 +158,6 @@ public class MainActivity extends ActionBarActivity implements
         }
     }
 
-    public static Intent getOpenFacebookIntent(Context context) {
-
-        try {
-            context.getPackageManager().getPackageInfo("com.facebook.katana", 0);
-            return new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/258436447677720"));
-        } catch (Exception e) {
-            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/textspam"));
-        }
-    }
-
     public void handleTwitter() {
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW,
@@ -167,19 +168,6 @@ public class MainActivity extends ActionBarActivity implements
             startActivity(new Intent(Intent.ACTION_VIEW,
                     Uri.parse("https://twitter.com/#!/andrewcod749")));
         }
-    }
-
-    class drawer_item_click_listener implements ListView.OnItemClickListener {
-
-        /*
-         * 0 will be quick message 1 conversations 2
-         */
-        @Override
-        public void onItemClick(AdapterView<?> adapterView, View view, int i,
-                                long l) {
-            selectItem(i);
-        }
-
     }
 
     @Override
@@ -230,6 +218,19 @@ public class MainActivity extends ActionBarActivity implements
             tempnames.add(i, object.get(i).getPhoneNumber());
         }
         return tempnames;
+    }
+
+    class drawer_item_click_listener implements ListView.OnItemClickListener {
+
+        /*
+         * 0 will be quick message 1 conversations 2
+         */
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i,
+                                long l) {
+            selectItem(i);
+        }
+
     }
 
 }

@@ -1,15 +1,15 @@
 package com.andrew749.textspam.Database;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by andrew on 08/12/13.
@@ -62,9 +62,11 @@ public class DataSource {
     public void deleteConversationID(long id) {
         database.delete(DatabaseHelper.TABLE_NAME, DatabaseHelper.COLUMN_ID + " = " + id, null);
     }
-    public void deleteAllConversations(){
-    	database.execSQL("delete from "+ DatabaseHelper.TABLE_NAME+" where _id>=0;");
+
+    public void deleteAllConversations() {
+        database.execSQL("delete from " + DatabaseHelper.TABLE_NAME + " where _id>=0;");
     }
+
     public List<ConversationModel> getAllConversations() {
         List<ConversationModel> conversations = new ArrayList<ConversationModel>();
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, allColumns, null, null, null, null, null);
@@ -92,5 +94,5 @@ public class DataSource {
         }
         return model;
     }
-   
+
 }

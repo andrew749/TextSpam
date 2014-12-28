@@ -19,17 +19,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
+
 import com.andrew749.textspam.Adapters.AutoCompleteCursorAdapter;
 import com.andrew749.textspam.Adapters.ContactListAdapter;
 import com.andrew749.textspam.Custom;
@@ -49,19 +47,18 @@ public class QuickMessageFragment extends Fragment {
     public static ArrayList<Custom> item = new ArrayList<Custom>();
     private static int frequency;
     private static String message;
+    final String PREFS_NAME = "TextSpamPreferences";
+    public int[] fields = {R.id.ccontName, R.id.ccontNo};
     EditText frequency_enter, message_enter;
     AutoCompleteTextView phonenumber_enter;
     ContactListAdapter contactListAdapter;
     Button add;
     ImageButton contact;
     ListView lv;
-    private ArrayList<Map<String, String>> mPeopleList;
     // private SimpleAdapter mAdapter;
     MainActivity activity;
-    final String PREFS_NAME = "TextSpamPreferences";
-
-    public int[] fields = {R.id.ccontName, R.id.ccontNo};
     AutoCompleteCursorAdapter ad;
+    private ArrayList<Map<String, String>> mPeopleList;
 
     /**
      * @author Andrew Codispoti This is the main fragment where the majority of
@@ -120,7 +117,7 @@ public class QuickMessageFragment extends Fragment {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
                         (keyCode == KeyEvent.KEYCODE_ENTER)) {
                     // Perform action on key press
-addItem();
+                    addItem();
                     return true;
                 }
                 return false;
@@ -333,15 +330,6 @@ addItem();
         }
     }
 
-    public interface quickmessagecommunication {
-        public void toggleDrawer();
-
-        public void addConversation(String message, ArrayList<Custom> item);
-
-        public void openChangelogDialog();
-
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
@@ -370,6 +358,21 @@ addItem();
             return true;
         } else {
             return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        SharedPreferences settings = activity.getSharedPreferences(PREFS_NAME,
+                0);
+        if (settings.getBoolean("my_first_time", true)) {
+            /*
+             * Run tutorial because app is being launched for the first time
+			 */
+            //doTutorial();
+            // record the fact that the app has been started at least once
+            settings.edit().putBoolean("my_first_time", false).commit();
         }
     }
 
@@ -441,25 +444,19 @@ addItem();
 //    }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        SharedPreferences settings = activity.getSharedPreferences(PREFS_NAME,
-                0);
-        if (settings.getBoolean("my_first_time", true)) {
-            /*
-             * Run tutorial because app is being launched for the first time
-			 */
-            //doTutorial();
-            // record the fact that the app has been started at least once
-            settings.edit().putBoolean("my_first_time", false).commit();
-        }
-    }
-
-    @Override
     public void onAttach(Activity activity) {
         this.activity = (MainActivity) activity;
         super.onAttach(activity);
         setHasOptionsMenu(true);
+
+    }
+
+    public interface quickmessagecommunication {
+        public void toggleDrawer();
+
+        public void addConversation(String message, ArrayList<Custom> item);
+
+        public void openChangelogDialog();
 
     }
 

@@ -1,7 +1,5 @@
 package com.andrew749.textspam.Adapters;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,6 +10,8 @@ import android.widget.TextView;
 
 import com.andrew749.textspam.Custom;
 import com.andrew749.textspam.R;
+
+import java.util.ArrayList;
 
 /**
  * Created by andrew on 25/06/13.
@@ -24,10 +24,6 @@ public class ContactListAdapter extends ArrayAdapter<Custom> {
         super(a, textViewResourceId, list);
         entries = list;
         ac = a;
-    }
-
-    public class ViewHolder {
-        TextView tv;
     }
 
     @Override
@@ -50,5 +46,9 @@ public class ContactListAdapter extends ArrayAdapter<Custom> {
             holder.tv.setText("" + numbers.getPhoneNumber());
         }
         return v;
+    }
+
+    public class ViewHolder {
+        TextView tv;
     }
 }

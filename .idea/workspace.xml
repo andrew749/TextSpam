@@ -23,141 +23,106 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6a65b4a-0aa7-4ba9-b08f-d1b75aa506b4" name="Default" comment="Latest Stable Version 2.5">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/GoogleAdMobAdsSdk_6_4_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/android_support_v4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_21_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/libGoogleAnalyticsServices.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/mockito_all_1_9_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/nineoldandroids_2_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_21_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_19_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_21_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/.classpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/R.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/OnShowcaseEventListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/ShowcaseView$ConfigOptions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/ShowcaseView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/ShowcaseViewBuilder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/ShowcaseViews$ItemViewProperties.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/ShowcaseViews$OnShowcaseAcknowledged.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/ShowcaseViews.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/actionbar/ActionBarViewWrapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/actionbar/reflection/ActionBarReflector.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/actionbar/reflection/AppCompatReflector.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/actionbar/reflection/BaseReflector$ActionBarType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/actionbar/reflection/BaseReflector.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/actionbar/reflection/SherlockReflector.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/anim/AnimationUtils$AnimationEndListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/anim/AnimationUtils$AnimationStartListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/anim/AnimationUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/drawing/ClingDrawer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/drawing/ClingDrawerImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/drawing/TextDrawer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/drawing/TextDrawerImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/targets/ActionItemTarget.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/targets/ActionViewTarget$Type.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/targets/ActionViewTarget.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/targets/PointTarget.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/targets/Target.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/targets/ViewTarget.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/utils/Calculator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/utils/PointAnimator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/espian/showcaseview/utils/ShowcaseAreaCalculator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/github/espiandev/showcaseview/BuildConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/github/espiandev/showcaseview/R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/github/espiandev/showcaseview/R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/github/espiandev/showcaseview/R$id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/github/espiandev/showcaseview/R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/github/espiandev/showcaseview/R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/github/espiandev/showcaseview/R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/github/espiandev/showcaseview/R$styleable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/classes/com/github/espiandev/showcaseview/R.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/jarlist.cache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/library.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-hdpi/btn_cling_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-hdpi/btn_cling_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-hdpi/cling.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-hdpi/hand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-mdpi/btn_cling_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-mdpi/btn_cling_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-mdpi/cling.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-mdpi/hand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-xhdpi/btn_cling_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-xhdpi/btn_cling_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-xhdpi/cling.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-xhdpi/cling_bleached.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/bin/res/crunch/drawable-xhdpi/hand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/library.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/libs/mockito-all-1.9.5.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/libs/nineoldandroids-2.4.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/project.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-hdpi/btn_cling_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-hdpi/btn_cling_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-hdpi/cling.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-hdpi/hand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-mdpi/btn_cling_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-mdpi/btn_cling_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-mdpi/cling.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-mdpi/hand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-xhdpi/btn_cling_normal.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-xhdpi/btn_cling_pressed.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-xhdpi/cling.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-xhdpi/cling_bleached.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable-xhdpi/hand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/drawable/cling_button_bg.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/layout/handy.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/layout/showcase_button.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/values/attrs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/values/ids.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/values/strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/res/values/styles.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/OnShowcaseEventListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/ShowcaseView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/ShowcaseViewBuilder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/ShowcaseViews.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/actionbar/ActionBarViewWrapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/actionbar/reflection/ActionBarReflector.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/actionbar/reflection/AppCompatReflector.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/actionbar/reflection/BaseReflector.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/actionbar/reflection/SherlockReflector.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/anim/AnimationUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/drawing/ClingDrawer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/drawing/ClingDrawerImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/drawing/TextDrawer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/drawing/TextDrawerImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/targets/ActionItemTarget.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/targets/ActionViewTarget.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/targets/PointTarget.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/targets/Target.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/targets/ViewTarget.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/utils/Calculator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/utils/PointAnimator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/src/com/espian/showcaseview/utils/ShowcaseAreaCalculator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/test/com/espian/showcaseview/ShowcaseViewTests.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/test/com/espian/showcaseview/TestingActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/test/com/espian/showcaseview/targets/ActionItemTargetTests.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/test/com/espian/showcaseview/targets/ActionViewTargetTests.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/test/com/espian/showcaseview/targets/PointTargetTests.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/test/com/espian/showcaseview/targets/ViewTargetTests.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/AndroidManifest.xml" afterPath="$PROJECT_DIR$/TextSpam/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/AndroidManifest.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/AndroidManifest.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/AndroidManifest.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/AndroidManifest.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Adapters/AutoCompleteCursorAdapter.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Adapters/AutoCompleteCursorAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/gen/com/andrew749/textspam/BuildConfig.java" afterPath="$PROJECT_DIR$/TextSpam/gen/com/andrew749/textspam/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Adapters/ContactListAdapter.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Adapters/ContactListAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Database/ConversationModel.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Database/ConversationModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/Conversations.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/Conversations.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Database/DataSource.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Database/DataSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Database/DatabaseHelper.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Database/DatabaseHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/MainActivity.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/MessageReciever.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/MessageReciever.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Messager.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Messager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/QuickMessageFragment.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/QuickMessageFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/TextSpam-TextSpam.iml" afterPath="$PROJECT_DIR$/TextSpam/TextSpam-TextSpam.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build.gradle" afterPath="$PROJECT_DIR$/TextSpam/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/SwipeDismissListViewTouchListener.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/SwipeDismissListViewTouchListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/tests/TestActivity.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/tests/TestActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/TutorialActivity.java" afterPath="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/TutorialActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_bar_title_item.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_bar_title_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_bar_up_container.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_bar_up_container.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_bar_view_list_nav_layout.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_bar_view_list_nav_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_menu_item_layout.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_menu_item_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_menu_layout.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_menu_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_mode_bar.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_mode_bar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_mode_close_item_material.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_mode_close_item_material.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_activity_chooser_view.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_activity_chooser_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_activity_chooser_view_include.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_activity_chooser_view_include.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_activity_chooser_view_list_item.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_activity_chooser_view_list_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_background_cache_hint_selector_material_dark.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_background_cache_hint_selector_material_dark.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_background_cache_hint_selector_material_light.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_background_cache_hint_selector_material_light.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_btn_check_material.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_btn_check_material.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_btn_radio_material.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_btn_radio_material.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_cab_background_internal_bg.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_cab_background_internal_bg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_cab_background_top_material.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_cab_background_top_material.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_edit_text_material.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_edit_text_material.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_expanded_menu_layout.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_expanded_menu_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_fade_in.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_fade_in.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_fade_out.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_fade_out.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_item_background_holo_dark.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_item_background_holo_dark.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_item_background_holo_light.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_item_background_holo_light.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_list_menu_item_checkbox.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_list_menu_item_checkbox.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_list_menu_item_icon.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_list_menu_item_icon.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_list_menu_item_layout.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_list_menu_item_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_list_menu_item_radio.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_list_menu_item_radio.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_list_selector_background_transition_holo_dark.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_list_selector_background_transition_holo_dark.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_list_selector_background_transition_holo_light.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_list_selector_background_transition_holo_light.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_list_selector_holo_dark.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_list_selector_holo_dark.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_list_selector_holo_light.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_list_selector_holo_light.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_popup_menu_item_layout.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_popup_menu_item_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_primary_text_disable_only_material_dark.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_primary_text_disable_only_material_dark.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_primary_text_disable_only_material_light.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_primary_text_disable_only_material_light.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_primary_text_material_dark.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_primary_text_material_dark.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_primary_text_material_light.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_primary_text_material_light.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_screen_content_include.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_screen_content_include.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout-v11/abc_screen_content_include.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout-v11/abc_screen_content_include.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_screen_simple.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_screen_simple.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_screen_simple_overlay_action_mode.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_screen_simple_overlay_action_mode.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_screen_toolbar.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_screen_toolbar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_search_dropdown_item_icons_2line.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_search_dropdown_item_icons_2line.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_search_url_text.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_search_url_text.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_search_view.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_search_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_secondary_text_material_dark.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_secondary_text_material_dark.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_secondary_text_material_light.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/color/abc_secondary_text_material_light.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_simple_dropdown_hint.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_simple_dropdown_hint.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_slide_in_bottom.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_slide_in_bottom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_slide_in_top.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_slide_in_top.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_slide_out_bottom.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_slide_out_bottom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_slide_out_top.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_slide_out_top.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_switch_thumb_material.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_switch_thumb_material.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_tab_indicator_material.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_tab_indicator_material.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_textfield_search_material.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/drawable/abc_textfield_search_material.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/TextSpam/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/xml/changelog.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/xml/changelog.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/xml/changelog.xml" afterPath="$PROJECT_DIR$/TextSpam/res/xml/changelog.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/drawable/cling_button_bg.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/drawable/cling_button_bg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/layout/conversationfragment.xml" afterPath="$PROJECT_DIR$/TextSpam/res/layout/conversationfragment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/menu/conversationmenu.xml" afterPath="$PROJECT_DIR$/TextSpam/res/menu/conversationmenu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/layout/conversationpopup.xml" afterPath="$PROJECT_DIR$/TextSpam/res/layout/conversationpopup.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/layout/customcontactview.xml" afterPath="$PROJECT_DIR$/TextSpam/res/layout/customcontactview.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/layout/drawerlistitem.xml" afterPath="$PROJECT_DIR$/TextSpam/res/layout/drawerlistitem.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/layout/handy.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/layout/handy.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/layout/listitem.xml" afterPath="$PROJECT_DIR$/TextSpam/res/layout/listitem.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/menu/main.xml" afterPath="$PROJECT_DIR$/TextSpam/res/menu/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/values/styles.xml" afterPath="$PROJECT_DIR$/TextSpam/res/values/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/values-v14/styles.xml" afterPath="$PROJECT_DIR$/TextSpam/res/values-v14/styles.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/layout/notification.xml" afterPath="$PROJECT_DIR$/TextSpam/res/layout/notification.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/layout/quickmessagefragment.xml" afterPath="$PROJECT_DIR$/TextSpam/res/layout/quickmessagefragment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/layout/showcase_button.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/layout/showcase_button.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/values/strings.xml" afterPath="$PROJECT_DIR$/TextSpam/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/support_simple_spinner_dropdown_item.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/support_simple_spinner_dropdown_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/res/layout/tutorial.xml" afterPath="$PROJECT_DIR$/TextSpam/res/layout/tutorial.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values/values.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values-de/values.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values-de/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values-nl/values.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values-nl/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values-ru/values.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values-ru/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values-v11/values.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values-v11/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values-v14/values.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/res/values-v14/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/values/values.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/TextSpam/library/unspecified/res/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-v11/values.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-v11/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-v21/values.xml" afterPath="$PROJECT_DIR$/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-v21/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TextSpam.iws" />
@@ -186,21 +151,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Conversations.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/Conversations.java">
+      <file leaf-file-name="main.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TextSpam/res/menu/main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3450" max-vertical-offset="3825">
-              <caret line="230" column="12" selection-start-line="230" selection-start-column="12" selection-end-line="230" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="3540">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.28156996" vertical-offset="0" max-vertical-offset="586">
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -1766,18 +1721,19 @@
         <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
         <option value="$PROJECT_DIR$/lib/build.gradle" />
         <option value="$PROJECT_DIR$/library/build.gradle" />
-        <option value="$PROJECT_DIR$/TextSpam/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/TextSpam/res/layout/quickmessagefragment.xml" />
         <option value="$PROJECT_DIR$/library/src/com/espian/showcaseview/actionbar/reflection/AppCompatReflector.java" />
         <option value="$PROJECT_DIR$/library/src/com/espian/showcaseview/ShowcaseView.java" />
         <option value="$PROJECT_DIR$/TextSpam/build.gradle" />
         <option value="$PROJECT_DIR$/TextSpam/res/values-v14/styles.xml" />
         <option value="$PROJECT_DIR$/TextSpam/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/TextSpam/res/menu/conversationmenu.xml" />
-        <option value="$PROJECT_DIR$/TextSpam/res/menu/main.xml" />
-        <option value="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/Conversations.java" />
         <option value="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/MainActivity.java" />
         <option value="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/QuickMessageFragment.java" />
+        <option value="$PROJECT_DIR$/TextSpam/res/layout/quickmessagefragment.xml" />
+        <option value="$PROJECT_DIR$/TextSpam/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/TextSpam/res/layout/conversationpopup.xml" />
+        <option value="$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/Conversations.java" />
+        <option value="$PROJECT_DIR$/TextSpam/res/menu/main.xml" />
       </list>
     </option>
   </component>
@@ -1869,6 +1825,9 @@
     <property name="FullScreen" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="04916c02094da67c" />
     <property name="last_opened_file_path" value="$USER_HOME$/Play" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="LayoutCode.rearrangeEntries" value="true" />
   </component>
   <component name="RunManager" selected="Android Application.TextSpam-TextSpam">
     <configuration default="false" name="Tests in 'com.andrew749.textspam.tests'" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true" nameIsGenerated="true">
@@ -2081,6 +2040,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933258" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2104,7 +2064,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32703003" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2165,14 +2124,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/Conversations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3450" max-vertical-offset="3825">
-          <caret line="230" column="12" selection-start-line="230" selection-start-column="12" selection-end-line="230" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="3615">
@@ -2186,15 +2137,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="6780">
           <caret line="34" column="64" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
           <folding>
-            <element signature="e#1584#1592#0" expanded="true" />
-            <element signature="e#3429#4260#0" expanded="true" />
-            <element signature="e#4241#4242#0" expanded="true" />
-            <element signature="e#4299#4482#0" expanded="true" />
-            <element signature="e#4471#4472#0" expanded="true" />
-            <element signature="e#4680#5056#0" expanded="true" />
-            <element signature="e#5045#5046#0" expanded="true" />
-            <element signature="e#6117#6260#0" expanded="true" />
-            <element signature="e#6249#6250#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1576#1584#0" expanded="true" />
+            <element signature="e#4297#4786#0" expanded="true" />
+            <element signature="e#4775#4776#0" expanded="true" />
+            <element signature="e#6642#6785#0" expanded="true" />
+            <element signature="e#6774#6775#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2371,13 +2319,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Adapters/AutoCompleteCursorAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.44420132" vertical-offset="781" max-vertical-offset="1695">
-          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Adapters/ContactListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11487965" vertical-offset="0" max-vertical-offset="914">
@@ -2459,29 +2400,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/res/layout/quickmessagefragment.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2428571" vertical-offset="639" max-vertical-offset="1935">
-          <caret line="89" column="51" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20477815" vertical-offset="0" max-vertical-offset="810">
           <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2609489" vertical-offset="322" max-vertical-offset="870">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -2510,34 +2432,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/res/menu/conversationmenu.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
           <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/res/menu/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2" vertical-offset="0" max-vertical-offset="480">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="6" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/Conversations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2743" max-vertical-offset="3615">
-          <caret line="230" column="12" selection-start-line="230" selection-start-column="12" selection-end-line="230" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -2550,28 +2448,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/QuickMessageFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="6780">
-          <caret line="34" column="64" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
-          <folding>
-            <element signature="e#1584#1592#0" expanded="true" />
-            <element signature="e#3429#4260#0" expanded="true" />
-            <element signature="e#4241#4242#0" expanded="true" />
-            <element signature="e#4299#4482#0" expanded="true" />
-            <element signature="e#4471#4472#0" expanded="true" />
-            <element signature="e#4680#5056#0" expanded="true" />
-            <element signature="e#5045#5046#0" expanded="true" />
-            <element signature="e#6117#6260#0" expanded="true" />
-            <element signature="e#6249#6250#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2668" max-vertical-offset="3540">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Adapters/AutoCompleteCursorAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="1515">
+          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/QuickMessageFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48634812" vertical-offset="1440" max-vertical-offset="6870">
+          <caret line="120" column="58" selection-start-line="120" selection-start-column="58" selection-end-line="120" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1576#1584#0" expanded="true" />
+            <element signature="e#4297#4786#0" expanded="true" />
+            <element signature="e#4775#4776#0" expanded="true" />
+            <element signature="e#6642#6785#0" expanded="true" />
+            <element signature="e#6774#6775#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23037542" vertical-offset="0" max-vertical-offset="586">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/res/layout/quickmessagefragment.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="1965">
+          <caret line="85" column="14" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.92" vertical-offset="72" max-vertical-offset="870">
+          <caret line="18" column="97" selection-start-line="18" selection-start-column="97" selection-end-line="18" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/res/layout/conversationpopup.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/src/com/andrew749/textspam/Fragments/Conversations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35836178" vertical-offset="945" max-vertical-offset="3135">
+          <caret line="120" column="72" selection-start-line="120" selection-start-column="72" selection-end-line="120" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TextSpam/res/menu/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28156996" vertical-offset="0" max-vertical-offset="586">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
           <folding />
         </state>
       </provider>
