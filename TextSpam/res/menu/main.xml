@@ -8,7 +8,8 @@
     <item
             android:id="@+id/sendmessage"
             android:title="Send"
-            app:showAsAction="always"></item>
+            app:showAsAction="always"
+        android:icon="@drawable/ic_action_send"></item>
     <item
             android:id="@+id/clearmessage"
             android:title="Clear"
