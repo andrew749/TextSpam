@@ -289,7 +289,7 @@ public class QuickMessageFragment extends Fragment {
         String phone;
         Cursor contacts = null;
         try {
-            ;
+
             getActivity();
             if (resultCode == Activity.RESULT_OK) {
                 switch (requestCode) {
