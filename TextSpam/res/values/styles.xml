@@ -11,7 +11,6 @@
 
     <style name="actionbarcustom" parent="Base.Widget.AppCompat.ActionBar.Solid">
         <item name="background">@color/blue</item>
-
     </style>
 
     <style name="Theme.Transparent" parent="AppBaseTheme">

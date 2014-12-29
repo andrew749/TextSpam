@@ -37,6 +37,7 @@ public class MainActivity extends ActionBarActivity implements
      * This is the main class where all the methods are interconnected
      */
     public QuickMessageFragment frag;
+    public Conversations conversationFragment;
     public String[] projection = {ContactsContract.Contacts._ID,
             ContactsContract.Contacts.DISPLAY_NAME,
             ContactsContract.Contacts.HAS_PHONE_NUMBER,
@@ -137,13 +138,17 @@ public class MainActivity extends ActionBarActivity implements
         android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
         switch (position) {
             case 0:
-                Fragment quickMessageFragment = new QuickMessageFragment();
+                if(frag==null) {
+                    frag = new QuickMessageFragment();
+                }
                 manager.beginTransaction()
-                        .replace(R.id.content_frame, quickMessageFragment).commit();
+                        .replace(R.id.content_frame, frag).commit();
                 mDrawerLayout.closeDrawer(mDrawerList);
                 break;
             case 1:
-                Fragment conversationFragment = new Conversations();
+                if(conversationFragment==null) {
+                    conversationFragment = new Conversations();
+                }
                 manager.beginTransaction()
                         .replace(R.id.content_frame, conversationFragment).commit();
 
