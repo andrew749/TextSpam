@@ -2,53 +2,53 @@
 <items version="2" >
 
     <item
-        jar="/home/andrew/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/classes.jar"
+        jar="/home/andrew/Projects/TextSpam/TextSpam/build/intermediates/exploded-aar/TextSpam/lib/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="778e06c4464f8a17deb654aaf5c7d3d6045c3ef3">
-        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-1ec891730062aec98cbfee46d3ce7a5dc70cd882.jar" />
+        sha1="7198878784f8ceb3b59f01ec42ef82d9f24437b0">
+        <dex dex="/home/andrew/Projects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-f6348b3464788de628634298ee463fc1818a3820.jar" />
     </item>
     <item
-        jar="/home/andrew/TextSpam/TextSpam/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-9c847d91091f2f4f4cbb6e5af3beb9e11e1a1a5c.jar" />
-    </item>
-    <item
-        jar="/home/andrew/TextSpam/TextSpam/libs/GoogleAdMobAdsSdk-6.4.1.jar"
+        jar="/home/andrew/Projects/TextSpam/TextSpam/libs/GoogleAdMobAdsSdk-6.4.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="6262c554ef5744538d526465aa73704810705734">
-        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/GoogleAdMobAdsSdk-6.4.1-ee93471254f8fe62958cc7c95b3052a03212d86d.jar" />
+        <dex dex="/home/andrew/Projects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/GoogleAdMobAdsSdk-6.4.1-b351538dfd3e8c557e7110d09369e8bed6ecc589.jar" />
     </item>
     <item
-        jar="/home/andrew/TextSpam/TextSpam/libs/libGoogleAnalyticsServices.jar"
+        jar="/home/andrew/Projects/TextSpam/TextSpam/libs/libGoogleAnalyticsServices.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="e887c6c9b31b39a39b0eaba981448b78902ea813">
-        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/libGoogleAnalyticsServices-cafd13c2016a8db549c3f59fe78dde8f0ba5e8be.jar" />
+        <dex dex="/home/andrew/Projects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/libGoogleAnalyticsServices-d43ddc85117c0eacf9c6999e1456265252e571ae.jar" />
     </item>
     <item
-        jar="/home/andrew/TextSpam/TextSpam/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jar="/home/andrew/Projects/TextSpam/TextSpam/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/andrew/Projects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-eadb5dfc301693d66f01905c0096e5bf89675f6b.jar" />
+    </item>
+    <item
+        jar="/home/andrew/Projects/TextSpam/TextSpam/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-92f71bcf53e5f29319c2273aacf329d31bb84810.jar" />
+        <dex dex="/home/andrew/Projects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-5a6c8a0c0dbfefec4ba4d652f80f5374c7bf5093.jar" />
     </item>
     <item
         jar="/home/andrew/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-c3e3ed59647c97c80d1eedb3c76dac4f9fa1d196.jar" />
+        <dex dex="/home/andrew/Projects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-c3e3ed59647c97c80d1eedb3c76dac4f9fa1d196.jar" />
     </item>
     <item
-        jar="/home/andrew/TextSpam/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jar="/home/andrew/Projects/TextSpam/TextSpam/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/home/andrew/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-b31ef9693cef781d5df97d4fb064e9e1e3f92ced.jar" />
+        <dex dex="/home/andrew/Projects/TextSpam/TextSpam/build/intermediates/pre-dexed/debug/classes-9e543c644d3b297e38d27c60223b315be00c7197.jar" />
     </item>
 
 </items>
